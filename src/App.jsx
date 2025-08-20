@@ -5,6 +5,7 @@ import Aboutus from "./pages/aboutus";
 import Services from "./pages/services";
 import Footer from "./pages/footer";
 import NavBar from "./pages/navbar";
+import Faq from "./pages/components/faq";
 // import Terms from "./pages/terms";
 // import Privacy from "./pages/privacy";
 
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/Services",
         element: <Services />,
+      },
+      {
+        path: "/Faq",
+        element: <Faq />,
       },
       // {
       //   path: "/terms",
