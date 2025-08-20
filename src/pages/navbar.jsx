@@ -204,7 +204,7 @@ const NavBar = () => {
     return (
         <nav
             className={`fixed top-0 w-full z-50 transition-all duration-300 !py-6
-                ${isScrolled ? "bg-white text-black shadow-md" : "bg-transparent text-white"}
+                ${isScrolled ? " text-black shadow-md" : "bg-transparent text-white"}
                 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
         >
             <div className=" px-4">

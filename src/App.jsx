@@ -31,18 +31,18 @@ const router = createBrowserRouter([
         path: "/",
         element: <Homepage />,
       },
-      // {
-      //   path: "/Contactus",
-      //   element: <Contactus />,
-      // },
-      // {
-      //   path: "/AboutUs",
-      //   element: <Aboutus />,
-      // },
-      // {
-      //   path: "/Services",
-      //   element: <Services />,
-      // },
+      {
+        path: "/Contactus",
+        element: <Contactus />,
+      },
+      {
+        path: "/AboutUs",
+        element: <Aboutus />,
+      },
+      {
+        path: "/Services",
+        element: <Services />,
+      },
       // {
       //   path: "/terms",
       //   element: <Terms />,
