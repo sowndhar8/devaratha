@@ -6,6 +6,7 @@ import Services from "./pages/services";
 import Footer from "./pages/footer";
 import NavBar from "./pages/navbar";
 import Faq from "./pages/components/faq";
+import Progress from "./pages/components/progress";
 // import Terms from "./pages/terms";
 // import Privacy from "./pages/privacy";
 
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "/Faq",
         element: <Faq />,
+      },
+      {
+        path: "/Progress",
+        element: <Progress />,
       },
       // {
       //   path: "/terms",

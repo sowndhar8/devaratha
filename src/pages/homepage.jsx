@@ -138,13 +138,13 @@ function Homepage() {
             {/* top section */}
             <section>
                 <div className='absolute w-full h-full  '>
-                    <img src={img1} alt="" className='w-full h-[100%]' />
+                    <img src={img1} alt="" className='w-full h-[100vh]' />
                 </div>
                 <div className='relative w-full h-full lg:!px-20 md:!px-15 !px-10 !py-60'>
                     <h1 className='lg:text-[78px] md:text-[50px] text-[28px] font-bold text-white '>
                         Strategic Guidance.<br /> Lasting Success
                     </h1>
-                    <p className='lg:text-[24px] md:text-[22px] text-[20px] font-medium  text-white '>
+                    <p className='lg:text-[24px] md:text-[22px] text-[18px] font-medium  text-white '>
                         These services can be tailored to meet the specific needs <br /> and challenges of each client.
                     </p>
                     <button
@@ -168,12 +168,12 @@ function Homepage() {
                     <div className='flex justify-center items-center '>
                         <div>
 
-                            <h1 className="relative inline-block text-[20px] font-semibold text-[#2956A6]">
+                            <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] ">
                                 About Us
                                 <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] -z-10"></span>
                             </h1>
 
-                            <h2 className='lg:text-[50px] md:text-[30px] text-[25px] font-bold  text-black '>
+                            <h2 className='lg:text-[50px] md:text-[35px] text-[25px] font-bold  text-black '>
                                 Your Trusted Advisors <br /> in <span className='text-[#2956A6]'> Business Success.</span>
                             </h2>
                             <p className='lg:text-[18px] md:text-[18px] text-[16px]  text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full  text-justify  '>
@@ -194,49 +194,49 @@ function Homepage() {
 
             {/* why choose us */}
             <section>
-                <div className=' bg-[#D9E9FF] rounded-4xl !m-20 !p-10 '>
+                <div className=' bg-[#D9E9FF] rounded-4xl lg:!m-20 md:!m-15 !m-10 lg:!p-10 md:!p-10 !py-5 '>
                     <div className='text-center '>
 
-                        <h1 className="relative inline-block text-[20px]  font-semibold text-[#2956A6]">
+                        <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px]  font-semibold text-[#2956A6] z-10">
                             Why Choose Us
-                            <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] -z-5"></span>
+                            <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
                         </h1>
 
-                        <h2 className='lg:text-[50px] md:text-[30px] text-[25px] text-center font-bold  text-black '>
+                        <h2 className='lg:text-[50px] md:text-[35px] text-[25px] text-center font-bold  text-black '>
                             why ---- is the right choice for you
                         </h2>
                     </div>
-                    <div className='flex gap-10 !mt-5 !p-10 !w-[70%] bg-white rounded-2xl !mx-auto '>
-                        <div className='!mt-5 w-[70%] '>
+                    <div className='flex lg:flex-row md:flex-row flex-col gap-10 !mt-5 lg:!p-10 md:!p-10 !p-5 lg:w-[70%] md:w-[70%] !w-[90%] bg-white rounded-2xl !mx-auto '>
+                        <div className='!mt-5 lg:w-[70%] md:w-[70%] w-full '>
                             <h3 className='lg:text-[18px] md:text-[18px] text-[16px]  text-white bg-[#007DF2] rounded-tr-2xl w-fit !px-5 !py-2 '>
                                 Strategize & Succeed
                             </h3>
-                            <h2 className='lg:text-[50px] md:text-[35px] text-[24px]  text-black font-bold lg:leading-15  '>
+                            <h2 className='lg:text-[50px] md:text-[35px] text-[20px]  text-black font-bold lg:leading-15  '>
                                 Driving Success <br /> Through Strategic <br /> Guidance.
                             </h2>
-                            <p className=' '>
+                            <p className='lg:text-[18px] md:text-[18px] text-[16px]  text-[#666666]  '>
                                 These services are tailored to meet the specific needs and challenges of each client,
                                 providing valuable expertise and support to drive business success.
                             </p>
 
-                            <div className='flex gap-10 !mt-5 '>
-                                <button className=" flex items-center rounded-lg bg-[#007DF2] text-white font-semibold text-[16px] justify-center w-[40%] !py-3 cursor-pointer">
+                            <div className='flex lg:flex-row md:flex-row flex-col lg:gap-10 md:gap-10 gap-5 !mt-5 '>
+                                <button className=" flex items-center rounded-lg bg-[#007DF2] text-white font-semibold text-[16px] justify-center lg:w-[30%] md:w-[30%] w-[100%] !py-3 cursor-pointer">
                                     CONTACT US
                                 </button>
-                                <button className=" flex items-center rounded-lg bg-white text-[#007DF2] border-2 font-semibold text-[16px] justify-center w-[40%] !py-3 cursor-pointer">
+                                <button className=" flex items-center rounded-lg bg-white text-[#007DF2] border-2 font-semibold text-[16px] justify-center lg:w-[30%] md:w-[30%] w-[100%] !py-3 cursor-pointer">
                                     FREE CONSULT
                                 </button>
                             </div>
                         </div>
-                        <div className='!mt-5 '>
+                        <div className='lg:flex md:flex hidden !mt-5 '>
                             <img src={img3} alt="" />
                         </div>
                     </div>
-                    <div className='!mt-10 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 !p-10 !'>
+                    <div className='!mt-10 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 lg:!p-10 md:!p-10  '>
                         {choose.map((item) => (
-                            <div key={item.id} className=' !mt-5 !p-5 !'>
-                                <div className='flex gap-5 items-center '>
-                                    <div className="w-25 h-20 flex items-center justify-center bg-white rounded-full">
+                            <div key={item.id} className=' !p-5 '>
+                                <div className='grid lg:grid-cols-[auto_1fr] md:grid-cols-[auto_1fr] grid-cols-1 items-center gap-4 '>
+                                    <div className="w-20 h-20 flex items-center justify-center bg-white rounded-full">
                                         <img src={item.img} alt={item.title} className="w-12 h-12 object-contain" />
                                     </div>
 
@@ -260,15 +260,15 @@ function Homepage() {
 
             {/* how we do */}
             <section>
-                <div className=' bg-[#D9E9FF] flex rounded-4xl !m-20 !px-10 !py-20 '>
-                    <div className='items-center justify-center flex w-[60%] '>
+                <div className=' bg-[#D9E9FF] flex lg:flex-row md:flex-row flex-col rounded-4xl lg:!m-20 md:!m-15 !m-10 !px-10 lg:!py-20 md:!py-20 !py-10 '>
+                    <div className='items-center justify-center flex lg:w-[60%] md:w-[60%] w-[100%] '>
                         <div>
-                            <h1 className="relative inline-block text-[20px]  font-semibold text-[#2956A6]">
+                            <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px]  font-semibold text-[#2956A6] z-10">
                                 How We Do
-                                <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] -z-5"></span>
+                                <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
                             </h1>
 
-                            <h2 className='lg:text-[50px] md:text-[30px] text-[25px]  font-bold  text-black '>
+                            <h2 className='lg:text-[50px] md:text-[35px] text-[25px]  font-bold  text-black '>
                                 The importance of business finance
                             </h2>
                             <div>
@@ -276,7 +276,7 @@ function Homepage() {
                                     <div key={item.id} className=' mt-5 !py-5 '>
 
                                         <div className=" flex gap-10">
-                                            <FaCircleCheck size={25} className='text-[#2956A6] !mt-5' />
+                                            <FaCircleCheck className="text-[#2956A6] mt-5 text-[80px] md:text-[50px] lg:text-[25px]"/>
                                             <div>
                                                 <h2 className='lg:text-[20px] md:text-[18px] text-[16px] text-black font-semibold mt-2'>
                                                     {item.title}
@@ -293,7 +293,7 @@ function Homepage() {
                         </div>
                     </div>
 
-                    <div className='!mt-5 w-[40%] '>
+                    <div className='!mt-5 lg:w-[40%] md:w-[40%] w-[100%] '>
                         <img src={img4} alt="" />
                     </div>
                 </div>
@@ -302,18 +302,18 @@ function Homepage() {
 
             {/* Advantage */}
             <section>
-                <div className=' bg-[#D9E9FF] flex rounded-4xl !m-20 !px-10 !py-20 gap-10 '>
-                    <div className='!mt-5 w-[40%] '>
+                <div className=' bg-[#D9E9FF] flex lg:flex-row md:flex-row flex-col rounded-4xl lg:!m-20 md:!m-15 !m-10 !px-10 lg:!py-20 md:!py-20 !py-10 gap-10 '>
+                    <div className='!mt-5 lg:w-[40%] md:w-[40%] w-[100%] '>
                         <img src={img5} alt="" />
                     </div>
-                    <div className='items-center justify-center flex w-[60%] '>
+                    <div className='items-center justify-center flex lg:w-[60%] md:w-[60%] w-[100%] '>
                         <div>
-                            <h1 className="relative inline-block text-[20px]  font-semibold text-[#2956A6]">
+                            <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] z-10">
                                 Advantages
-                                <span className="absolute left-0 bottom-1 w-full h-[30%] text-[#DFAE51] -z-5"></span>
+                                <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
                             </h1>
 
-                            <h2 className='lg:text-[50px] md:text-[30px] text-[25px]  font-bold  text-black '>
+                            <h2 className='lg:text-[50px] md:text-[35px] text-[25px]  font-bold  text-black '>
                                 Manage finance for your business
                             </h2>
                             <div>
@@ -321,7 +321,7 @@ function Homepage() {
                                     <div key={item.id} className=' mt-5 !py-5 '>
 
                                         <div className=" flex gap-10">
-                                            <FaCircleCheck size={25} className='text-[#2956A6] !mt-5' />
+                                            <FaCircleCheck className="text-[#2956A6] mt-5 text-[80px] md:text-[50px] lg:text-[25px]" />
                                             <div>
                                                 <h2 className='lg:text-[20px] md:text-[18px] text-[16px] text-black font-semibold mt-2'>
                                                     {item.title}
@@ -343,11 +343,11 @@ function Homepage() {
 
             {/* Comments */}
             <section>
-                <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 !m-20'>
+                <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 lg:!m-20 md:!m-15 !m-10'>
                     {data2.map((item) => (
-                        <div key={item.id} className=' flex rounded-4xl !p-10 border-2 border-[#D9E9FF]'>
+                        <div key={item.id} className=' flex rounded-4xl lg:!p-10 md:!p-10 !p-5 border-2 border-[#D9E9FF]'>
                             <div className=' '>
-                                <div className='flex gap-10' >
+                                <div className='flex gap-5 items-center' >
                                     <div>
                                         <img src={item.img} alt="" className='w-20 h-20' />
                                     </div>
