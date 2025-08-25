@@ -3,30 +3,33 @@ import img from "../img/logo.png";
 import { FaArrowRight } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
+import { nav } from "framer-motion/client";
 
 function Footer() {
   return (
     <div className="bg-[#0D0D0D] lg:!px-40 lg:!py-20 ">
       <div className="lg:grid-cols-4 md:grid-cols-1 grid-cols-1 grid gap-4 md:!px-12 md:!py-12 !px-6 !py-6">
         <div>
+          <a href ="/">
           <img src={img} alt="" className="w-[50px] h-[50px] !mb-5 " />
           <p className="text-[#D0DAF5] text-[14px] font-bold ">
             Devavratha Consultency Services
           </p>
+          </a>
         </div>
         <div className="">
           <h2 className="text-[#D0DAF5] text-[16px] !pb-5">Explore</h2>
           <div>
-            <a href="">
+            <a href="/">
               <h4 className="text-[#6F7481] text-[16px] !pb-2">Home</h4>
             </a>
-            <a href="">
+            <a href="/Services">
               <h4 className="text-[#6F7481] text-[16px] !pb-2">Services</h4>
             </a>
-            <a href="">
+            <a href="/Aboutus">
               <h4 className="text-[#6F7481] text-[16px] !pb-2">About us</h4>
             </a>
-            <a href="">
+            <a href="/Contactus">
               <h4 className="text-[#6F7481] text-[16px] !pb-2">Contact us</h4>
             </a>
           </div>
@@ -34,16 +37,16 @@ function Footer() {
         <div className="">
           <h2 className="text-[#D0DAF5] text-[16px] !pb-5">Company</h2>
           <div className="">
-            <a href="">
+            <a href="/Aboutus">
               <h4 className="text-[#6F7481] text-[16px] !pb-2">About us</h4>
             </a>
-            <a href="">
+            <a href="#">
               <h4 className="text-[#6F7481] text-[16px] !pb-2">Partners</h4>
             </a>
-            <a href="">
+            <a href="#">
               <h4 className="text-[#6F7481] text-[16px] !pb-2">Customers</h4>
             </a>
-            <a href="">
+            <a href="#">
               <h4 className="text-[#6F7481] text-[16px] !pb-2">Contact us</h4>
             </a>
           </div>

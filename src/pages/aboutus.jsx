@@ -95,7 +95,7 @@ function Aboutus() {
       </section>
 
       <section>
-        <div className='lg:!px-20 md:!px-20 !px-10 !py-20 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1  justify-evenly items-center bg-[#F4FAFF] '>
+        <div className='lg:!px-20 md:!px-20 !px-10 !py-20 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1  !gap-10 justify-evenly items-center bg-[#F4FAFF] '>
           <div className='flex justify-center items-center '>
             <div>
 
@@ -116,7 +116,7 @@ function Aboutus() {
               </div>
             </div>
           </div>
-          <div className=' '>
+        <div className=' '>
             <img
               src={img2}
               alt=""
@@ -249,7 +249,7 @@ function Aboutus() {
                    hover:bg-white hover:text-[#2956A6] hover:border-2 hover:border-[#2956A6] !gap-2"
                     >
                       <button className="lg:text-[22px] font-semibold md:text-[16px] text-[14px] transition-colors duration-300">
-                        Send Message
+                        Submit Now
                       </button>
 
                     </div>
