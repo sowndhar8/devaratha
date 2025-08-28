@@ -17,3 +17,13 @@
   display: none !important;
 }
 
+.no-spinner input {
+  color: #2956A6 !important;
+  font-weight: bold !important;
+  background-color:  #F0F0F2 !important;
+ 
+}
+
+.clip-diagonal {
+  clip-path: polygon(100% 0%, 0% 40%, 0% 100%, 100% 100%);
+}

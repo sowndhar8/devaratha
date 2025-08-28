@@ -24,6 +24,12 @@ function Layout() {
 import { Outlet } from "react-router-dom";
 import Footersection from "./pages/footer";
 import Navbar from "./pages/navbar";
+import GoldLoans from "./pages/goldLoan";
+import PersonalLoan from "./pages/personalLoan";
+import Businessloan from "./pages/businessloan";
+import MortageLoan from "./pages/mortageLoan";
+import Enquire from "./pages/enquire";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -52,6 +58,26 @@ const router = createBrowserRouter([
       {
         path: "/Progress",
         element: <Progress />,
+      },
+      {
+        path: "/GoldLoans",
+        element: <GoldLoans />,
+      },
+      {
+        path: "/PersonalLoan",
+        element: <PersonalLoan />,
+      },
+      {
+        path: "/BusinessLoan",
+        element: <Businessloan />,
+      },
+      {
+        path: "/MortageLoan",
+        element: <MortageLoan />,
+      },
+      {
+        path: "/Enquire",
+        element: <Enquire />,
       },
       // {
       //   path: "/terms",

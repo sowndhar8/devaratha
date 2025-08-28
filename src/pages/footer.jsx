@@ -7,7 +7,7 @@ import { nav } from "framer-motion/client";
 
 function Footer() {
   return (
-    <div className="bg-[#0D0D0D] lg:!px-40 lg:!py-20 ">
+    <div className="bg-[#0D0D0D] lg:!px-40 lg:!py-10 ">
       <div className="lg:grid-cols-4 md:grid-cols-1 grid-cols-1 grid gap-4 md:!px-12 md:!py-12 !px-6 !py-6">
         <div>
           <a href ="/">
@@ -51,7 +51,7 @@ function Footer() {
             </a>
           </div>
         </div>
-        <div className="bg-[#0E1014] md:!px-10 md:!py-10 !py-5 !px-5">
+        <div className="bg-[#0E1014] md:!px-5 md:!py-10 !py-5 !px-5">
           <h2 className="text-[#D0DAF5]">Connect</h2>
           <div className="flex h-[50px] border-1 border-[#161829] items-center justify-between rounded-[10px] !my-5 ">
             <input
@@ -70,10 +70,10 @@ function Footer() {
           </p>
         </div>
       </div>
-      <div className="lg:!px-12 !px-6 !py-6 ">
-      <div className="h-[2px] w-[100%] bg-[#18181B] md:!my-10 !my-5 "></div>
+      <div className="lg:!px-12 !px-6  ">
+      <div className="h-[2px] w-[100%] bg-[#18181B] md:!my-5 !my-5 "></div>
       </div>
-      <div className="flex  md:!px-12 md:!py-12 justify-between items-center !px-6 !py-6 ">
+      <div className="flex  md:!px-12 md:!py-5 justify-between items-center !px-6 !py-6 ">
         <div className="">
           <a href="">
             <span className="text-[#D0DAF5] text-[14px] !pr-4">Terms</span>

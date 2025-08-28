@@ -34,18 +34,19 @@ const SipCalculator = () => {
 
     return (
         <div>
-            <h2 className="text-4xl font-bold !mb-6 text-center text-blue-600">
+            <h2 className="text-2xl lg:text-4xl font-bold !mb-6 text-[#0D0D3F] text-center lg:text-left">
                 SIP Calculator
             </h2>
 
-            {/* Input fields with sliders */}
-            <div className="flex justify-between !p-10 bg-white shadow-lg rounded-2xl">
-                <div className="!space-y-8">
+            {/* Container */}
+            <div className="flex flex-col lg:flex-row md:flex-row justify-between gap-8 !p-6 lg:!p-10 bg-white shadow-lg rounded-2xl">
 
-                    {/* Deposit Amount */}
-                    <div className="!gap-10">
-                        <div className="flex w-100 justify-between items-center">
-                            <label className="block font-medium !pb-2 text-[#44475B]">
+                {/* Input Section */}
+                <div className="space-y-8 w-full lg:w-1/2">
+                    {/* Monthly Investment */}
+                    <div>
+                        <div className="flex justify-between items-center !mb-2">
+                            <label className="font-medium text-[#44475B]">
                                 Monthly Investment
                             </label>
                             <Col>
@@ -55,10 +56,10 @@ const SipCalculator = () => {
                                     value={monthlyInvestment}
                                     onChange={setMonthlyInvestment}
                                     className="no-spinner"
+                                    style={{ border: "none" }}
                                 />
                             </Col>
                         </div>
-
                         <Slider
                             min={100}
                             max={1000000}
@@ -67,9 +68,10 @@ const SipCalculator = () => {
                         />
                     </div>
 
+                    {/* Expected Return */}
                     <div>
-                        <div className="flex justify-between w-100 items-center">
-                            <label className="block font-medium !pb-2 text-[#44475B]">
+                        <div className="flex justify-between items-center !mb-2">
+                            <label className="font-medium text-[#44475B]">
                                 Expected Return (%)
                             </label>
                             <Col>
@@ -79,10 +81,10 @@ const SipCalculator = () => {
                                     value={expectedReturn}
                                     onChange={setExpectedReturn}
                                     className="no-spinner"
+                                    style={{ border: "none" }}
                                 />
                             </Col>
                         </div>
-
                         <Slider
                             min={1}
                             max={30}
@@ -90,66 +92,52 @@ const SipCalculator = () => {
                             value={expectedReturn}
                             onChange={setExpectedReturn}
                         />
-
-
                     </div>
 
+                    {/* Time Period */}
                     <div>
-                        <div>
-                            <div className="flex justify-between w-100 items-center">
-                                <label className="block font-medium text-[#44475B]">
-                                    Time Period
-                                </label>
-                                <Col>
-                                    <InputNumber
-                                        min={1}
-                                        max={40}
-                                        value={timePeriod}
-                                        onChange={setTimePeriod}
-                                    />
-                                </Col>
-                            </div>
-                            <Slider
-                                min={1}
-                                max={40}
-                                value={timePeriod}
-                                onChange={setTimePeriod}
-                            />
+                        <div className="flex justify-between items-center !mb-2">
+                            <label className="font-medium text-[#44475B]">
+                                Time Period (Years)
+                            </label>
+                            <Col>
+                                <InputNumber
+                                    min={1}
+                                    max={40}
+                                    value={timePeriod}
+                                    onChange={setTimePeriod}
+                                    className="no-spinner"
+                                    style={{ border: "none" }}
+                                />
+                            </Col>
                         </div>
+                        <Slider
+                            min={1}
+                            max={40}
+                            value={timePeriod}
+                            onChange={setTimePeriod}
+                        />
                     </div>
                 </div>
 
-
-
-                {/* Results */}
-
-                <table className="w-full border-neutral-50 ">
-                    <tbody>
-                        <tr className="text-md font-medium text-[#44475B]">
-                            <td className="text-[#7C7E8C] p-2">Invested Amount:</td>
-                            <td className="text-right p-2">
-                                ₹{invested.toLocaleString("en-IN", { maximumFractionDigits: 0 })}
-                            </td>
-                        </tr>
-
-                        <tr className="text-md font-medium text-[#44475B]">
-                            <td className="text-[#7C7E8C] p-2">Wealth Gained:</td>
-                            <td className="text-right p-2">
-                                ₹{wealthGained.toLocaleString("en-IN", { maximumFractionDigits: 0 })}
-                            </td>
-                        </tr>
-
-                        <tr className="text-md font-medium text-[#44475B]">
-                            <td className="text-[#7C7E8C] p-2">Total Value:</td>
-                            <td className="text-right p-2">
-                                ₹{maturity.toLocaleString("en-IN", { maximumFractionDigits: 0 })}
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
+                {/* Results Section */}
+        <div className="flex-1 flex flex-col gap-6 rounded-xl !p-6">
+                    <div className="flex justify-between text-md font-medium text-[#44475B]">
+                        <p className="text-[#7C7E8C]">Invested Amount:</p>
+                        <p>₹{invested.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
+                    </div>
+                    <div className="flex justify-between text-md font-medium text-[#44475B]">
+                        <p className="text-[#7C7E8C]">Wealth Gained:</p>
+                        <p>₹{wealthGained.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
+                    </div>
+                    <div className="flex justify-between text-md font-medium text-[#44475B]">
+                        <p className="text-[#7C7E8C]">Total Value:</p>
+                        <p>₹{maturity.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
+                    </div>
+                </div>
             </div>
         </div>
+
     );
 };
 

@@ -248,8 +248,8 @@ const NavBar = () => {
                             </div>
                         ))}
 
-                        <div className="hidden lg:flex items-center rounded-4xl bg-[#DFAE51] text-[#2956A6] font-medium text-[20px] !px-5 !py-2 cursor-pointer">Free Consult
-                            <BsArrowUpRight color="white" size={40} className="!ml-2 bg-[#2956A6] rounded-full !p-2 " /></div>
+                        <a href="/Enquire" className="hidden lg:flex items-center rounded-4xl bg-[#DFAE51] text-[#2956A6] font-medium text-[20px] !px-5 !py-2 cursor-pointer">Free Consult
+                            <BsArrowUpRight color="white" size={40} className="!ml-2 bg-[#2956A6] rounded-full !p-2 " /></a>
                         </div>
 
                     {/* Mobile Menu Button */}
