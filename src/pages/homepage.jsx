@@ -1,6 +1,5 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import img1 from "../img/home-bg.png";
 import img2 from "../img/aboutus-bg.png";
 import img3 from "../img/choose-us-bg.png";
 import img4 from "../img/we-do.png";
@@ -21,6 +20,9 @@ import { FaArrowRight } from 'react-icons/fa';
 import { FaCircleCheck } from 'react-icons/fa6';
 import { Rate } from "antd";
 import Faq from "./components/faq";
+import OurServices from './components/ourServices';
+
+
 
 const choose = [
     {
@@ -136,59 +138,70 @@ function Homepage() {
         <div>
 
             {/* top section */}
+            
             <section>
-                <div className='absolute w-full h-full  '>
-                    <img src={img1} alt="" className='w-full h-[100vh]' />
-                </div>
-                <div className='relative w-full h-full lg:!px-20 md:!px-15 !px-10 !py-60'>
-                    <h1 className='lg:text-[78px] md:text-[50px] text-[28px] font-bold text-white '>
-                        Strategic Guidance.<br /> Lasting Success
-                    </h1>
-                    <p className='lg:text-[24px] md:text-[22px] text-[18px] font-medium  text-white '>
-                        These services can be tailored to meet the specific needs <br /> and challenges of each client.
-                    </p>
-                    <button
-                        // onClick={() => navigate("/Contactus")}
-                        className='bg-[#DFAE51] text-[#2956A6] !px-10 !py-4 rounded-lg !mt-12 text-[16px] font-semibold cursor-pointer'>
-                        Contact Us
-                    </button>
+                <div className='bg-banner  bg-cover flex justify-center items-center'>
+                    <div className=' w-full h-full lg:!px-20 md:!px-15 !px-10 !py-60'>
+                        <h1 className='lg:text-[78px] md:text-[50px] text-[28px] font-bold text-white '>
+                            Strategic Guidance.<br /> Lasting Success
+                        </h1>
+                        <p className='lg:text-[24px] md:text-[22px] text-[18px] font-medium  text-white '>
+                            These services can be tailored to meet the specific needs <br /> and challenges of each client.
+                        </p>
+                        <button
+                            onClick={() => navigate("/Contactus")}
+                            className='bg-[#DFAE51] text-[#2956A6] !px-10 !py-4 rounded-lg !mt-12 text-[16px] font-semibold cursor-pointer'>
+                            Contact Us
+                        </button>
+                    </div>
                 </div>
             </section>
 
+
+            
             {/* aboutus */}
             <section>
-                <div className='lg:!px-20 md:!px-20 !px-10 !py-20 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1  justify-evenly items-center  '>
-                    <div className=' '>
-                        <img
-                            src={img2}
-                            alt=""
-                            className='w-fit place-self-center '
-                        />
-                    </div>
-                    <div className='flex justify-center items-center '>
-                        <div>
+                <div>
+                    <div className='lg:!px-20 md:!px-20 !px-10 !py-20 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1  justify-evenly items-center  '>
+                        <div className=' '>
+                            <img
+                                src={img2}
+                                alt=""
+                                className=' w-fit place-self-center '
+                            />
+                        </div>
+                        <div className='flex justify-center items-center '>
+                            <div>
 
-                            <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] ">
-                                About Us
-                                <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] -z-10"></span>
-                            </h1>
+                                <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] ">
+                                    About Us
+                                    <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] -z-10"></span>
+                                </h1>
 
-                            <h2 className='lg:text-[50px] md:text-[35px] text-[25px] font-bold  text-black '>
-                                Your Trusted Advisors <br /> in <span className='text-[#2956A6]'> Business Success.</span>
-                            </h2>
-                            <p className='lg:text-[18px] md:text-[18px] text-[16px]  text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full  text-justify  '>
-                                we understand the challenges and complexities that businesses face in today's dynamic marketplace.
-                                That's why we offer a comprehensive suite of consulting services. we understand the challenges and
-                                complexities that businesses face in today's dynamic marketplace. That's why we offer a comprehensive
-                                suite of consulting services. we understand the challenges and complexities.
-                            </p>
-                            <div className='!mt-5 '>
-                                <button className=" flex items-center rounded-4xl bg-[#2956A6] text-white font-semibold text-[16px] !px-5 !py-2 cursor-pointer">Read More
-                                    <FaArrowRight color="black" size={30} className="!ml-2 bg-white rounded-full !p-2 " />
-                                </button>
+                                <h2 className='lg:text-[50px] md:text-[35px] text-[25px] font-bold  text-black '>
+                                    Your Trusted Advisors <br /> in <span className='text-[#2956A6]'> Business Success.</span>
+                                </h2>
+                                <p className='lg:text-[18px] md:text-[18px] text-[16px]  text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full  text-justify  '>
+                                    we understand the challenges and complexities that businesses face in today's dynamic marketplace.
+                                    That's why we offer a comprehensive suite of consulting services. we understand the challenges and
+                                    complexities that businesses face in today's dynamic marketplace. That's why we offer a comprehensive
+                                    suite of consulting services. we understand the challenges and complexities.
+                                </p>
+                                <div className='!mt-5 '>
+                                    <button className=" flex items-center rounded-4xl bg-[#2956A6] text-white font-semibold text-[16px] !px-5 !py-2 cursor-pointer">Read More
+                                        <FaArrowRight color="black" size={30} className="!ml-2 bg-white rounded-full !p-2 " />
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* Our Services */}
+            <section>
+                <div>
+                    <OurServices />
                 </div>
             </section>
 
@@ -260,8 +273,8 @@ function Homepage() {
 
             {/* how we do */}
             <section>
-                <div className=' bg-[#D9E9FF] flex lg:flex-row md:flex-row flex-col rounded-4xl lg:!m-20 md:!m-15 !m-10 !px-10 lg:!py-20 md:!py-20 !py-10 '>
-                    <div className='items-center justify-center flex lg:w-[60%] md:w-[60%] w-[100%] '>
+                <div className=' bg-[#D9E9FF] flex lg:flex-row md:flex-col flex-col rounded-4xl lg:!m-20 md:!m-15 !m-10 !px-10 lg:!py-20 md:!py-20 !py-10 '>
+                    <div className='items-center justify-center flex lg:w-[60%] md:w-[100%] w-[100%] '>
                         <div>
                             <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px]  font-semibold text-[#2956A6] z-10">
                                 How We Do
@@ -275,13 +288,15 @@ function Homepage() {
                                 {data.map((item) => (
                                     <div key={item.id} className=' mt-5 !py-5 '>
 
-                                        <div className=" flex gap-10">
-                                            <FaCircleCheck className="text-[#2956A6] mt-5 text-[80px] md:text-[50px] lg:text-[25px]"/>
-                                            <div>
-                                                <h2 className='lg:text-[20px] md:text-[18px] text-[16px] text-black font-semibold mt-2'>
-                                                    {item.title}
-                                                </h2>
-                                                <p className='text-[#666] !mt-2'>
+                                        <div className="flex items-center gap-10 ">
+                                            <div className=' '>
+                                                <div className='flex gap-5 items-center'>
+                                                    <FaCircleCheck className="text-[#2956A6] mt-5 text-[20px] md:text-[20px] lg:text-[20px]" />
+                                                    <h2 className='lg:text-[20px] md:text-[18px] text-[16px] text-black font-semibold mt-2'>
+                                                        {item.title}
+                                                    </h2>
+                                                </div>
+                                                <p className='text-[#666] !mt-2 !px-10'>
                                                     {item.description}
                                                 </p>
                                             </div>
@@ -293,17 +308,17 @@ function Homepage() {
                         </div>
                     </div>
 
-                    <div className='!mt-5 lg:w-[40%] md:w-[40%] w-[100%] '>
+                    <div className='!mt-5 lg:w-[40%] md:w-[100%] w-[100%] '>
                         <img src={img4} alt="" />
                     </div>
                 </div>
 
-            </section >
+            </section>
 
             {/* Advantage */}
             <section>
-                <div className=' bg-[#D9E9FF] flex lg:flex-row md:flex-row flex-col rounded-4xl lg:!m-20 md:!m-15 !m-10 !px-10 lg:!py-20 md:!py-20 !py-10 gap-10 '>
-                    <div className='!mt-5 lg:w-[40%] md:w-[40%] w-[100%] '>
+                <div className=' bg-[#D9E9FF] flex lg:flex-row md:flex-col flex-col rounded-4xl lg:!m-20 md:!m-15 !m-10 !px-10 lg:!py-20 md:!py-20 !py-10 gap-10 '>
+                    <div className='!mt-5 lg:w-[40%] md:w-[100%] w-[100%] '>
                         <img src={img5} alt="" />
                     </div>
                     <div className='items-center justify-center flex lg:w-[60%] md:w-[60%] w-[100%] '>
@@ -318,15 +333,17 @@ function Homepage() {
                             </h2>
                             <div>
                                 {data.map((item) => (
-                                    <div key={item.id} className=' mt-5 !py-5 '>
+                                   <div key={item.id} className=' mt-5 !py-5 '>
 
-                                        <div className=" flex gap-10">
-                                            <FaCircleCheck className="text-[#2956A6] mt-5 text-[80px] md:text-[50px] lg:text-[25px]" />
-                                            <div>
-                                                <h2 className='lg:text-[20px] md:text-[18px] text-[16px] text-black font-semibold mt-2'>
-                                                    {item.title}
-                                                </h2>
-                                                <p className='text-[#666] !mt-2'>
+                                        <div className="flex items-center gap-10 ">
+                                            <div className=' '>
+                                                <div className='flex gap-5 items-center'>
+                                                    <FaCircleCheck className="text-[#2956A6] mt-5 text-[20px] md:text-[20px] lg:text-[20px]" />
+                                                    <h2 className='lg:text-[20px] md:text-[18px] text-[16px] text-black font-semibold mt-2'>
+                                                        {item.title}
+                                                    </h2>
+                                                </div>
+                                                <p className='text-[#666] !mt-2 !px-10'>
                                                     {item.description}
                                                 </p>
                                             </div>
@@ -363,11 +380,11 @@ function Homepage() {
                                         </p>
                                     </div>
                                 </div>
-                                    <div>
-                                        <p className='text-[#666666] !mt-2'>
-                                            {item.description}
-                                        </p>
-                                    </div>
+                                <div>
+                                    <p className='text-[#666666] !mt-2'>
+                                        {item.description}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     ))}
@@ -382,9 +399,10 @@ function Homepage() {
             </section>
 
 
+        </div>
 
 
-        </div >
+
     )
 }
 export default Homepage
