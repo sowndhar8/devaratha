@@ -143,10 +143,10 @@ function Homepage() {
                 <div className='bg-banner  bg-cover flex justify-center items-center'>
                     <div className=' w-full h-full lg:!px-20 md:!px-15 !px-10 !py-60'>
                         <h1 className='lg:text-[78px] md:text-[50px] text-[28px] font-bold text-white '>
-                            Strategic Guidance.<br /> Lasting Success
+                            Secure Wealth,<br /> Smart Future 
                         </h1>
                         <p className='lg:text-[24px] md:text-[22px] text-[18px] font-medium  text-white '>
-                            These services can be tailored to meet the specific needs <br /> and challenges of each client.
+                            Build your savings with trusted financial solutions. From deposits to investments and tax strategies, we help you grow your wealth with clarity and confidence.
                         </p>
                         <button
                             onClick={() => navigate("/Contactus")}
@@ -179,7 +179,7 @@ function Homepage() {
                                 </h1>
 
                                 <h2 className='lg:text-[50px] md:text-[35px] text-[25px] font-bold  text-black '>
-                                    Your Trusted Advisors <br /> in <span className='text-[#2956A6]'> Business Success.</span>
+                                   Building Wealth with <br /> in <span className='text-[#2956A6]'> Business Success.</span>
                                 </h2>
                                 <p className='lg:text-[18px] md:text-[18px] text-[16px]  text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full  text-justify  '>
                                     we understand the challenges and complexities that businesses face in today's dynamic marketplace.

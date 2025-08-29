@@ -3,6 +3,7 @@ import img4 from "../img/touch.png";
 import { Formik, Form as FormikForm, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
+
 function Enquire() {
 
     const initialValues = {
@@ -18,6 +19,7 @@ function Enquire() {
         service: Yup.string().required("Service is required"),
         message: Yup.string().required("Message is required"),
     })
+
 
     return (
         <div>
@@ -56,7 +58,7 @@ function Enquire() {
                         </div>
 
                         {/* Right - Form */}
-                        <div className="w-full md:w-1/2 relative shadow-2xl !p-10 rounded-xl ">
+                        <div className="w-full md:w-1/2  shadow-2xl !p-10 rounded-xl ">
                             <p className="lg:text-[24px] md:text-[20px] text-[18px] font-semibold text-black">
                                 Enquire
                             </p>
@@ -99,12 +101,19 @@ function Enquire() {
                                             {/* Service Field */}
                                             <div className="relative w-full">
                                                 <Field
-                                                    type="text"
+                                                    as="select"
                                                     name="service"
                                                     id="service"
-                                                    placeholder="Service Looking for * "
-                                                    className="peer w-full focus:bg-white border-b-1 text-gray-900 text-md  !px-3 !py-3 focus:outline-none focus:border-b-2  focus:border-b-[#2956A6]"
-                                                />
+                                                    placeholder="Service Looking for "
+                                                    className="peer w-full focus:bg-white border-b-1 text-gray-900 text-md !px-2 !py-3 focus:outline-none focus:border-b-2  focus:border-b-[#2956A6]">
+                                                    <option className="text-sm text-[#666666]" selected hidden>
+                                                        Service Looking For
+                                                    </option>
+                                                    <option value="Gold Loan" className="text-sm ">Gold Loan</option>
+                                                    <option value="Personal Loan" className="text-sm ">Personal Loan</option>
+                                                    <option value="Mortage Loan" className="text-sm ">Mortage Loan</option>
+                                                    <option value="Business Loan" className="text-sm ">Business Loan</option>
+                                                </Field>
                                                 <ErrorMessage name="service" component="div" className="text-red-500 text-sm !pt-2" />
                                             </div>
 
