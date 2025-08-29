@@ -20,7 +20,7 @@ const DropdownMenu = ({ items, isOpen, isHorizontal = false }) => {
                 }
       `}
         >
-            <div className={`${isHorizontal ? "grid justify-between !px-12" : ""}`}>
+            <div className={`${isHorizontal ? "grid justify-between !px-5" : ""}`}>
                 {items.map((item, idx) => {
                     return (
                         <div
@@ -30,84 +30,21 @@ const DropdownMenu = ({ items, isOpen, isHorizontal = false }) => {
                                 : "flex flex-wrap"
                                 }`}
                         >
-                            <div className="bg-transparent !px-2 !py-2  rounded-lg  transition-all duration-300 group ">
+                            <div className="bg-transparent  !py-2  rounded-lg  transition-all duration-300 group ">
                                 <div className="flex justify-center items-center !gap-2">
-                                    {item?.id == 1 ? (
-                                        <div
-                                            className={`flex justify-center items-center transition-all duration-300 
-                       bg-[#9F70FD]
-                       !p-3 rounded-full`}
-                                        >
-                                            <CiSettings size={30} style={{ color: "white" }} />
-                                        </div>
-                                    ) : item?.id == 2 ? (
-                                        <div
-                                            className={`flex justify-center items-center transition-all duration-300 
-                       bg-[#9F70FD]
-                       !p-3 rounded-full`}
-                                        >
-                                            <LuCloudCog size={30} style={{ color: "white" }} />
-                                        </div>
-                                    ) : item?.id == 3 ? (
-                                        <div
-                                            className={`flex justify-center items-center transition-all duration-300 
-                       bg-[#9F70FD]
-                       !p-3 rounded-full`}
-                                        >
-                                            <CiMobile3 size={30} style={{ color: "white" }} />
-                                        </div>
-                                    ) : item?.id == 4 ? (
-                                        <div
-                                            className={`flex justify-center items-center transition-all duration-300 
-                       bg-[#9F70FD]
-                       !p-3 rounded-full`}
-                                        >
-                                            <LuMonitorCog size={30} style={{ color: "white" }} />
-                                        </div>
-                                    ) : item?.id == 5 ? (
-                                        <div
-                                            className={`flex justify-center items-center transition-all duration-300 
-                       bg-[#9F70FD]
-                       !p-3 rounded-full`}
-                                        >
-                                            <AiOutlineShoppingCart
-                                                size={30}
-                                                style={{ color: "white" }}
-                                            />
-                                        </div>
-                                    ) : item?.id == 6 ? (
-                                        <div
-                                            className={`flex justify-center items-center transition-all duration-300 
-                       bg-[#9F70FD]
-                       !p-3 rounded-full`}
-                                        >
-                                            <FaPencilRuler size={30} style={{ color: "white" }} />
-                                        </div>
-                                    ) : item?.id == 7 ? (
-                                        <div
-                                            className={`flex justify-center items-center transition-all duration-300 
-                       bg-[#9F70FD]
-                       !p-3 rounded-full`}
-                                        >
-                                            <LuBrainCircuit size={30} style={{ color: "white" }} />
-                                        </div>
-                                    ) : (
-                                        <div
-                                            className={`flex justify-center items-center transition-all duration-300 
-                       bg-[#9F70FD]
-                       !p-3 rounded-full`}
-                                        >
-                                            <TbBrandSpeedtest size={30} style={{ color: "white" }} />
-                                        </div>
-                                    )}
+                                    {item?.id === 1 }
+                                    {item?.id === 2 }
+                                    {item?.id === 3 }
+                                    {item?.id === 4 }
+
 
                                     <div>
                                         <a
                                             href={item.path}
                                             className={`${isHorizontal
-                                                ? "px-4 whitespace-nowrap"
-                                                : "block px-6 !py-3 mb-2"
-                                                } uppercase text-sm font-syne tracking-wide text-black group-hover:text-transparent group-hover:bg-[#9F70FD] group-hover:bg-clip-text duration-200 text-center`}
+                                                ? "px-2 whitespace-nowrap"
+                                                : "block px-2 !py-2 mb-2"
+                                                } text-md font-syne text-black  group-hover:text-[#9F70FD] group-hover:bg-clip-text duration-200 text-center`}
                                         >
                                             {item.title}
                                         </a>
@@ -164,10 +101,16 @@ const NavBar = () => {
 
 
 
+    // Toggle dropdown menu
     const toggleDropdown = (index) => {
-        setActiveDropdown(activeDropdown === index ? null : index);
+        // setActiveDropdown(activeDropdown == index ? null : index);
+        console.log("checkingggg", activeDropdown);
+        if (activeDropdown) {
+            setActiveDropdown(null);
+        } else {
+            setActiveDropdown(index);
+        }
     };
-
     // Handle escape key to close dropdown
     useEffect(() => {
         const handleEscKey = (event) => {
@@ -191,6 +134,32 @@ const NavBar = () => {
             path: "/services",
         },
         {
+            title: "Loans",
+            dropdown: [
+                {
+                    id: 1,
+                    title: "Gold Loan",
+                    path: "/GoldLoans"
+                },
+                {
+                    id: 2,
+                    title: "Personal Loan",
+                    path: "/PersonalLoan"
+                },
+                {
+                    id: 3,
+                    title: "Mortgage Loan",
+                    path: "/MortageLoan"
+                },
+                {
+                    id: 4,
+                    title: "Business Loan",
+                    path: "/Businessloan"
+                },
+            ],
+            isHorizontal: true,
+        },
+        {
             title: "About Us",
             path: "/aboutUs"
         },
@@ -198,7 +167,7 @@ const NavBar = () => {
             title: "Contact Us",
             path: "/contactUs"
         },
-       
+
     ];
 
     return (
@@ -235,6 +204,10 @@ const NavBar = () => {
                             <div
                                 key={index}
                                 className="relative"
+                                onMouseEnter={() => link.dropdown && setActiveDropdown(index)}
+                                onMouseLeave={() => {
+                                    link.dropdown && setActiveDropdown(null);
+                                }}
                             >
                                 <a
                                     href={link.path}
@@ -244,13 +217,19 @@ const NavBar = () => {
                                     {link.title}
 
                                 </a>
-
+                                {link.dropdown && (
+                                    <DropdownMenu
+                                        items={link.dropdown}
+                                        isOpen={activeDropdown === index}
+                                        isHorizontal={link.isHorizontal}
+                                    />
+                                )}
                             </div>
                         ))}
 
                         <a href="/Enquire" className="hidden lg:flex items-center rounded-4xl bg-[#DFAE51] text-[#2956A6] font-medium text-[20px] !px-5 !py-2 cursor-pointer">Free Consult
                             <BsArrowUpRight color="white" size={40} className="!ml-2 bg-[#2956A6] rounded-full !p-2 " /></a>
-                        </div>
+                    </div>
 
                     {/* Mobile Menu Button */}
                     <div className="lg:hidden ">

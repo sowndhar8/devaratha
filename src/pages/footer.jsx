@@ -7,13 +7,13 @@ import { nav } from "framer-motion/client";
 
 function Footer() {
   return (
-    <div className="bg-[#0D0D0D] lg:!px-40 lg:!py-10 ">
-      <div className="lg:grid-cols-4 md:grid-cols-1 grid-cols-1 grid gap-4 md:!px-12 md:!py-12 !px-6 !py-6">
+    <div className="bg-[#0D0D0D] lg:!px-15 lg:!py-10 ">
+      <div className="lg:grid-cols-5 md:grid-cols-2 grid-cols-1 grid gap-4 md:!px-12 md:!py-12 !py-6">
         <div>
           <a href ="/">
           <img src={img} alt="" className="w-[50px] h-[50px] !mb-5 " />
           <p className="text-[#D0DAF5] text-[14px] font-bold ">
-            Devavratha Consultency Services
+            Devaratha Consultency Services
           </p>
           </a>
         </div>
@@ -35,6 +35,23 @@ function Footer() {
           </div>
         </div>
         <div className="">
+          <h2 className="text-[#D0DAF5] text-[16px] !pb-5">Loans</h2>
+          <div>
+            <a href="/GoldLoans">
+              <h4 className="text-[#6F7481] text-[16px] !pb-2">Gold Loan</h4>
+            </a>
+            <a href="/PersonalLoan">
+              <h4 className="text-[#6F7481] text-[16px] !pb-2">Personal Loan</h4>
+            </a>
+            <a href="/BusinessLoan">
+              <h4 className="text-[#6F7481] text-[16px] !pb-2">Business Loan</h4>
+            </a>
+            <a href="/MortageLoan">
+              <h4 className="text-[#6F7481] text-[16px] !pb-2">Mortage Loan</h4>
+            </a>
+          </div>
+        </div>
+        <div className="">
           <h2 className="text-[#D0DAF5] text-[16px] !pb-5">Company</h2>
           <div className="">
             <a href="/Aboutus">
@@ -51,7 +68,7 @@ function Footer() {
             </a>
           </div>
         </div>
-        <div className="bg-[#0E1014] md:!px-5 md:!py-10 !py-5 !px-5">
+        <div className="bg-[#0E1014] md:!px-5 md:!py-10 !py-5">
           <h2 className="text-[#D0DAF5]">Connect</h2>
           <div className="flex h-[50px] border-1 border-[#161829] items-center justify-between rounded-[10px] !my-5 ">
             <input
