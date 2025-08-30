@@ -8,27 +8,27 @@ function mortageLoan() {
   const Faq = [
     {
       id: 1,
-      title: "Who is eligible to get a Gold Loan?",
+      title: "What is a mortgage loan?",
       answer:
-        "Financial planning is essential because it helps you achieve your financial goals and secure your financial future.",
+        "A loan provided against property such as land, house, or commercial building.",
     },
     {
       id: 2,
-      title: "What documents are required to apply for a Gold Loan?",
+      title: " How much funding can I get?",
       answer:
-        "Webflow is a powerful visual development platform that allows designers to build fully responsive websites without writing a single line of code. It combines the flexibility of code with the simplicity of a visual editor, empowering creators to bring their ideas to life faster and more efficiently than ever before.",
+        "The loan amount is based on the market value of your property.",
     },
     {
       id: 3,
-      title: "When should you apply for a Gold Loan?",
+      title: ". Can I continue using my property?",
       answer:
-        "Absolutely. We welcome collaboration and encourage feedback throughout the process, allowing you to tailor features that best suit your business needs.",
+        " Yes, you retain ownership and can continue to use your property during the loan period.",
     },
     {
       id: 4,
-      title: "What happens if a Gold Loan is not paid?",
+      title: "What is the repayment process?",
       answer:
-        "Yes. Our team offers continuous support, including updates, bug fixes, and performance optimization so your platform always runs smoothly.",
+        "You can repay through monthly EMIs with flexible tenure options.",
     },
   ];
 
@@ -39,9 +39,9 @@ function mortageLoan() {
     <div>
 
       <div className="relative bg-banner2 bg-cover h-[50vh] items-center justify-center">
-        <div className="absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
-          <h2 className="text-[#2956A6] text-[50px]">Mortage Loan</h2>
-          <h3 className="text-[#D8D8D8] text-[20px] text-center !py-7">
+        <div className="absolute lg:top-[50%] md:top-[50%] top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
+          <h2 className="text-[#2956A6] text-[50px] text-center">Mortage Loan</h2>
+          <h3 className="text-[#D8D8D8] lg:text-[20px] md:text-[18px] text-[16px] text-center !py-7">
             Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum doloreaeu fugiat nulla pariatur.
           </h3>
@@ -51,7 +51,7 @@ function mortageLoan() {
 
 
 
-      <div className='lg:!px-20 md:!px-20 !px-6 '>
+      <div className='lg:!px-20 md:!px-20 !px-10 '>
 
         <section>
           <div className='!py-10 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1  justify-evenly items-center  '>

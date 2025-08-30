@@ -8,25 +8,24 @@ import { FaArrowRight } from "react-icons/fa";
 function Contactus() {
 
   const initialValues = {
-      name: "",
-      email: "",
-      message: "",
-    };
-  
-    const TouchSchema = Yup.object().shape({
-      name: Yup.string().required("Name is required"),
-      email: Yup.string().email("Invalid email").required("Email is required"),
-      message: Yup.string().required("Message is required"),
-    })
+    name: "",
+    email: "",
+    message: "",
+  };
+
+  const TouchSchema = Yup.object().shape({
+    name: Yup.string().required("Name is required"),
+    email: Yup.string().email("Invalid email").required("Email is required"),
+    message: Yup.string().required("Message is required"),
+  })
 
   return (
     <div>
-   <div className="relative bg-banner2 bg-cover h-[60vh] items-center justify-enter">
+      <div className="relative bg-banner2 bg-cover h-[60vh] items-center justify-enter">
         <div className="absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
           <h2 className="text-[#2956A6] text-[50px]">Contact us</h2>
           <h3 className="text-[#D8D8D8] text-[20px] text-center !py-7">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum doloreaeu fugiat nulla pariatur.
+            We’re just one text away. Join us and let’s shape your financial future together!
           </h3>
         </div>
       </div>
@@ -110,12 +109,11 @@ function Contactus() {
 
                       {/* Submit Button */}
                       <div
-                        // onClick={() => navigate("/")}
                         className="group flex justify-center items-center rounded-xl bg-[#2956A6] text-white
-                   lg:h-15 lg:w-50 h-10 md:h-12 md:w-40 w-40 cursor-pointer transition-colors duration-300
-                   hover:bg-white hover:text-[#2956A6] hover:border-2 hover:border-[#2956A6] !gap-2"
+                         lg:h-15 lg:w-50 h-10 md:h-12 md:w-40 w-40 cursor-pointer transition-colors duration-300
+                         hover:bg-white hover:text-[#2956A6] hover:border-2 hover:border-[#2956A6] !gap-2"
                       >
-                        <button className="lg:text-[22px] font-semibold md:text-[16px] text-[14px] transition-colors duration-300">
+                        <button className="lg:text-[22px] font-semibold md:text-[16px] text-[14px] group-hover:cursor-pointer transition-colors duration-300">
                           Submit Now
                         </button>
 

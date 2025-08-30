@@ -51,7 +51,7 @@ const FdCalculator = () => {
               <label className="font-medium text-[#44475B]">Total Investment</label>
               <Col>
                 <InputNumber
-                  min={1000}
+                  min={5000}
                   max={10000000}
                   value={principal}
                   onChange={setPrincipal}
@@ -61,7 +61,7 @@ const FdCalculator = () => {
               </Col>
             </div>
             <Slider
-              min={1000}
+              min={5000}
               max={10000000}
               step={500}
               value={principal}

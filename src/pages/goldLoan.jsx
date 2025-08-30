@@ -1,35 +1,61 @@
-import { useState } from "react";
+import { use, useState, useEffect } from "react";
 import img1 from "../img/gold-loan.png";
+import gold from "../img/gold.gif";
 import { FaArrowRight, FaCheck } from 'react-icons/fa';
-import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowRight, MdOutlineKeyboardArrowUp } from "react-icons/md";
+import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
+import axios from "axios";
+import { date } from "yup";
 
 function GoldLoans() {
+
+    const [goldData, setGoldData] = useState(null);
+
+    useEffect(() => {
+        axios
+            .get("https://gold.g.apised.com/v1/latest?metals=XAU&base_currency=INR&weight_unit=gram", {
+                headers: {
+                    "x-api-key": "sk_8b92324c45B60F216Ecf1E4f66ba073f8999B4E6a1A17bf4",
+                },
+            })
+            .then((response) => {
+                setGoldData(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+
+    const today = new Date().toLocaleDateString("en-IN", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+    });
 
     const Faq = [
         {
             id: 1,
-            title: "Who is eligible to get a Gold Loan?",
+            title: "What is a gold loan?",
             answer:
-                "Financial planning is essential because it helps you achieve your financial goals and secure your financial future.",
+                " A gold loan is a secured loan where you pledge your gold ornaments in exchange for funds.",
         },
         {
             id: 2,
-            title: "What documents are required to apply for a Gold Loan?",
+            title: "How much loan amount can I get?",
             answer:
-                "Webflow is a powerful visual development platform that allows designers to build fully responsive websites without writing a single line of code. It combines the flexibility of code with the simplicity of a visual editor, empowering creators to bring their ideas to life faster and more efficiently than ever before.",
+                "The loan amount depends on the value and purity of the gold pledged.",
         },
         {
             id: 3,
-            title: "When should you apply for a Gold Loan?",
+            title: "Is my gold safe during the loan period?",
             answer:
-                "Absolutely. We welcome collaboration and encourage feedback throughout the process, allowing you to tailor features that best suit your business needs.",
+                "Yes, your gold is stored securely and returned in the same condition after repayment.",
         },
         {
             id: 4,
-            title: "What happens if a Gold Loan is not paid?",
+            title: "What are the repayment options?",
             answer:
-                "Yes. Our team offers continuous support, including updates, bug fixes, and performance optimization so your platform always runs smoothly.",
+                "You can repay through EMI and flexible repayment plans.",
         },
     ];
 
@@ -38,17 +64,17 @@ function GoldLoans() {
     return (
         <div>
 
-            <div className="relative bg-banner2 bg-cover h-[60vh] items-center">
-                <div className="absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
-                    <h2 className="text-[#2956A6] text-[50px]">Loans</h2>
-                    <h3 className="text-[#D8D8D8] text-[20px] text-center !py-7">
+            <div className="relative bg-banner2 bg-cover h-[50vh] items-center">
+                <div className="absolute lg:top-[50%] md:top-[50%] top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
+                    <h2 className="text-[#2956A6] text-[50px] text-center">Gold Loan</h2>
+                    <h3 className="text-[#D8D8D8] lg:text-[20px] md:text-[18px] text-[16px] text-center !py-7">
                         Duis aute irure dolor in reprehenderit in voluptate velit esse
                         cillum doloreaeu fugiat nulla pariatur.
                     </h3>
                 </div>
             </div>
 
-            <div className='lg:!px-20 md:!px-20 !px-6 '>
+            <div className='lg:!px-20 md:!px-20 !px-10 '>
 
                 <section>
                     <div className='!py-10 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1  justify-evenly items-center  '>
@@ -88,6 +114,52 @@ function GoldLoans() {
                                 alt=""
                                 className='w-fit place-self-center '
                             />
+
+                            <div className="place-self-center gap-2 !mt-5 w-fit">
+
+                                {/* Table for md & lg (1 row) */}
+                                <table className="hidden md:table border-1 border-[#C9C9C9] rounded-md">
+                                    <tbody>
+                                        <tr className="text-center">
+                                            <td className="!px-6 !py-3 border border-[#C9C9C9]">
+                                                <div className="flex items-center justify-center gap-2">
+                                                    <img src={gold} alt="gold.gif" className="w-[40px] h-[40px]" />
+                                                    <span>Today's Gold Rate  ({today})</span>
+                                                </div>
+                                            </td>
+                                            <td className="!px-6 !py-3 border border-[#C9C9C9]">
+                                                {goldData?.data?.metal_prices?.XAU?.price_24k
+                                                    ? "₹" + goldData.data.metal_prices.XAU.price_24k.toFixed(2) + "/g"
+                                                    : "Loading..."}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                {/* Table for sm (2 rows) */}
+                                <table className="md:hidden border-1 border-[#C9C9C9] rounded-md">
+                                    <tbody>
+                                        <tr>
+                                            <td className="!px-6 !py-3 border border-[#C9C9C9] ">
+                                                <div className="flex items-center justify-center gap-2">
+                                                    <img src={gold} alt="gold.gif" className="w-[40px] h-[40px] rounded-full" />
+                                                    <span>Today's Gold Rate ({today})</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td className="!px-6 !py-3 border border-[#C9C9C9] text-center">
+                                                {goldData?.data?.metal_prices?.XAU?.price_24k
+                                                    ? "₹" + goldData.data.metal_prices.XAU.price_24k.toFixed(2) + "/g"
+                                                    : "Loading..."}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+
                         </div>
                     </div>
                 </section>
@@ -99,7 +171,7 @@ function GoldLoans() {
                     </h2>
                     <p className='text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 '>
                         We are here to fulfil your needs with Gold Loan which allows you to get funds in 45 minutes! Whatever your need may be
-                        -education, business expansion, personal requirement, medical crisis or any other specified end-use, our Loan against Gold is all you need.
+                        for education, business expansion, personal requirement, medical crisis or any other specified end-use, our Loan against Gold is all you need.
                     </p>
 
                     <p className='text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 '>

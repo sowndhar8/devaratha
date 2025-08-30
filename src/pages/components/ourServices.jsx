@@ -39,7 +39,7 @@ function OurServices() {
           <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
         </h1>
 
-        <h2 className='lg:text-[50px] md:text-[35px] text-[25px] text-center font-bold  text-white '>
+        <h2 className='lg:text-[50px] md:text-[35px] text-[25px] text-center font-bold !px-10  text-white '>
           Your Trusted Advisors in Business Success
         </h2>
       </div>
@@ -48,7 +48,7 @@ function OurServices() {
 
         {/* Services Grid */}
         <div className="lg:!mb-20 md:!mb-40 !mb-25">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 !gap-30 !px-6 lg:!px-15">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:!gap-30 md:!gap-20 gap-10 !px-10 lg:!px-15">
             {image.map((thing) => (
               <div
                 key={thing.id}
@@ -68,11 +68,11 @@ function OurServices() {
                       <MdOutlineArrowOutward className="w-12 h-12 object-contain text-[#2956A6] group-hover:text-white transition-colors duration-1500 " />
                     </div>
                   </div>
-                
-                <div className="absolute bottom-0 left-0 w-full  !p-4">
+
+                  <div className="absolute bottom-0 left-0 w-full  !p-4">
                     <h4 className="text-white font-bold text-[20px] mt-4 ">{thing.title}</h4>
                     <p className="text-white text-[14px]">{thing.desc}</p>
-                </div>
+                  </div>
 
                 </div>
               </div>

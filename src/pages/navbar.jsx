@@ -1,11 +1,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Logo from "../img/logo.png";
-import { CiMobile3, CiSettings } from "react-icons/ci";
-import { LuBrainCircuit, LuCloudCog, LuMonitorCog } from "react-icons/lu";
-import { FaPencilRuler } from "react-icons/fa";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { TbBrandSpeedtest } from "react-icons/tb";
 import { BsArrowUpRight } from "react-icons/bs";
 
 // Dropdown component for better organization
@@ -252,7 +247,7 @@ const NavBar = () => {
                                 />
                             </svg>
                         </button>
-                    </div>
+                    </div>            
                 </div>
             </div>
 

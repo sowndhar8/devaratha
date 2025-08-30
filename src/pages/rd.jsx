@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Col, InputNumber, Row, Slider, Space } from 'antd';
 
-const SipCalculator = () => {
+const RdCalculator = () => {
     const [monthlyInvestment, setMonthlyInvestment] = useState(5000);
     const [expectedReturn, setExpectedReturn] = useState(12);
     const [timePeriod, setTimePeriod] = useState(10);
@@ -22,7 +22,7 @@ const SipCalculator = () => {
         const t = timePeriod;
 
         const maturity =
-            P * (((Math.pow(1 + r / n, n * t) - 1) / (r / n)) * (1 + r / n));
+            P * ((Math.pow(1 + r / n, n * t) - 1) / (1 - Math.pow(1 + r / n, -1 / 3)));
 
         const invested = P * t * 12;
         const wealthGained = maturity - invested;
@@ -35,7 +35,7 @@ const SipCalculator = () => {
     return (
         <div>
             <h2 className="text-2xl lg:text-4xl font-bold !mb-6 text-[#0D0D3F] text-center lg:text-left">
-                SIP Calculator
+                RD Calculator
             </h2>
 
             {/* Container */}
@@ -141,6 +141,6 @@ const SipCalculator = () => {
     );
 };
 
-export default SipCalculator;
+export default RdCalculator;
 
 

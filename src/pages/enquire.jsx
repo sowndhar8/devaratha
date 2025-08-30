@@ -134,7 +134,7 @@ function Enquire() {
                                             <div
                                                 // onClick={() => navigate("/")}
                                                 className="group flex justify-center items-center rounded-xl bg-[#2956A6] text-white
-                                                   lg:h-15 lg:w-50 h-10 md:h-12 md:w-40 w-40 group-hover:cursor-pointer transition-colors duration-300
+                                                   lg:h-15 lg:w-50 h-10 md:h-12 md:w-40 w-40 cursor-pointer transition-colors duration-300
                                                   hover:bg-white hover:text-[#2956A6] hover:border-2 hover:border-[#2956A6] !gap-2"
                                             >
                                                 <button className="lg:text-[22px] font-semibold group-hover:cursor-pointer md:text-[16px] text-[14px] transition-colors duration-300 ">

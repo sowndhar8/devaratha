@@ -30,56 +30,74 @@ const choose = [
     {
         id: 1,
         img: comp1,
-        title: "Personalized for you",
-        description: "Designed front to back, FinPoan card features tone on tone..."
+        title: "Trusted Expertise",
+        description: "Years of experience guiding clients toward secure and profitable financial choices."
     },
     {
         id: 2,
         img: comp2,
-        title: "Unlimited virtual cards",
-        description: "Control by generating as many virtual credit cards as you need."
+        title: "Personalized Solutions",
+        description: "Tailored strategies designed to match your unique goals and lifestyle."
     },
     {
         id: 3,
         img: comp3,
-        title: "Enhanced privacy",
-        description: "With no visible card number on it surface, FinPoan keeps your..."
+        title: "Transparent Process",
+        description: "Clear, honest advice with no hidden terms or surprises."
     },
     {
         id: 4,
         img: comp4,
-        title: "Streamlined payments",
-        description: "Streamlined empowers you to establish milestones according."
+        title: "Comprehensive Services",
+        description: "From deposits to tax planning, everything under one roof."
     },
     {
         id: 5,
         img: comp5,
-        title: "Accelerate your savings",
-        description: "A high interest online savings account with no monthly fees."
+        title: "Reliable Support",
+        description: "Dedicated assistance whenever you need financial clarity or guidance."
     },
     {
         id: 6,
         img: comp6,
-        title: "Built for growth",
-        description: "Get access to financial risks data and build a crisis strategy."
+        title: "Proven Results",
+        description: "A track record of helping individuals and businesses grow their wealth."
     }
 ];
 
 const data = [
     {
         id: 1,
-        title: "Strategic Decision Making",
-        description: "Business finance is crucial for making informed and strategic decisions within a company."
+        title: "Understanding Your Goal",
+        description: "We begin by listening to your needs and financial aspirations."
     },
     {
         id: 2,
-        title: "Resource Allocation",
-        description: "Effective resource allocation ensures that a company uses its financial resources wisely."
+        title: "Crafting the Right Plan",
+        description: "Our experts design tailored strategies that align with your objectives."
     },
     {
         id: 3,
-        title: "Risk Management",
-        description: "This includes having sufficient working capital to cover unforeseen expenses."
+        title: "Guiding Every Step",
+        description: "We provide continuous support to keep you on track toward success."
+    },
+];
+
+const data1 = [
+    {
+        id: 1,
+        title: "Safe & Secure Investments",
+        description: "We prioritize reliability to protect your money at every step."
+    },
+    {
+        id: 2,
+        title: "Expert Financial Guidance",
+        description: "Our team offers trusted advice backed by years of experience."
+    },
+    {
+        id: 3,
+        title: "Hassle-Free Process",
+        description: "Simple, transparent, and easy solutions for all your financial needs."
     },
 ];
 
@@ -190,22 +208,22 @@ function Homepage() {
             {/* top section */}
 
             <section>
-                <div className='bg-banner  bg-cover flex justify-center items-center'>
-                    <div className=' w-full h-full lg:!px-20 md:!px-15 !px-10 !py-60'>
+                <div className='lg:bg-banner bg-banner3 bg-cover flex justify-center items-center'>
+                    <div className= ' flex items-center w-full h-full lg:!px-20 md:!px-15 !px-10 !py-25'>
+                        <div>
                         <h1 className='lg:text-[78px] md:text-[50px] text-[28px] font-bold text-white '>
                             Secure Wealth,<br /> Smart Future
                         </h1>
                         <p className='lg:text-[24px] md:text-[22px] text-[18px] font-medium  text-white '>
                             Build your savings with trusted financial solutions.
-                            From deposits to investments and tax strategies, <br />
-                            we help you grow your wealth with clarity and confidence.
-                            Unlock opportunities with strategic planning.<br />
+                            From deposits to investments and tax strategies,
                         </p>
                         <button
                             onClick={() => navigate("/Contactus")}
                             className='bg-[#DFAE51] text-[#2956A6] !px-10 !py-4 rounded-lg !mt-12 text-[16px] font-semibold cursor-pointer'>
                             Contact Us
                         </button>
+                    </div>
                     </div>
                 </div>
             </section>
@@ -216,7 +234,7 @@ function Homepage() {
             <section>
                 <div>
                     <div className='lg:!px-20 md:!px-20 !px-10 !py-20 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1  justify-evenly items-center  '>
-                        <div className=' '>
+                        <div className='lg:!py-0 md:!py-0 !py-5 '>
                             <img
                                 src={img2}
                                 alt=""
@@ -232,13 +250,13 @@ function Homepage() {
                                 </h1>
 
                                 <h2 className='lg:text-[50px] md:text-[35px] text-[25px] font-bold  text-black '>
-                                    Building Wealth with <br /> in <span className='text-[#2956A6]'> Business Success.</span>
+                                    Building Wealth with <br /> <span className='text-[#2956A6]'> Business Success.</span>
                                 </h2>
-                                <p className='lg:text-[18px] md:text-[18px] text-[16px]  text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full  text-justify  '>
-                                    we understand the challenges and complexities that businesses face in today's dynamic marketplace.
-                                    That's why we offer a comprehensive suite of consulting services. we understand the challenges and
-                                    complexities that businesses face in today's dynamic marketplace. That's why we offer a comprehensive
-                                    suite of consulting services. we understand the challenges and complexities.
+                               <p className='lg:text-[18px] md:text-[18px] text-[16px]  text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full  text-justify  '>
+                                    We are a trusted financial services company committed to helping individuals and businesses make smarter money decisions. Our expertise spans across deposits,
+                                    investments, financial planning, and tax strategies tailored to your unique goals. With transparency and integrity at the core, we ensure every
+                                    solution is designed to protect and grow your wealth. Our team combines experience with a client-first approach to deliver reliable results.
+                                    Together, we help you achieve financial stability and long-term prosperity.
                                 </p>
                                 <div className='!mt-5 '>
                                     <button className=" flex items-center rounded-4xl bg-[#2956A6] text-white font-semibold text-[16px] !px-5 !py-2 cursor-pointer">Read More
@@ -277,8 +295,8 @@ function Homepage() {
                                     Why Choose Us
                                     <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
                                 </h1>
-                                <h2 className='lg:text-[50px] md:text-[35px] text-[25px] text-center font-bold  text-black '>
-                                    why ---- is the right choice for you
+                                <h2 className='lg:text-[50px] md:text-[35px] text-[25px] text-center font-bold  text-black !px-5 '>
+                                    why <span className='text-[#2956A6]'>Devaratha </span> is the right choice for you
                                 </h2>
                             </div>
                             {/* <div className='flex lg:flex-row md:flex-row flex-col gap-10 !mt-5 lg:!p-10 md:!p-10 !p-5 lg:w-[70%] md:w-[70%] !w-[90%] bg-white rounded-2xl !mx-auto '>
@@ -344,7 +362,7 @@ function Homepage() {
                                     </h1>
 
                                     <h2 className='lg:text-[50px] md:text-[35px] text-[25px]  font-bold  text-black '>
-                                        The importance of business finance
+                                The importance of planning finances
                                     </h2>
                                     <div>
                                         {data.map((item) => (
@@ -379,7 +397,7 @@ function Homepage() {
 
                     {/* Advantage */}
                     <section className="item h-[100vh] w-[100%]  absolute top-0 left-0 justify-center items-center ">
-                        <div className=' bg-[#D9E9FF] flex lg:flex-row md:flex-col flex-col rounded-4xl lg:!m-20 md:!m-15 !m-10 !px-10 lg:!py-20 md:!py-20 !py-10 gap-10 '>
+                        <div className=' bg-[#D9E9FF] flex lg:flex-row md:flex-col flex-col rounded-4xl lg:!m-20 md:!m-15 !m-10 !px-10 lg:!py-10 md:!py-10 !py-10 gap-10 '>
                             <div className='!mt-5 lg:w-[40%] md:w-[100%] w-[100%] '>
                                 <img src={img5} alt="" />
                             </div>
@@ -391,10 +409,10 @@ function Homepage() {
                                     </h1>
 
                                     <h2 className='lg:text-[50px] md:text-[35px] text-[25px]  font-bold  text-black '>
-                                        Manage finance for your business
+                                Safe Hands Leading Your Financial Journey
                                     </h2>
                                     <div>
-                                        {data.map((item) => (
+                                        {data1.map((item) => (
                                             <div key={item.id} className=' mt-5 !py-5 '>
 
                                                 <div className="flex items-center gap-10 ">
@@ -427,7 +445,7 @@ function Homepage() {
 
             {/* Comments */}
             <section>
-                <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 lg:!m-20 md:!m-15 !m-10'>
+                <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 lg:!mx-20 md:!mx-15 !mx-10 !pb-10'>
                     {data2.map((item) => (
                         <div key={item.id} className=' flex rounded-4xl lg:!p-10 md:!p-10 !p-5 border-2 border-[#D9E9FF]'>
                             <div className=' '>

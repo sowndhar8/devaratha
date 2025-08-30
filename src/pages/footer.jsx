@@ -7,8 +7,8 @@ import { nav } from "framer-motion/client";
 
 function Footer() {
   return (
-    <div className="bg-[#0D0D0D] lg:!px-15 lg:!py-10 ">
-      <div className="lg:grid-cols-5 md:grid-cols-2 grid-cols-1 grid gap-4 md:!px-12 md:!py-12 !py-6">
+    <div className="bg-[#0D0D0D] lg:!px-15 md:!px-10 !px-10 lg:!py-10 ">
+      <div className="lg:grid-cols-5 md:grid-cols-2 grid-cols-1 grid gap-4 md:!px-5 md:!py-12 !py-6">
         <div>
           <a href ="/">
           <img src={img} alt="" className="w-[50px] h-[50px] !mb-5 " />
