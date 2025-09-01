@@ -208,7 +208,7 @@ function Homepage() {
             {/* top section */}
 
             <section>
-                <div className='lg:bg-banner bg-banner3 bg-cover flex justify-center items-center'>
+                <div className='lg:bg-banner bg-banner3 bg-cover h-[100vh] flex justify-center items-center'>
                     <div className= ' flex items-center w-full h-full lg:!px-20 md:!px-15 !px-10 !py-25'>
                         <div>
                         <h1 className='lg:text-[78px] md:text-[50px] text-[28px] font-bold text-white '>
