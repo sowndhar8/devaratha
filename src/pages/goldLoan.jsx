@@ -1,11 +1,12 @@
 import { use, useState, useEffect } from "react";
 import img1 from "../img/gold-loan.png";
 import gold from "../img/gold.gif";
-import { FaArrowRight, FaCheck } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
 import { date } from "yup";
+import { FaCircleCheck } from "react-icons/fa6";
 
 function GoldLoans() {
 
@@ -100,10 +101,12 @@ function GoldLoans() {
                                 </div>
                                 <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 items-center">
                                     <div className='!mt-5 flex !gap-5 items-center'>
-                                        <FaCheck /> <span className='text-[#666666] '>Easy Process</span>
+                                        <FaCircleCheck className="text-[#2956A6] mt-5 text-[20px] md:text-[20px] lg:text-[20px]" />
+                                        <span className='text-[#666666] '>Easy Process</span>
                                     </div>
                                     <div className='!mt-5 flex !gap-5 items-center'>
-                                        <FaCheck /> <span className='text-[#666666] '>15 minutes disbursal</span>
+                                        <FaCircleCheck className="text-[#2956A6] mt-5 text-[20px] md:text-[20px] lg:text-[20px]" />
+                                        <span className='text-[#666666] '>15 minutes disbursal</span>
                                     </div>
                                 </div>
                             </div>
@@ -206,7 +209,7 @@ function GoldLoans() {
                     </h2>
 
                     {/* FAQ List */}
-                    <div className="lg:w-[100%] md:w-[80%] w-full flex flex-col  !gap-5 !py-10">
+                     <div className="lg:w-[100%] md:w-[80%] w-full flex flex-col  !gap-5 !py-10">
                         {Faq?.map((item) => {
                             const isSelected = selected?.id === item?.id;
 
@@ -218,7 +221,7 @@ function GoldLoans() {
                                     ></p>
                                     {/* Title Row */}
                                     <div
-                                        className={`flex !p-3 justify-between items-center cursor-pointer transition-all duration-300 ${isSelected ? "bg-[#F8F7FD] border-l-4 border-[#A3B5FF]" : "bg-[#FBFBFE] border-l-4 border-[#F1F2F9]"
+                                        className={`flex !p-3 justify-between items-center cursor-pointer transition-all duration-300 ${isSelected ? "bg-[#F8F7FD] border-l-4 border-[#2956A6]" : "bg-[#FBFBFE] border-l-4 border-[#F1F2F9]"
                                             }`}
                                         onClick={() => {
                                             setSelected(isSelected ? null : item);
@@ -233,10 +236,10 @@ function GoldLoans() {
                                                 color="#170F49"
                                             />
                                         ) : (
-                                            <MdOutlineKeyboardArrowDown size={25} color="#170F49" />
+                                            <MdOutlineKeyboardArrowDown size={25} color="#2956A6" />
                                         )}
                                         <h2
-                                            className={`lg:text-[20px] md:text-[18px] sm:text-[16px] text-[14px] font-semibold w-full lg:!py-4 md:!py-4 !py-2 text-[#170F49] font-poppins capitalize`}
+                                            className={`lg:text-[20px] md:text-[18px] sm:text-[16px] text-[14px] font-semibold w-full lg:!py-4 md:!py-4 !py-2 ${isSelected ? "text-[#170F49]" : "text-[#2956A6]"} font-poppins capitalize`}
                                         >
                                             {item?.title}
 
@@ -253,10 +256,10 @@ function GoldLoans() {
                                                 animate={{ height: "auto", opacity: 1 }}
                                                 exit={{ height: 0, opacity: 0 }}
                                                 transition={{ duration: 0.4, ease: "easeInOut" }}
-                                                className="overflow-hidden bg-[#F9F8FD] border-l-4 border-[#A3B5FF] "
+                                                className="overflow-hidden bg-[#F9F8FD] border-l-4 border-[#2956A6] "
                                             >
-                                                <div className="!p-5 ">
-                                                    <p className="lg:text-[16px] md:text-[16px] sm:text-[14px] text-[12px] text-[#6F6C8F] !px-5   ">
+                                                <div className=" ">
+                                                    <p className="lg:text-[16px] md:text-[16px] sm:text-[14px] text-[12px] text-[#6F6C8F] !px-10 !pb-5   ">
                                                         {item?.answer}
                                                     </p>
                                                 </div>

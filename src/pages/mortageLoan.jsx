@@ -1,8 +1,9 @@
 import { useState } from "react";
 import img1 from "../img/mortage-loan.png";
-import { FaArrowRight, FaCheck } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowRight, MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaCircleCheck } from "react-icons/fa6";
 
 function mortageLoan() {
   const Faq = [
@@ -77,10 +78,12 @@ function mortageLoan() {
                 </div>
                 <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 items-center">
                   <div className='!mt-5 flex !gap-5 items-center'>
-                    <FaCheck /> <span className='text-[#666666] '>Easy Process</span>
+                    <FaCircleCheck className="text-[#2956A6] mt-5 text-[20px] md:text-[20px] lg:text-[20px]" />
+                    <span className='text-[#666666] '>Easy Process</span>
                   </div>
                   <div className='!mt-5 flex !gap-5 items-center'>
-                    <FaCheck /> <span className='text-[#666666] '>15 minutes disbursal</span>
+                    <FaCircleCheck className="text-[#2956A6] mt-5 text-[20px] md:text-[20px] lg:text-[20px]" />
+                    <span className='text-[#666666] '>15 minutes disbursal</span>
                   </div>
                 </div>
               </div>
@@ -179,9 +182,9 @@ function mortageLoan() {
 
           <p className='text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 '>
             The following documents are required along with your Mortgage Loan application:
-            </p>
-            <p className=' lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full font-bold  text-justify lg:!pb-5 md:!pb-5 !pb-2 '>
-              For Salaried Individuals:
+          </p>
+          <p className=' lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full font-bold  text-justify lg:!pb-5 md:!pb-5 !pb-2 '>
+            For Salaried Individuals:
             <ul className="list-disc text-[#666666] font-normal !pl-7">
               <li>A copy of any of the following as proof of residence:
                 <ul className="list-disc !pl-7">
@@ -209,8 +212,8 @@ function mortageLoan() {
 
         <section>
 
-            <p className=' lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full font-bold  text-justify lg:!pb-5 md:!pb-5 !pb-2 '>
-              For Self Employed Professionals/Individuals:
+          <p className=' lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full font-bold  text-justify lg:!pb-5 md:!pb-5 !pb-2 '>
+            For Self Employed Professionals/Individuals:
             <ul className="list-disc text-[#666666] font-normal !pl-7">
               <li>Certified Financial Statement for the previous 3 years</li>
               <li>A copy of any of the following as proof of residence:
@@ -256,7 +259,7 @@ function mortageLoan() {
                   ></p>
                   {/* Title Row */}
                   <div
-                    className={`flex !p-3 justify-between items-center cursor-pointer transition-all duration-300 ${isSelected ? "bg-[#F8F7FD] border-l-4 border-[#A3B5FF]" : "bg-[#FBFBFE] border-l-4 border-[#F1F2F9]"
+                    className={`flex !p-3 justify-between items-center cursor-pointer transition-all duration-300 ${isSelected ? "bg-[#F8F7FD] border-l-4 border-[#2956A6]" : "bg-[#FBFBFE] border-l-4 border-[#F1F2F9]"
                       }`}
                     onClick={() => {
                       setSelected(isSelected ? null : item);
@@ -271,10 +274,10 @@ function mortageLoan() {
                         color="#170F49"
                       />
                     ) : (
-                      <MdOutlineKeyboardArrowDown size={25} color="#170F49" />
+                      <MdOutlineKeyboardArrowDown size={25} color="#2956A6" />
                     )}
                     <h2
-                      className={`lg:text-[20px] md:text-[18px] sm:text-[16px] text-[14px] font-semibold w-full lg:!py-4 md:!py-4 !py-2 text-[#170F49] font-poppins capitalize`}
+                      className={`lg:text-[20px] md:text-[18px] sm:text-[16px] text-[14px] font-semibold w-full lg:!py-4 md:!py-4 !py-2 ${isSelected ? "text-[#170F49]" : "text-[#2956A6]"} font-poppins capitalize`}
                     >
                       {item?.title}
 
@@ -291,10 +294,10 @@ function mortageLoan() {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.4, ease: "easeInOut" }}
-                        className="overflow-hidden bg-[#F9F8FD] border-l-4 border-[#A3B5FF] "
+                        className="overflow-hidden bg-[#F9F8FD] border-l-4 border-[#2956A6] "
                       >
-                        <div className="!p-5 ">
-                          <p className="lg:text-[16px] md:text-[16px] sm:text-[14px] text-[12px] text-[#6F6C8F] !px-5   ">
+                        <div className=" ">
+                          <p className="lg:text-[16px] md:text-[16px] sm:text-[14px] text-[12px] text-[#6F6C8F] !px-10 !pb-5   ">
                             {item?.answer}
                           </p>
                         </div>

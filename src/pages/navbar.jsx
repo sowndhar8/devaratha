@@ -26,7 +26,7 @@ const DropdownMenu = ({ items, isOpen, isHorizontal = false }) => {
                                 }`}
                         >
                             <div className="bg-transparent  !py-2  rounded-lg  transition-all duration-300 group ">
-                                <div className="flex justify-center items-center !gap-2">
+                                <div className="flex justify-center items-center ">
                                     {item?.id === 1 }
                                     {item?.id === 2 }
                                     {item?.id === 3 }
@@ -39,7 +39,7 @@ const DropdownMenu = ({ items, isOpen, isHorizontal = false }) => {
                                             className={`${isHorizontal
                                                 ? "px-2 whitespace-nowrap"
                                                 : "block px-2 !py-2 mb-2"
-                                                } text-md font-syne text-black  group-hover:text-[#9F70FD] group-hover:bg-clip-text duration-200 text-center`}
+                                                } text-md font-syne text-black  group-hover:text-[#2956A6] group-hover:bg-clip-text duration-200 text-center`}
                                         >
                                             {item.title}
                                         </a>

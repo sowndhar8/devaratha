@@ -37,13 +37,13 @@ function Services() {
             <div className="flex lg:flex-col w-full lg:w-[30%] bg-[#F2F2F2] !p-5 !gap-2 rounded-lg !mt-10 !mb-5 ">
               <button
                 onClick={() => setActiveTab("fd")}
-                className={`relative text-[#2956A6] bg-white !p-4 rounded-lg cursor-pointer  overflow-hidden `}
+                className={`relative text-[#2956A6] bg-white !p-4 rounded-lg font-semibold cursor-pointer  overflow-hidden`}
               >
                 {/* Animated border */}
                 <span
-                  className={`absolute left-0 top-1/2 w-[3px] bg-[#2956A6] transition-all duration-300 ease-in-out transform -translate-y-1/2 ${activeTab === "fd"
-                    ? "top-0 h-full -translate-y-0"   // full height at left edge
-                    : "h-4"                           // small line centered
+                  className={`absolute left-0 top-1/2 w-[3px] transition-all duration-300 ease-in-out transform -translate-y-1/2 ${activeTab === "fd"
+                    ? "top-0 h-full -translate-y-0 bg-[#2956A6]"   // full height at left edge
+                    : "h-4 bg-black"                           // small line centered
                     }`}
                 />
                 Fixed Deposit
@@ -51,12 +51,12 @@ function Services() {
 
               <button
                 onClick={() => setActiveTab("rd")}
-                className={`relative text-[#2956A6] bg-white !p-4 rounded-lg cursor-pointer overflow-hidden `}
+                className={`relative text-[#2956A6] bg-white !p-4 font-semibold rounded-lg cursor-pointer overflow-hidden `}
               >
                 <span
-                  className={`absolute left-0 top-1/2 w-[3px] bg-[#2956A6] transition-all duration-300 ease-in-out transform -translate-y-1/2 ${activeTab === "rd"
-                    ? "top-0 h-full -translate-y-0"   // full height at left edge
-                    : "h-4"                           // small line centered
+                  className={`absolute left-0 top-1/2 w-[3px] transition-all duration-300 ease-in-out transform -translate-y-1/2 ${activeTab === "rd"
+                    ? "top-0 h-full -translate-y-0 bg-[#2956A6]"   // full height at left edge
+                    : "h-4 bg-black"                           // small line centered
                     }`}
                 />
                 Recurring Deposit
@@ -64,13 +64,13 @@ function Services() {
 
               <button
                 onClick={() => setActiveTab("gold")}
-                className={`relative text-[#2956A6] bg-white !p-4 rounded-lg cursor-pointer overflow-hidden `}
+                className={`relative text-[#2956A6] bg-white !p-4 rounded-lg font-semibold cursor-pointer overflow-hidden `}
               >
 
                 <span
-                  className={`absolute left-0 top-1/2 w-[3px] bg-[#2956A6] transition-all duration-300 ease-in-out transform -translate-y-1/2 ${activeTab === "gold"
-                    ? "top-0 h-full -translate-y-0"   // full height at left edge
-                    : "h-4"                           // small line centered
+                  className={`absolute left-0 top-1/2 w-[3px] transition-all duration-300 ease-in-out transform -translate-y-1/2 ${activeTab === "gold"
+                    ? "top-0 h-full -translate-y-0 bg-[#2956A6]"   // full height at left edge
+                    : "h-4 bg-black"                           // small line centered
                     }`}
                 />
                 Gold Investment
@@ -96,8 +96,8 @@ function Services() {
 
             {activeTab === "fd" &&
               <div className="flex flex-col lg:w-[70%] w-[100%] bg-white !p-5 !gap-2 rounded-lg lg:!mt-10 lg:!m-5 lg:!pl-20 ">
-                <img src={img2} alt="" className=" lg:w-fit w-full  lg:h-[40%] place-self-center !p-5" />
-                <p className="text-[#767682] text-[16px] !p-2 rounded-lg ">
+                <img src={img2} alt="" className=" lg:w-fit w-full  lg:h-[40%] !py-5" />
+                <p className="text-[#767682] text-[16px] !py-2 rounded-lg ">
                   Grow your wealth with secure Fixed Deposits, disciplined Recurring Deposits, and
                   trusted Gold Investments. Whether you seek guaranteed returns, steady savings, or
                   timeless value, our solutions are designed to match your financial goals. With flexible
@@ -107,21 +107,21 @@ function Services() {
               </div>
             }
             {activeTab === "rd" &&
-              <div className="flex flex-col lg:w-[70%] w-[100%] bg-white !p-5 !gap-2 rounded-lg lg:!mt-10 lg:!m-5 lg:!pl-20  ">
-                <img src={img2} alt="" className=" w-fit  h-[40%] place-self-center !p-5" />
-                <p className="text-[#767682] text-[16px] !p-2 rounded-lg ">
+              <div className="flex flex-col lg:w-[70%] w-[100%] bg-white !py-5 !gap-2 rounded-lg lg:!mt-10 lg:!m-5 lg:!pl-20  ">
+                <img src={img2} alt="" className=" w-fit  h-[40%]  !py-5" />
+                <p className="text-[#767682] text-[16px] !py-2 rounded-lg ">
                   Grow your wealth with secure Fixed Deposits, disciplined Recurring Deposits, and
                   trusted Gold Investments. Whether you seek guaranteed returns, steady savings, or
                   timeless value, our solutions are designed to match your financial goals. With flexible
                   options and expert guidance, we make your money work smarter for you.
                 </p>
-                <RdCalculator />
+                <RdCalculator  />
               </div>
             }
             {activeTab === "gold" &&
-              <div className="flex flex-col lg:w-[70%] w-[100%] bg-white !p-5 !gap-2 rounded-lg lg:!mt-10 lg:!m-5 lg:!pl-20 ">
-                <img src={img2} alt="" className=" w-fit  h-[40%] place-self-center !p-5" />
-                <p className="text-[#767682] text-[16px] !p-2 rounded-lg ">
+              <div className="flex flex-col lg:w-[70%] w-[100%] bg-white !py-5 !gap-2 rounded-lg lg:!mt-10 lg:!m-5 lg:!pl-20 ">
+                <img src={img2} alt="" className=" w-fit  h-[40%] !py-5" />
+                <p className="text-[#767682] text-[16px] !py-2 rounded-lg ">
                   Grow your wealth with secure Fixed Deposits, disciplined Recurring Deposits, and
                   trusted Gold Investments. Whether you seek guaranteed returns, steady savings, or
                   timeless value, our solutions are designed to match your financial goals. With flexible
@@ -165,14 +165,14 @@ function Services() {
                   we understand the challenges and complexities that businesses face in today's dynamic marketplace.
                   That's why we offer a comprehensive suite of consulting services.
                 </p>
-                <div className='!mt-5 '>
+                {/* <div className='!mt-5 '>
                   <button
                     onClick={() => navigate("#")}
                     className=" flex items-center rounded-4xl bg-[#2956A6] text-white font-semibold text-[16px] !px-5 !py-2 cursor-pointer">
                     Know More
                     <FaArrowRight color="black" size={30} className="!ml-2 bg-white rounded-full !p-2 " />
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -206,14 +206,14 @@ function Services() {
                     we understand the challenges and complexities that businesses face in today's dynamic marketplace.
                     That's why we offer a comprehensive suite of consulting services.
                   </p>
-                  <div className='!mt-5 '>
+                  {/* <div className='!mt-5 '>
                     <button
                       onClick={() => navigate("#")}
                       className=" flex items-center rounded-4xl bg-[#2956A6] text-white font-semibold text-[16px] !px-5 !py-2 cursor-pointer">
                       Know More
                       <FaArrowRight color="black" size={30} className="!ml-2 bg-white rounded-full !p-2 " />
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className='hidden md:block lg:block '>
@@ -254,14 +254,14 @@ function Services() {
                   we understand the challenges and complexities that businesses face in today's dynamic marketplace.
                   That's why we offer a comprehensive suite of consulting services.
                 </p>
-                <div className='!mt-5 '>
+                {/* <div className='!mt-5 '>
                   <button
                     onClick={() => navigate("#")}
                     className=" flex items-center rounded-4xl bg-[#2956A6] text-white font-semibold text-[16px] !px-5 !py-2 cursor-pointer">
                     Know More
                     <FaArrowRight color="black" size={30} className="!ml-2 bg-white rounded-full !p-2 " />
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

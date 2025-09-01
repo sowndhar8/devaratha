@@ -23,6 +23,8 @@ import { FaCircleCheck } from 'react-icons/fa6';
 import { Rate } from "antd";
 import Faq from "./components/faq";
 import OurServices from './components/ourServices';
+import Marquee from "react-fast-marquee";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -150,6 +152,38 @@ const data2 = [
         role: "Founder and CEO at Gymdesk",
         description: "We have a very pragmatic approach to lending and savings and saw a great match of culture and ethos in FinPoan."
     },
+    {
+        id: 7,
+        value: "5",
+        img: ava2,
+        name: "Shelby Baldwin",
+        role: "Founder and CEO at Gymdesk",
+        description: "They tailored a personalized investment strategy that aligned perfectly with my risk tolerance and long term objectives. Thanks to their expertise and continuous support."
+    },
+    {
+        id: 8,
+        value: "5",
+        img: ava3,
+        name: "Eran Galperin",
+        role: "Founder and CEO at Gymdesk",
+        description: "FinPoan’s ease of integration, flexibility and time to market has helped us give our customers an unrivalled, technology driven mobile banking experience."
+    },
+    {
+        id: 9,
+        value: "5",
+        img: ava4,
+        name: "Kate Barton",
+        role: "Founder and CEO at Gymdesk",
+        description: "Running on FinPoan not only enables us to focus on scaling and innovation, but it also is a great cultural fit."
+    },
+    {
+        id: 10,
+        value: "5",
+        img: ava5,
+        name: "Keyla Ramira",
+        role: "Founder and CEO at Gymdesk",
+        description: "They took the time to understand my unique financial situation, patiently answered all my questions & designed a comprehensive financial plan."
+    }
 ];
 
 function Homepage() {
@@ -209,21 +243,21 @@ function Homepage() {
 
             <section>
                 <div className='lg:bg-banner bg-banner3 bg-cover h-[100vh] flex justify-center items-center'>
-                    <div className= ' flex items-center w-full h-full lg:!px-20 md:!px-15 !px-10 !py-25'>
+                    <div className=' flex items-center w-full h-full lg:!px-20 md:!px-15 !px-10 !py-25'>
                         <div>
-                        <h1 className='lg:text-[78px] md:text-[50px] text-[28px] font-bold text-white '>
-                            Secure Wealth,<br /> Smart Future
-                        </h1>
-                        <p className='lg:text-[24px] md:text-[22px] text-[18px] font-medium  text-white '>
-                            Build your savings with trusted financial solutions.
-                            From deposits to investments and tax strategies,
-                        </p>
-                        <button
-                            onClick={() => navigate("/Contactus")}
-                            className='bg-[#DFAE51] text-[#2956A6] !px-10 !py-4 rounded-lg !mt-12 text-[16px] font-semibold cursor-pointer'>
-                            Contact Us
-                        </button>
-                    </div>
+                            <h1 className='lg:text-[78px] md:text-[50px] text-[28px] font-bold text-white '>
+                                Secure Wealth,<br /> Smart Future
+                            </h1>
+                            <p className='lg:text-[24px] md:text-[22px] text-[18px] font-medium  text-white '>
+                                Build your savings with trusted financial solutions.
+                                From deposits <br /> to investments and tax strategies,
+                            </p>
+                            <button
+                                onClick={() => navigate("/Contactus")}
+                                className='bg-[#DFAE51] text-[#2956A6] !px-10 !py-4 rounded-lg !mt-12 text-[16px] font-semibold cursor-pointer'>
+                                Contact Us
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -252,17 +286,17 @@ function Homepage() {
                                 <h2 className='lg:text-[50px] md:text-[35px] text-[25px] font-bold  text-black '>
                                     Building Wealth with <br /> <span className='text-[#2956A6]'> Business Success.</span>
                                 </h2>
-                               <p className='lg:text-[18px] md:text-[18px] text-[16px]  text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full  text-justify  '>
+                                <p className='lg:text-[18px] md:text-[18px] text-[16px]  text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full  text-justify  '>
                                     We are a trusted financial services company committed to helping individuals and businesses make smarter money decisions. Our expertise spans across deposits,
                                     investments, financial planning, and tax strategies tailored to your unique goals. With transparency and integrity at the core, we ensure every
                                     solution is designed to protect and grow your wealth. Our team combines experience with a client-first approach to deliver reliable results.
                                     Together, we help you achieve financial stability and long-term prosperity.
                                 </p>
-                                <div className='!mt-5 '>
+                                {/* <div className='!mt-5 '>
                                     <button className=" flex items-center rounded-4xl bg-[#2956A6] text-white font-semibold text-[16px] !px-5 !py-2 cursor-pointer">Read More
                                         <FaArrowRight color="black" size={30} className="!ml-2 bg-white rounded-full !p-2 " />
                                     </button>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -296,7 +330,7 @@ function Homepage() {
                                     <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
                                 </h1>
                                 <h2 className='lg:text-[50px] md:text-[35px] text-[25px] text-center font-bold  text-black !px-5 '>
-                                    why <span className='text-[#2956A6]'>Devaratha </span> is the right choice for you
+                                    why <span className='text-[#2956A6]'>Devavratha </span> is the right choice for you
                                 </h2>
                             </div>
                             {/* <div className='flex lg:flex-row md:flex-row flex-col gap-10 !mt-5 lg:!p-10 md:!p-10 !p-5 lg:w-[70%] md:w-[70%] !w-[90%] bg-white rounded-2xl !mx-auto '>
@@ -354,7 +388,7 @@ function Homepage() {
                     {/* how we do */}
                     <section className="item h-[100vh] w-[100%]  absolute top-0 left-0 justify-center items-center ">
                         <div className=' bg-[#D9E9FF] flex lg:flex-row md:flex-col flex-col rounded-4xl lg:!m-20 md:!m-15 !m-10 !px-10 lg:!py-20 md:!py-20 !py-10 '>
-                            <div className='items-center justify-center flex lg:w-[60%] md:w-[100%] w-[100%] '>
+                            <div className='items-center justify- flex lg:w-[60%] md:w-[100%] w-[100%] '>
                                 <div>
                                     <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px]  font-semibold text-[#2956A6] z-10">
                                         How We Do
@@ -362,7 +396,7 @@ function Homepage() {
                                     </h1>
 
                                     <h2 className='lg:text-[50px] md:text-[35px] text-[25px]  font-bold  text-black '>
-                                The importance of planning finances
+                                        The importance of<br /> planning finances
                                     </h2>
                                     <div>
                                         {data.map((item) => (
@@ -388,7 +422,7 @@ function Homepage() {
                                 </div>
                             </div>
 
-                            <div className='!mt-5 lg:w-[40%] md:w-[100%] w-[100%] '>
+                            <div className='!mt-5 lg:w-[50%] md:w-[100%] w-[100%] flex items-center justify-center '>
                                 <img src={img4} alt="" />
                             </div>
                         </div>
@@ -398,8 +432,8 @@ function Homepage() {
                     {/* Advantage */}
                     <section className="item h-[100vh] w-[100%]  absolute top-0 left-0 justify-center items-center ">
                         <div className=' bg-[#D9E9FF] flex lg:flex-row md:flex-col flex-col rounded-4xl lg:!m-20 md:!m-15 !m-10 !px-10 lg:!py-10 md:!py-10 !py-10 gap-10 '>
-                            <div className='!mt-5 lg:w-[40%] md:w-[100%] w-[100%] '>
-                                <img src={img5} alt="" />
+                            <div className='!mt-5 lg:w-[50%] md:w-[100%] w-[100%] '>
+                                <img src={img5} alt="" className="flex items-center justify-center " />
                             </div>
                             <div className='items-center justify-center flex lg:w-[60%] md:w-[60%] w-[100%] '>
                                 <div>
@@ -409,7 +443,7 @@ function Homepage() {
                                     </h1>
 
                                     <h2 className='lg:text-[50px] md:text-[35px] text-[25px]  font-bold  text-black '>
-                                Safe Hands Leading Your Financial Journey
+                                        Safe Hands Leading Your Financial Journey
                                     </h2>
                                     <div>
                                         {data1.map((item) => (
@@ -444,10 +478,81 @@ function Homepage() {
 
 
             {/* Comments */}
+
             <section>
-                <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 lg:!mx-20 md:!mx-15 !mx-10 !pb-10'>
+                
+                <Marquee pauseOnHover={true} speed={40}>
+                    <div className=' flex !gap-20 lg:!mx-10 md:!mx-15 !mx-10 !pb-10 '>
+                        {data2.map((item) => (
+                            <div key={item.id} className=' flex rounded-4xl lg:!p-10 md:!p-10 !p-5 border-2 border-[#D9E9FF] w-100 h-80'>
+                                <div className=' '>
+                                    <div className='flex gap-5 items-center' >
+                                        <div>
+                                            <img src={item.img} alt="" className='w-20 h-20' />
+                                        </div>
+                                        <div>
+                                            <p className='text-[#666] !mt-2'>
+                                                <Rate disabled value={item.value} />
+                                            </p>
+                                            <h2 className='lg:text-[20px] md:text-[18px] text-[16px] text-black font-semibold mt-2'>
+                                                {item.name}
+                                            </h2>
+                                            <p className='text-[#999999] !mt-2'>
+                                                {item.role}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p className='text-[#666666] !mt-2'>
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </Marquee>
+
+                <Marquee pauseOnHover={true} speed={40} direction="right">
+                    <div className=' flex gap-20 lg:!mx-10 md:!mx-15 !mx-10 !pb-10'>
+                        {data2.map((item) => (
+                            <div key={item.id} className=' flex rounded-4xl lg:!p-10 md:!p-10 !p-5 border-2 border-[#D9E9FF] w-100 h-80'>
+                                <div className=' '>
+                                    <div className='flex gap-5 items-center' >
+                                        <div>
+                                            <img src={item.img} alt="" className='w-20 h-20' />
+                                        </div>
+                                        <div>
+                                            <p className='text-[#666] !mt-2'>
+                                                <Rate disabled value={item.value} />
+                                            </p>
+                                            <h2 className='lg:text-[20px] md:text-[18px] text-[16px] text-black font-semibold mt-2'>
+                                                {item.name}
+                                            </h2>
+                                            <p className='text-[#999999] !mt-2'>
+                                                {item.role}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p className='text-[#666666] !mt-2'>
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </Marquee>
+            </section>
+
+            {/* <section>
+                <div className='flex gap-10 lg:!mx-20 md:!mx-15 !mx-10 '>
+                    <div className="bg-[#F8F4FF] !py-10 !px-5 ">
+                        <div className="group overflow-hidden ">
+                            <div className="flex lg:animate-none animate-loop-scroll-reverse sm:animate-loop-scroll-reverse space-x-16 min-w-max group gap-20 ">
                     {data2.map((item) => (
-                        <div key={item.id} className=' flex rounded-4xl lg:!p-10 md:!p-10 !p-5 border-2 border-[#D9E9FF]'>
+                        <div key={item.id} className=' flex rounded-4xl lg:!p-10 md:!p-10 !p-5 border-2 border-[#D9E9FF] '>
                             <div className=' '>
                                 <div className='flex gap-5 items-center' >
                                     <div>
@@ -474,7 +579,48 @@ function Homepage() {
                         </div>
                     ))}
                 </div>
-            </section>
+                </div>
+                </div>
+                </div>
+                
+
+                <div className='flex gap-10 lg:!mx-20 md:!mx-15 !mx-10 !pb-10'>
+                    <div className="bg-[#F8F4FF] !py-10 !px-5 ">
+                        <div className="group1  overflow-hidden ">
+                            <div className="flex lg:animate-none animate-loop-scroll-reverse sm:animate-loop-scroll-reverse space-x-16 min-w-max group1-hover:paused gap-20 ">
+
+                                {data2.map((item) => (
+                                    <div key={item.id} className=' flex rounded-4xl lg:!p-10 md:!p-10 !p-5 border-2 border-[#D9E9FF]'>
+                                        <div className=' '>
+                                            <div className='flex gap-5 items-center' >
+                                                <div>
+                                                    <img src={item.img} alt="" className='w-20 h-20' />
+                                                </div>
+                                                <div>
+                                                    <p className='text-[#666] !mt-2'>
+                                                        <Rate disabled value={item.value} />
+                                                    </p>
+                                                    <h2 className='lg:text-[20px] md:text-[18px] text-[16px] text-black font-semibold mt-2'>
+                                                        {item.name}
+                                                    </h2>
+                                                    <p className='text-[#999999] !mt-2'>
+                                                        {item.role}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p className='text-[#666666] !mt-2'>
+                                                    {item.description}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> */}
 
             {/* faq */}
             <section>
@@ -490,3 +636,5 @@ function Homepage() {
     )
 }
 export default Homepage
+
+

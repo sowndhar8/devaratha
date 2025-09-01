@@ -10,65 +10,98 @@ function Footer() {
     <div className="bg-[#0D0D0D] lg:!px-15 md:!px-10 !px-10 lg:!py-10 ">
       <div className="lg:grid-cols-5 md:grid-cols-2 grid-cols-1 grid gap-4 md:!px-5 md:!py-12 !py-6">
         <div>
-          <a href ="/">
-          <img src={img} alt="" className="w-[50px] h-[50px] !mb-5 " />
-          <p className="text-[#D0DAF5] text-[14px] font-bold ">
-            Devaratha Consultency Services
-          </p>
+          <a href="/">
+            <img src={img} alt="" className="w-[50px] h-[50px] !mb-5 " />
+            <p className="text-[#D0DAF5] text-[14px] font-bold ">
+              Devavratha Consultency Services
+            </p>
           </a>
         </div>
-        <div className="">
+        <div className=" ">
           <h2 className="text-[#D0DAF5] text-[16px] !pb-5">Explore</h2>
-          <div>
-            <a href="/">
-              <h4 className="text-[#6F7481] text-[16px] !pb-2">Home</h4>
+          <div className="flex flex-col gap-2">
+            <a
+              href="/"
+              className="relative text-[#6F7481] text-[16px] w-fit after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px]
+               after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Home
             </a>
-            <a href="/Services">
-              <h4 className="text-[#6F7481] text-[16px] !pb-2">Services</h4>
+            <a
+              href="/Services"
+              className="relative text-[#6F7481] text-[16px] w-fit after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px]
+               after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Services
             </a>
-            <a href="/Aboutus">
-              <h4 className="text-[#6F7481] text-[16px] !pb-2">About us</h4>
+            <a
+              href="/Aboutus"
+              className="relative text-[#6F7481] text-[16px] w-fit after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] 
+              after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full"
+            >
+              About us
             </a>
-            <a href="/Contactus">
-              <h4 className="text-[#6F7481] text-[16px] !pb-2">Contact us</h4>
+            <a
+              href="/Contactus"
+              className="relative text-[#6F7481] text-[16px] w-fit after:content-[''] after:absolute after:left-0 after:-bottom-0 after:h-[2px] 
+              after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Contact us
             </a>
           </div>
         </div>
+
         <div className="">
           <h2 className="text-[#D0DAF5] text-[16px] !pb-5">Loans</h2>
-          <div>
-            <a href="/GoldLoans">
-              <h4 className="text-[#6F7481] text-[16px] !pb-2">Gold Loan</h4>
+          <div className="flex flex-col gap-2">
+            <a href="/GoldLoans"
+              className="relative text-[#6F7481] text-[16px] w-fit after:content-[''] after:absolute after:left-0 after:-bottom-0 after:h-[2px] 
+              after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full" >
+              Gold Loan
             </a>
-            <a href="/PersonalLoan">
-              <h4 className="text-[#6F7481] text-[16px] !pb-2">Personal Loan</h4>
+            <a href="/PersonalLoan"
+              className="relative text-[#6F7481] text-[16px] w-fit after:content-[''] after:absolute after:left-0 after:-bottom-0 after:h-[2px] 
+              after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full" >
+              Personal Loan
             </a>
-            <a href="/BusinessLoan">
-              <h4 className="text-[#6F7481] text-[16px] !pb-2">Business Loan</h4>
+            <a href="/BusinessLoan"
+              className="relative text-[#6F7481] text-[16px] w-fit after:content-[''] after:absolute after:left-0 after:-bottom-0 after:h-[2px] 
+              after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full" >
+              Business Loan
             </a>
-            <a href="/MortageLoan">
-              <h4 className="text-[#6F7481] text-[16px] !pb-2">Mortage Loan</h4>
+            <a href="/MortageLoan"
+              className="relative text-[#6F7481] text-[16px] w-fit after:content-[''] after:absolute after:left-0 after:-bottom-0 after:h-[2px] 
+              after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full" >
+              Mortage Loan
             </a>
           </div>
         </div>
         <div className="">
           <h2 className="text-[#D0DAF5] text-[16px] !pb-5">Company</h2>
-          <div className="">
-            <a href="/Aboutus">
-              <h4 className="text-[#6F7481] text-[16px] !pb-2">About us</h4>
+          <div className="flex flex-col gap-2">
+            <a href="/Aboutus"
+              className="relative text-[#6F7481] text-[16px] w-fit after:content-[''] after:absolute after:left-0 after:-bottom-0 after:h-[2px] 
+              after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full" >
+              About us
             </a>
-            <a href="#">
-              <h4 className="text-[#6F7481] text-[16px] !pb-2">Partners</h4>
+            <a href="#"
+              className="relative text-[#6F7481] text-[16px] w-fit after:content-[''] after:absolute after:left-0 after:-bottom-0 after:h-[2px] 
+              after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full" >
+              Partners
             </a>
-            <a href="#">
-              <h4 className="text-[#6F7481] text-[16px] !pb-2">Customers</h4>
+            <a href="#"
+              className="relative text-[#6F7481] text-[16px] w-fit after:content-[''] after:absolute after:left-0 after:-bottom-0 after:h-[2px] 
+              after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full" >
+              Customers
             </a>
-            <a href="#">
-              <h4 className="text-[#6F7481] text-[16px] !pb-2">Contact us</h4>
+            <a href="#"
+              className="relative text-[#6F7481] text-[16px] w-fit after:content-[''] after:absolute after:left-0 after:-bottom-0 after:h-[2px] 
+              after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full" >
+              Contact us
             </a>
           </div>
         </div>
-        <div className="bg-[#0E1014] md:!px-5 md:!py-10 !py-5">
+        {/* <div className="bg-[#0E1014] md:!px-5 md:!py-3 !py-5 ">
           <h2 className="text-[#D0DAF5]">Connect</h2>
           <div className="flex h-[50px] border-1 border-[#161829] items-center justify-between rounded-[10px] !my-5 ">
             <input
@@ -85,10 +118,41 @@ function Footer() {
             Hello, we are ABC. trying to make an effort to put the right people
             for you to get the best results. Just insight
           </p>
+        </div> */}
+
+        <div>
+          <h2 className="text-[#D0DAF5] text-[16px] !pb-5">Contact Us</h2>
+          <ul className="!space-y-3 sm:!space-y-4">
+            <li>
+              <a href="mailto:info@devavratha.in"
+                className="relative text-[#6F7481] text-[16px] w-fit after:content-[''] after:absolute after:left-0 after:-bottom-0 after:h-[2px] 
+              after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full" >
+                info@aadhithyaa.in</a>
+            </li>
+            <li>
+              <a href="tel:+91 98765 43210"
+                className="relative text-[#6F7481] text-[16px] w-fit after:content-[''] after:absolute after:left-0 after:-bottom-0 after:h-[2px] 
+              after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full" >
+                +91 98765 43210</a>
+            </li>
+            <li>
+              <a
+                href="https://maps.app.goo.gl/TvLKzYiKDKixGPxz8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative text-[#6F7481] text-[16px] w-fit after:content-[''] after:absolute after:left-0 after:-bottom-0 after:h-[2px] 
+                after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full" >                    
+                H-22, Peelamedu, HUDCO Colony,<br />
+                Coimbatore, Tamil Nadu-641004
+              </a>
+            </li>
+          </ul>
         </div>
+
+
       </div>
       <div className="lg:!px-12 !px-6  ">
-      <div className="h-[2px] w-[100%] bg-[#18181B] md:!my-5 !my-5 "></div>
+        <div className="h-[2px] w-[100%] bg-[#18181B] md:!my-5 !my-5 "></div>
       </div>
       <div className="flex  md:!px-12 md:!py-5 justify-between items-center !px-6 !py-6 ">
         <div className="">
