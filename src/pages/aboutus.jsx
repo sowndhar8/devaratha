@@ -9,6 +9,7 @@ import Progress from "./components/progress";
 import { Formik, Form as FormikForm, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
+import { FaCircleCheck } from "react-icons/fa6";
 
 function Aboutus() {
 
@@ -29,7 +30,7 @@ function Aboutus() {
 
   return (
     <div>
-         <div className="relative bg-banner2 bg-cover h-[60vh] items-center justify-center">    
+      <div className="relative bg-banner2 bg-cover h-[60vh] items-center justify-center">
         <div className="absolute lg:top-[50%] md:top-[50%] top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
           <h2 className="text-[#2956A6] text-[50px] text-center">About Us</h2>
           <h3 className="text-[#D8D8D8] lg:text-[20px] md:text-[18px] text-[16px] text-center !py-7">
@@ -69,16 +70,24 @@ function Aboutus() {
               </div>
               <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 items-center">
                 <div className='!mt-5 flex !gap-5 items-center'>
-                  <FaCheck /> <span className='text-[#666666] '>Client-Centric Approach</span>
+                  <FaCircleCheck className="text-[#2956A6] mt-5 text-[20px] md:text-[20px] lg:text-[20px]" />
+                  <span className='text-[#666666] '>
+                    Client-Centric Approach</span>
                 </div>
                 <div className='!mt-5 flex !gap-5 items-center'>
-                  <FaCheck /> <span className='text-[#666666] '>Best Financial Solutions</span>
+                  <FaCircleCheck className="text-[#2956A6] mt-5 text-[20px] md:text-[20px] lg:text-[20px]" />
+                  <span className='text-[#666666] '>
+                    Best Financial Solutions</span>
                 </div>
                 <div className='!mt-5 flex !gap-5 items-center'>
-                  <FaCheck /> <span className='text-[#666666] '>Expert Guidance</span>
+                  <FaCircleCheck className="text-[#2956A6] mt-5 text-[20px] md:text-[20px] lg:text-[20px]" />
+                  <span className='text-[#666666] '>
+                    Expert Guidance</span>
                 </div>
                 <div className='!mt-5 flex !gap-5 items-center'>
-                  <FaCheck /> <span className='text-[#666666] '>Commitment to Integrity</span>
+                  <FaCircleCheck className="text-[#2956A6] mt-5 text-[20px] md:text-[20px] lg:text-[20px]" />
+                  <span className='text-[#666666] '>
+                    Commitment to Integrity</span>
                 </div>
               </div>
             </div>
@@ -108,7 +117,7 @@ function Aboutus() {
               </div>
             </div>
           </div>
-        <div className=' '>
+          <div className=' '>
             <img
               src={img2}
               alt=""
