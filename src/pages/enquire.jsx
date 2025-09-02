@@ -24,10 +24,10 @@ function Enquire() {
     return (
         <div>
 
-            <div className="relative bg-banner2 bg-cover h-[60vh] items-center justify-enter">
+            <div className="relative bg-banner2 bg-cover h-[50vh] items-center justify-enter">
                 <div className="absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
-                    <h2 className="text-[#2956A6] text-[50px]">Enquire</h2>
-                    <h3 className="text-[#D8D8D8] text-[20px] text-center !py-7">
+                    <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[35px]">Enquire</h2>
+                    <h3 className="text-[#D8D8D8] lg:text-[20px] md:text-[18px] text-[16px] tracking-wider text-center !py-7">
                         Duis aute irure dolor in reprehenderit in voluptate velit esse
                         cillum doloreaeu fugiat nulla pariatur.
                     </h3>

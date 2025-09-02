@@ -2,10 +2,16 @@ import React, { useState } from "react";
 import { Col, InputNumber, Slider, Select } from "antd";
 
 const FdCalculator = () => {
-  const [principal, setPrincipal] = useState(1000);
+  const [principal, setPrincipal] = useState(100000);
   const [expectedReturn, setExpectedReturn] = useState(6.5);
-  const [timePeriod, setTimePeriod] = useState(1);
+  const [timePeriod, setTimePeriod] = useState(5);
   const [timeUnit, setTimeUnit] = useState("years"); // "days" | "months" | "years"
+
+   const handleReset = () => {
+    setPrincipal(100000);
+    setExpectedReturn(6.5);
+    setTimePeriod(5);
+  };
 
   const calculateFD = () => {
     const P = principal;
@@ -16,6 +22,7 @@ const FdCalculator = () => {
     let t = timePeriod;
     if (timeUnit === "days") t = timePeriod / 365;
     if (timeUnit === "months") t = timePeriod / 12;
+    if (timeUnit === "years") t = timePeriod ;
 
     const maturity = P * Math.pow(1 + r / n, n * t);
     const invested = P;

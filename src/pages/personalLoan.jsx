@@ -42,10 +42,10 @@ function PersonalLoan() {
 
             <div className="relative bg-banner2 bg-cover h-[50vh] items-center justify-center">
                 <div className="absolute lg:top-[50%] md:top-[50%] top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
-                    <h2 className="text-[#2956A6] text-[50px] text-center">Personal Loan</h2>
-                    <h3 className="text-[#D8D8D8] lg:text-[20px] md:text-[18px] text-[16px] text-center !py-7">
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum doloreaeu fugiat nulla pariatur.
+                    <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[35px] text-center">Personal Loan</h2>
+                    <h3 className="text-[#D8D8D8] lg:text-[20px] md:text-[18px] text-[16px] text-center tracking-wider !py-7">
+                        From dreams to emergencies, we’ve got you covered.
+                        Fast, easy, and stress-free personal loans
                     </h3>
                 </div>
             </div>
@@ -93,7 +93,7 @@ function PersonalLoan() {
                             <img
                                 src={img1}
                                 alt=""
-                                className='w-fit place-self-center '
+                                className='w-fit place-self-center !pt-5 '
                             />
                         </div>
                     </div>

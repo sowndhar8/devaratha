@@ -67,10 +67,10 @@ function GoldLoans() {
 
             <div className="relative bg-banner2 bg-cover h-[50vh] items-center">
                 <div className="absolute lg:top-[50%] md:top-[50%] top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
-                    <h2 className="text-[#2956A6] text-[50px] text-center">Gold Loan</h2>
-                    <h3 className="text-[#D8D8D8] lg:text-[20px] md:text-[18px] text-[16px] text-center !py-7">
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum doloreaeu fugiat nulla pariatur.
+                    <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[35px] text-center">Gold Loan</h2>
+                    <h3 className="text-[#D8D8D8] lg:text-[20px] md:text-[18px] text-[16px] tracking-wider text-center !py-7">
+                        Keep your gold safe,and your goals moving.
+                        Instant gold loans with minimum paperwork.
                     </h3>
                 </div>
             </div>
@@ -115,7 +115,7 @@ function GoldLoans() {
                             <img
                                 src={img1}
                                 alt=""
-                                className='w-fit place-self-center '
+                                className='w-fit place-self-center !py-5 '
                             />
 
                             <div className="place-self-center gap-2 !mt-5 w-fit">
@@ -209,7 +209,7 @@ function GoldLoans() {
                     </h2>
 
                     {/* FAQ List */}
-                     <div className="lg:w-[100%] md:w-[80%] w-full flex flex-col  !gap-5 !py-10">
+                    <div className="lg:w-[100%] md:w-[80%] w-full flex flex-col  !gap-5 !py-10">
                         {Faq?.map((item) => {
                             const isSelected = selected?.id === item?.id;
 

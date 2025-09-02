@@ -19,10 +19,10 @@ function Services() {
     <div>
       <div className="relative bg-banner2 bg-cover h-[50vh] items-center justify-enter">
         <div className="absolute lg:top-[50%] md:top-[50%] top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
-          <h2 className="text-[#2956A6] text-[50px]">Services</h2>
-          <h3 className="text-[#D8D8D8] lg:text-[20px] md:text-[18px] text-[16px] text-center !py-7">
+          <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[35px] text-center">Services</h2>
+          <h3 className="text-[#D8D8D8] lg:text-[20px] md:text-[18px] text-[16px] text-center tracking-wider !py-4 w-full">
             Explore our wide range of financial services designed to secure, grow, and manage your
-            wealth. From savings to investments, we provide expert solutions tailored to your goals.
+            wealth. 
           </h3>
 
         </div>
@@ -34,7 +34,7 @@ function Services() {
       <section>
         <div className=" lg:!px-20 md:!px-15 !px-5  ">
           <div className="flex lg:flex-row flex-col ">
-            <div className="flex lg:flex-col w-full lg:w-[30%] bg-[#F2F2F2] !p-5 !gap-2 rounded-lg !mt-10 !mb-5 ">
+            <div className="flex lg:flex-col w-full lg:w-[30%] bg-[#F2F2F2] !p-5 !gap-2 rounded-lg !mt-10 !mb-5 overflow-hidden ">
               <button
                 onClick={() => setActiveTab("fd")}
                 className={`relative text-[#2956A6] bg-white !p-4 rounded-lg font-semibold cursor-pointer  overflow-hidden`}
@@ -107,7 +107,7 @@ function Services() {
               </div>
             }
             {activeTab === "rd" &&
-              <div className="flex flex-col lg:w-[70%] w-[100%] bg-white !py-5 !gap-2 rounded-lg lg:!mt-10 lg:!m-5 lg:!pl-20  ">
+              <div className="flex flex-col lg:w-[70%] w-[100%] bg-white !p-5 !gap-2 rounded-lg lg:!mt-10 lg:!m-5 lg:!pl-20  ">
                 <img src={img2} alt="" className=" w-fit  h-[40%]  !py-5" />
                 <p className="text-[#767682] text-[16px] !py-2 rounded-lg ">
                   Grow your wealth with secure Fixed Deposits, disciplined Recurring Deposits, and
@@ -119,7 +119,7 @@ function Services() {
               </div>
             }
             {activeTab === "gold" &&
-              <div className="flex flex-col lg:w-[70%] w-[100%] bg-white !py-5 !gap-2 rounded-lg lg:!mt-10 lg:!m-5 lg:!pl-20 ">
+              <div className="flex flex-col lg:w-[70%] w-[100%] bg-white !p-5 !gap-2 rounded-lg lg:!mt-10 lg:!m-5 lg:!pl-20 ">
                 <img src={img2} alt="" className=" w-fit  h-[40%] !py-5" />
                 <p className="text-[#767682] text-[16px] !py-2 rounded-lg ">
                   Grow your wealth with secure Fixed Deposits, disciplined Recurring Deposits, and
