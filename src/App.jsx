@@ -9,7 +9,15 @@ import Faq from "./pages/components/faq";
 import Progress from "./pages/components/progress";
 // import Terms from "./pages/terms";
 // import Privacy from "./pages/privacy";
-
+import { Outlet } from "react-router-dom";
+import AboutUsHomePage from "./pages/components/AboutUsHomePage";
+import Navbar from "./pages/navbar";
+import GoldLoans from "./pages/goldLoan";
+import PersonalLoan from "./pages/personalLoan";
+import Businessloan from "./pages/businessloan";
+import MortageLoan from "./pages/mortageLoan";
+import Enquire from "./pages/enquire";
+import Comments from "./pages/components/comments";
 
 
 function Layout() {
@@ -21,14 +29,7 @@ function Layout() {
     </>
   );
 }
-import { Outlet } from "react-router-dom";
-import Footersection from "./pages/footer";
-import Navbar from "./pages/navbar";
-import GoldLoans from "./pages/goldLoan";
-import PersonalLoan from "./pages/personalLoan";
-import Businessloan from "./pages/businessloan";
-import MortageLoan from "./pages/mortageLoan";
-import Enquire from "./pages/enquire";
+
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,14 @@ const router = createBrowserRouter([
       {
         path: "/AboutUs",
         element: <Aboutus />,
+      },
+      {
+        path: "/AboutUsHomePage",
+        element: <AboutUsHomePage />,
+      },
+      {
+        path: "/Comments",
+        element: <Comments />,
       },
       {
         path: "/Services",
