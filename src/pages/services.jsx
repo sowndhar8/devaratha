@@ -41,7 +41,7 @@ function Services() {
             ...prev,
             [observerName]: true
           }));
-        } else {
+        }else {
           // Reset the animation when element leaves viewport
           setIsVisible(prev => ({
             ...prev,
@@ -194,18 +194,18 @@ function Services() {
         </div>
       </section >
 
-      {/* financial planning */}
+      {/* financial planning - Left side image, right side text */}
       <div section>
         <div ref={financialPlanningRef}>
-          <div className={`lg:!px-20 md:!px-20 !px-10 !py-10 grid rev lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-evenly items-center transition-all duration-700 ${isVisible.financialPlanning ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className=''>
+          <div className="lg:!px-20 md:!px-20 !px-10 !py-10 grid rev lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-evenly items-center">
+            <div className={`transition-all duration-700 ease-out ${isVisible.financialPlanning ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
               <img
                 src={img3}
                 alt=""
                 className='w-fit !py-5'
               />
             </div>
-            <div className='flex justify-center items-center'>
+            <div className={`flex justify-center items-center transition-all duration-700 ease-out delay-300 ${isVisible.financialPlanning ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-0'}`}>
               <div>
                 <h1 className="relative inline-block lg:text-[20px] md:text-[18px] text-[16px] font-semibold text-[#2956A6] ">
                   Financial Planning
@@ -224,18 +224,23 @@ function Services() {
         </div>
       </div>
 
-      {/* Investment Advisory */}
+      {/* Investment Advisory - Right side image, left side text */}
       <section>
         <div ref={investmentAdvisoryRef}>
-          <div className={`lg:!px-20 md:!px-20 !px-10 !py-0 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-evenly items-center transition-all duration-700 ${isVisible.investmentAdvisory ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="lg:!px-20 md:!px-20 !px-10 !py-0 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-evenly items-center">
+            {/* Mobile image (shown first on mobile) */}
             <div className='block md:hidden lg:hidden'>
-              <img
-                src={img4}
-                alt=""
-                className='w-fit place-self-center !py-5'
-              />
+              <div className={`transition-all duration-700 ease-out ${isVisible.investmentAdvisory ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+                <img
+                  src={img4}
+                  alt=""
+                  className='w-fit place-self-center !py-5'
+                />
+              </div>
             </div>
-            <div className='flex justify-center items-center'>
+            
+            {/* Text content */}
+            <div className={`flex justify-center items-center transition-all duration-700 ease-out ${isVisible.investmentAdvisory ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
               <div>
                 <h1 className="relative inline-block lg:text-[20px] md:text-[18px] text-[16px] font-semibold text-[#2956A6] ">
                   Investment Advisory
@@ -250,29 +255,33 @@ function Services() {
                 </p>
               </div>
             </div>
+            
+            {/* Desktop/tablet image (shown after text on larger screens) */}
             <div className='hidden md:block lg:block'>
-              <img
-                src={img4}
-                alt=""
-                className='w-fit place-self-center !py-5'
-              />
+              <div className={`transition-all duration-700 ease-out delay-300 ${isVisible.investmentAdvisory ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+                <img
+                  src={img4}
+                  alt=""
+                  className='w-fit place-self-center !py-5'
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Tax & compliance strategy */}
+      {/* Tax & compliance strategy - Left side image, right side text */}
       <div section>
         <div ref={taxComplianceRef}>
-          <div className={`lg:!px-20 md:!px-20 !px-10 !py-10 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-evenly items-center transition-all duration-700 ${isVisible.taxCompliance ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className=''>
+          <div className="lg:!px-20 md:!px-20 !px-10 !py-10 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-evenly items-center">
+            <div className={`transition-all duration-700 ease-out ${isVisible.taxCompliance ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
               <img
                 src={img5}
                 alt=""
                 className='w-fit !py-5'
               />
             </div>
-            <div className='flex justify-center items-center'>
+            <div className={`flex justify-center items-center transition-all duration-700 ease-out delay-300 ${isVisible.taxCompliance ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               <div>
                 <h1 className="relative inline-block lg:text-[20px] md:text-[18px] text-[16px] font-semibold text-[#2956A6] ">
                   Tax & compliance strategy
