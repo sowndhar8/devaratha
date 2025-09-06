@@ -11,6 +11,7 @@ import img5 from "../img/Rectangle 3.png";
 import GoldGraph from "./components/goldGraph";
 import { MdLocalPhone } from "react-icons/md";
 
+
 function Services() {
   const [activeTab, setActiveTab] = useState("fd");
   

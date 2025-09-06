@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import background from "../img/background.png";
 import { FaArrowRight, FaCheck } from "react-icons/fa";
 import img1 from "../img/aboutus-bg.png";
@@ -10,11 +10,6 @@ import { Formik, Form as FormikForm, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { FaCircleCheck } from "react-icons/fa6";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
 
 function Aboutus() {
   const isHovered = false;
@@ -36,42 +31,85 @@ function Aboutus() {
   const startSectionRef = useRef(null);
   const contactSectionRef = useRef(null);
 
+  // State to track which sections are visible
+  const [isVisible, setIsVisible] = useState({
+    mission: false,
+    start: false,
+    contact: false,
+  });
+
   useEffect(() => {
-    // Create a timeline for each section animation
-    const sections = [
-      { ref: missionSectionRef, id: "mission" },
-      { ref: startSectionRef, id: "start" },
-      { ref: contactSectionRef, id: "contact" }
-    ];
+    const observerOptions = {
+      threshold: 0.2, // Trigger when 20% of the element is visible
+      rootMargin: "0px 0px -10% 0px",
+    };
 
-    sections.forEach(({ ref, id }) => {
-      if (ref.current) {
-        gsap.fromTo(ref.current, 
-          { opacity: 0, y: 50 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: ref.current,
-              start: "top 80%",
-              toggleActions: "play none none reverse",
-              id: id
-            }
-          }
-        );
+    const observers = [];
+    const lastScrollY = { current: window.scrollY }; // Store the last scroll position
+
+    const handleIntersect = (entries, observerName) => {
+      entries.forEach((entry) => {
+        const currentScrollY = window.scrollY;
+        const scrollingDown = currentScrollY > lastScrollY.current;
+
+        if (entry.isIntersecting && scrollingDown) {
+          // only trigger animation when scrolling down into the section
+          setIsVisible((prev) => ({
+            ...prev,
+            [observerName]: true,
+          }));
+        }
+      });
+    };
+
+    // Create separate observers for each section
+    if (missionSectionRef.current) {
+      const observer = new IntersectionObserver(
+        (entries) => handleIntersect(entries, "mission"),
+        observerOptions
+      );
+      observer.observe(missionSectionRef.current);
+      observers.push(observer);
+    }
+
+    if (startSectionRef.current) {
+      const observer = new IntersectionObserver(
+        (entries) => handleIntersect(entries, "start"),
+        observerOptions
+      );
+      observer.observe(startSectionRef.current);
+      observers.push(observer);
+    }
+
+    if (contactSectionRef.current) {
+      const observer = new IntersectionObserver(
+        (entries) => handleIntersect(entries, "contact"),
+        observerOptions
+      );
+      observer.observe(contactSectionRef.current);
+      observers.push(observer);
+    }
+
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setIsVisible({
+          mission: false,
+          start: false,
+          contact: false,
+        });
       }
-    });
+    };
 
-    // Clean up ScrollTrigger instances
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      observers.forEach((observer) => observer.disconnect());
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <div className="overflow-x-hidden">
+    <div>
       <div className="relative bg-banner2 bg-cover h-[50vh] items-center justify-center">
         <div className="absolute lg:top-[50%] md:top-[50%] top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
           <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[35px] text-center">
@@ -87,7 +125,7 @@ function Aboutus() {
       {/* About Section */}
       <section>
         <div>
-          <div className="lg:!px-20 md:!px-20 !px-10 !py-20 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-evenly items-center">
+          <div className="lg:!px-20 md:!px-20 !px-10 !py-10 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-evenly items-center">
             <div className="flex justify-center">
               <img src={img1} alt="" className="w-full max-w-md" />
             </div>
@@ -148,10 +186,16 @@ function Aboutus() {
       </section>
 
       {/* Mission Section */}
-      <section>
-        <div ref={missionSectionRef} className="opacity-0">
-          <div className="lg:!px-20 md:!px-20 !px-10 !py-20 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 !gap-10 justify-evenly items-center bg-[#F4FAFF]">
-            <div className="flex justify-center items-center ${isVisible.investmentAdvisory ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}">
+      <div section>
+        <div ref={missionSectionRef}>
+          <div className="lg:!px-20 md:!px-20 !px-10 !py-10 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 !gap-10 justify-evenly items-center bg-[#F4FAFF]">
+            <div
+              className={` transition-all duration-1000 ease-out ${
+                isVisible.mission
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-20"
+              }`}
+            >
               <div>
                 <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] z-0 ">
                   Our Mission
@@ -173,21 +217,23 @@ function Aboutus() {
                 </div>
               </div>
             </div>
-            <div className="flex justify-center">
-              <img
-                src={img2}
-                alt=""
-                className="w-full max-w-md rounded-lg"
-              />
+            <div
+              className={`flex justify-center transition-all duration-1000 ease-out ${
+                isVisible.mission
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-20"
+              }`}
+            >
+              <img src={img2} alt="" className="w-full max-w-md rounded-lg" />
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Start Section */}
-      <section>
-        <div ref={startSectionRef} className="opacity-0">
-          <div className="!my-15">
+      <section className="!pb-10">
+        <div ref={startSectionRef}>
+          <div className="flex justify-center !mt-10">
             {/* Background image */}
             <img
               src={img3}
@@ -227,31 +273,43 @@ function Aboutus() {
 
       {/* Contact Section */}
       <section>
-        <div ref={contactSectionRef} className="opacity-0">
-          <div className="!px-10 lg:!px-15 !p-10">
-            <div className="flex flex-col items-center justify-center">
-              <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] z-10">
-                Contact Us
-                <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
-              </h1>
-              <p className="lg:text-[44px] md:text-[35px] text-[25px] font-bold font-manrope text-black">
-                Get in Touch
-              </p>
-              <p className="lg:text-[20px] md:text-[18px] text-[16px] font-medium text-[#666666] !py-4 text-center w-[80%]">
-                Please feel free to contact us through our support center.
-                Simply choose the appropriate support options to send us your
-                questions, concerns and feedback.Our customer service team is
-                ready to overcome any issues that might occur.
-              </p>
-            </div>
+        <div className="!px-10 lg:!px-15 !p-10">
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] z-10">
+              Contact Us
+              <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
+            </h1>
+            <p className="lg:text-[44px] md:text-[35px] text-[25px] font-bold font-manrope text-black">
+              Get in Touch
+            </p>
+            <p className="lg:text-[20px] md:text-[18px] text-[16px] font-medium text-[#666666] !py-4 text-center w-[80%]">
+              Please feel free to contact us through our support center. Simply
+              choose the appropriate support options to send us your questions,
+              concerns and feedback.Our customer service team is ready to
+              overcome any issues that might occur.
+            </p>
+          </div>
+          <div ref={contactSectionRef}>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 lg:!gap-12 mt-10">
               {/* Left - Image */}
-              <div className="flex justify-center items-center w-full md:w-1/2">
+              <div
+                className={`flex justify-center items-center w-full md:w-1/2 transition-all duration-1000 ease-out ${
+                  isVisible.contact
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 -translate-x-20"
+                }`}
+              >
                 <img src={img4} alt="" className="max-w-full h-auto" />
               </div>
 
               {/* Right - Form */}
-              <div className="w-full md:w-1/2 relative shadow-2xl !p-10 rounded-xl">
+              <div
+                className={`w-full md:w-1/2 relative shadow-2xl !p-10 rounded-xl transition-all duration-1000 ease-out ${
+                  isVisible.contact
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 translate-x-20"
+                }`}
+              >
                 <p className="lg:text-[24px] md:text-[20px] text-[18px] font-semibold text-black">
                   Send Us a Message
                 </p>
