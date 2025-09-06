@@ -8,8 +8,8 @@ import { nav } from "framer-motion/client";
 function Footer() {
   return (
     <div className="bg-[#0D0D0D] lg:!px-15 md:!px-10 !px-10  ">
-      <div className="lg:grid-cols-2 md:grid-cols-2 grid-cols-1 grid gap-4 md:!px-5 md:!py-12 !py-6">
-        <div>
+      <div className="flex lg:flex-row md:flex-row flex-col gap-4 md:!px-5 md:!py-12 !py-6  ">
+        <div className="lg:w-1/3 md:w-1/3 w-full">
           <a href="/">
             <img src={img} alt="" className="w-[50px] h-[50px] !mb-5 " />
             <p className="text-[#D0DAF5] text-[14px] font-bold ">
@@ -18,7 +18,7 @@ function Footer() {
           </a>
         </div>
 
-        <div className="flex lg:flex-row md:flex-row flex-col gap-10 justify-evenly md:!px-5 ">
+        <div className="flex lg:flex-row md:flex-row flex-col  gap-10  justify-between md:!px-5 w-full ">
           <div className=" ">
             <h2 className="text-[#D0DAF5] text-[16px] !pb-5">Explore</h2>
             <div className="flex flex-col gap-2">

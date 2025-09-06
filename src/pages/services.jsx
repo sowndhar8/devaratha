@@ -34,19 +34,18 @@ function Services() {
     };
     
     const observers = [];
-    
+    const lastScrollY = { current: window.scrollY }; // Store the last scroll position
+
     const handleIntersect = (entries, observerName) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsVisible(prev => ({
+        const currentScrollY = window.scrollY;
+        const scrollingDown = currentScrollY > lastScrollY.current;
+
+        if (entry.isIntersecting && scrollingDown) {
+          // only trigger animation when scrolling down into the section
+          setIsVisible((prev) => ({
             ...prev,
-            [observerName]: true
-          }));
-        }else {
-          // Reset the animation when element leaves viewport
-          setIsVisible(prev => ({
-            ...prev,
-            [observerName]: false
+            [observerName]: true,
           }));
         }
       });
@@ -80,10 +79,24 @@ function Services() {
       observers.push(observer);
     }
     
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setIsVisible({
+          mission: false,
+          start: false,
+          contact: false,
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      observers.forEach(observer => observer.disconnect());
+      observers.forEach((observer) => observer.disconnect());
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
 
   return (
     <div>
@@ -157,7 +170,7 @@ function Services() {
 
             {activeTab === "fd" &&
               <div className="flex flex-col lg:w-[70%] w-[100%] bg-white !p-5 !gap-2 rounded-lg lg:!mt-10 lg:!m-5 lg:!pl-20 ">
-                <img src={img2} alt="" className=" lg:w-fit w-full  lg:h-[40%] !py-5" />
+                <img src={img2} alt="" className=" w-full  lg:h-[40%] !py-5" />
                 <p className="text-[#767682] text-[16px] !py-2 rounded-lg ">
                   Grow your wealth with secure Fixed Deposits, disciplined Recurring Deposits, and
                   trusted Gold Investments. Whether you seek guaranteed returns, steady savings, or
@@ -169,7 +182,7 @@ function Services() {
             }
             {activeTab === "rd" &&
               <div className="flex flex-col lg:w-[70%] w-[100%] bg-white !p-5 !gap-2 rounded-lg lg:!mt-10 lg:!m-5 lg:!pl-20  ">
-                <img src={img2} alt="" className=" w-fit  h-[40%]  !py-5" />
+                <img src={img2} alt="" className=" w-full  h-[40%]  !py-5" />
                 <p className="text-[#767682] text-[16px] !py-2 rounded-lg ">
                   Grow your wealth with secure Fixed Deposits, disciplined Recurring Deposits, and
                   trusted Gold Investments. Whether you seek guaranteed returns, steady savings, or
@@ -181,7 +194,7 @@ function Services() {
             }
             {activeTab === "gold" &&
               <div className="flex flex-col lg:w-[70%] w-[100%] bg-white !p-5 !gap-2 rounded-lg lg:!mt-10 lg:!m-5 lg:!pl-20 ">
-                <img src={img2} alt="" className=" w-fit  h-[40%] !py-5" />
+                <img src={img2} alt="" className=" w-full  h-[40%] !py-5" />
                 <p className="text-[#767682] text-[16px] !py-2 rounded-lg ">
                   Grow your wealth with secure Fixed Deposits, disciplined Recurring Deposits, and
                   trusted Gold Investments. Whether you seek guaranteed returns, steady savings, or
@@ -198,7 +211,7 @@ function Services() {
       {/* financial planning - Left side image, right side text */}
       <div section>
         <div ref={financialPlanningRef}>
-          <div className="lg:!px-20 md:!px-20 !px-10 !py-10 grid rev lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-evenly items-center">
+          <div className="lg:!px-20 md:!px-20 !px-10 !py-5 grid rev lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-evenly items-center">
             <div className={`transition-all duration-700 ease-out ${isVisible.financialPlanning ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
               <img
                 src={img3}
@@ -228,7 +241,7 @@ function Services() {
       {/* Investment Advisory - Right side image, left side text */}
       <section>
         <div ref={investmentAdvisoryRef}>
-          <div className="lg:!px-20 md:!px-20 !px-10 !py-0 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-evenly items-center">
+          <div className="lg:!px-20 md:!px-20 !px-10  grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-evenly items-center">
             {/* Mobile image (shown first on mobile) */}
             <div className='block md:hidden lg:hidden'>
               <div className={`transition-all duration-700 ease-out ${isVisible.investmentAdvisory ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
@@ -274,7 +287,7 @@ function Services() {
       {/* Tax & compliance strategy - Left side image, right side text */}
       <div section>
         <div ref={taxComplianceRef}>
-          <div className="lg:!px-20 md:!px-20 !px-10 !py-10 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-evenly items-center">
+          <div className="lg:!px-20 md:!px-20 !px-10 !py-5 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-evenly items-center">
             <div className={`transition-all duration-700 ease-out ${isVisible.taxCompliance ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
               <img
                 src={img5}

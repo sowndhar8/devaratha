@@ -54,7 +54,7 @@ function Contactus() {
             ${
               isVisible
                 ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
+                : "opacity-0 translate-y-20"
             }`}
           >
             <h1 className="relative inline-block lg:text-[20px] text-[18px] font-semibold text-[#2956A6] z-10">

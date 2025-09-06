@@ -42,7 +42,7 @@ function OurServices() {
 
       <div className="!mt-10 !mb-1  flex flex-col justify-center items-center">
         {/* Services Grid */}
-        <div className="lg:!mb-20 md:!mb-40 !mb-25">
+        <div className="lg:!mb-20 md:!mb-40 !mb-15">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:!gap-30 md:!gap-20 gap-10 !px-10 lg:!px-15">
             {image.map((thing) => (
               <div

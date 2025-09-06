@@ -1,282 +1,425 @@
-import { use, useState, useEffect } from "react";
+import { use, useState, useEffect, useRef } from "react";
 import img1 from "../img/gold-loan.png";
 import gold from "../img/gold.gif";
-import { FaArrowRight } from 'react-icons/fa';
-import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
+import { FaArrowRight } from "react-icons/fa";
+import {
+  MdOutlineKeyboardArrowDown,
+  MdOutlineKeyboardArrowUp,
+} from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
 import { date } from "yup";
 import { FaCircleCheck } from "react-icons/fa6";
 
 function GoldLoans() {
+  const [goldData, setGoldData] = useState(null);
 
-    const [goldData, setGoldData] = useState(null);
-
-    useEffect(() => {
-        axios
-            .get("https://gold.g.apised.com/v1/latest?metals=XAU&base_currency=INR&weight_unit=gram", {
-                headers: {
-                    "x-api-key": "sk_8b92324c45B60F216Ecf1E4f66ba073f8999B4E6a1A17bf4",
-                },
-            })
-            .then((response) => {
-                setGoldData(response.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }, []);
-
-    const today = new Date().toLocaleDateString("en-IN", {
-        day: "2-digit",
-        month: "short",
-        year: "numeric",
-    });
-
-    const Faq = [
+  useEffect(() => {
+    axios
+      .get(
+        "https://gold.g.apised.com/v1/latest?metals=XAU&base_currency=INR&weight_unit=gram",
         {
-            id: 1,
-            title: "What is a gold loan?",
-            answer:
-                " A gold loan is a secured loan where you pledge your gold ornaments in exchange for funds.",
-        },
-        {
-            id: 2,
-            title: "How much loan amount can I get?",
-            answer:
-                "The loan amount depends on the value and purity of the gold pledged.",
-        },
-        {
-            id: 3,
-            title: "Is my gold safe during the loan period?",
-            answer:
-                "Yes, your gold is stored securely and returned in the same condition after repayment.",
-        },
-        {
-            id: 4,
-            title: "What are the repayment options?",
-            answer:
-                "You can repay through EMI and flexible repayment plans.",
-        },
-    ];
+          headers: {
+            "x-api-key": "sk_8b92324c45B60F216Ecf1E4f66ba073f8999B4E6a1A17bf4",
+          },
+        }
+      )
+      .then((response) => {
+        setGoldData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
-    const [selected, setSelected] = useState(null);
+  const today = new Date().toLocaleDateString("en-IN", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
 
-    return (
-        <div>
+  // Refs for the sections we want to animate
+  const topSectionRef = useRef(null);
+  const textSectionRef = useRef(null);
+  const textSection1Ref = useRef(null);
+  const faqSectionRef = useRef(null);
 
-            <div className="relative bg-banner2 bg-cover h-[50vh] items-center">
-                <div className="absolute lg:top-[50%] md:top-[50%] top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
-                    <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[35px] text-center">Gold Loan</h2>
-                    <h3 className="text-[#D8D8D8] lg:text-[20px] md:text-[18px] text-[16px] tracking-wider text-center !py-7">
-                        Keep your gold safe,and your goals moving.
-                        Instant gold loans with minimum paperwork.
-                    </h3>
-                </div>
-            </div>
+  // State to track which sections are visible
+  const [isVisible, setIsVisible] = useState({
+    topSection: false,
+    textSection: false,
+    textSection1: false,
+    faqSection: false,
+  });
 
-            <div className='lg:!px-20 md:!px-20 !px-10 '>
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.2, // Trigger when 20% of the element is visible
+      rootMargin: "0px 0px -10% 0px",
+    };
 
-                <section>
-                    <div className='!py-10 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1  justify-evenly items-center  '>
+    const observers = [];
 
-                        <div className='flex justify-center items-center '>
-                            <div>
+    const handleIntersect = (entries, observerName) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible((prev) => ({
+            ...prev,
+            [observerName]: true,
+          }));
+        }
+      });
+    };
+    // Create separate observers for each section
+    if (topSectionRef.current) {
+      const observer = new IntersectionObserver(
+        (entries) => handleIntersect(entries, "topSection"),
+        observerOptions
+      );
+      observer.observe(topSectionRef.current);
+      observers.push(observer);
+    }
 
-                                <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] ">
-                                    Gold Loan
-                                    <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] -z-10"></span>
-                                </h1>
+    if (textSectionRef.current) {
+      const observer = new IntersectionObserver(
+        (entries) => handleIntersect(entries, "textSection"),
+        observerOptions
+      );
+      observer.observe(textSectionRef.current);
+      observers.push(observer);
+    }
 
-                                <h2 className='lg:text-[50px] md:text-[35px] text-[25px] font-bold  text-black font-poppins'>
-                                    Your Trusted Partner  <br /> in <span className='text-[#2956A6]'>Gold Loan. </span>
-                                </h2>
-                                <p className='lg:text-[18px] md:text-[18px] text-[16px]  text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full  text-justify  '>
-                                    we understand the challenges and complexities that businesses face in today's dynamic marketplace. That's why we offer a comprehensive suite of consulting services.
-                                </p>
-                                <div className='!mt-5 '>
-                                    <button className=" flex items-center rounded-4xl bg-[#2956A6] text-white font-semibold text-[16px] !px-5 !py-2 cursor-pointer">Connect Us
-                                        <FaArrowRight color="black" size={30} className="!ml-2 bg-white rounded-full !p-2 " />
-                                    </button>
-                                </div>
-                                <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 items-center">
-                                    <div className='!mt-5 flex !gap-5 items-center'>
-                                        <FaCircleCheck className="text-[#2956A6] mt-5 text-[20px] md:text-[20px] lg:text-[20px]" />
-                                        <span className='text-[#666666] '>Easy Process</span>
-                                    </div>
-                                    <div className='!mt-5 flex !gap-5 items-center'>
-                                        <FaCircleCheck className="text-[#2956A6] mt-5 text-[20px] md:text-[20px] lg:text-[20px]" />
-                                        <span className='text-[#666666] '>15 minutes disbursal</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className=' '>
-                            <img
-                                src={img1}
-                                alt=""
-                                className='w-fit place-self-center !py-5 '
-                            />
+    if (textSection1Ref.current) {
+      const observer = new IntersectionObserver(
+        (entries) => handleIntersect(entries, "textSection1"),
+        observerOptions
+      );
+      observer.observe(textSection1Ref.current);
+      observers.push(observer);
+    }
 
-                            <div className="place-self-center gap-2 !mt-5 w-fit">
+    if (faqSectionRef.current) {
+      const observer = new IntersectionObserver(
+        (entries) => handleIntersect(entries, "faqSection"),
+        observerOptions
+      );
+      observer.observe(faqSectionRef.current);
+      observers.push(observer);
+    }
 
-                                {/* Table for md & lg (1 row) */}
-                                <table className="hidden md:table border-1 border-[#C9C9C9] rounded-md">
-                                    <tbody>
-                                        <tr className="text-center">
-                                            <td className="!px-6 !py-3 border border-[#C9C9C9]">
-                                                <div className="flex items-center justify-center gap-2">
-                                                    <img src={gold} alt="gold.gif" className="w-[40px] h-[40px]" />
-                                                    <span>Today's Gold Rate  ({today})</span>
-                                                </div>
-                                            </td>
-                                            <td className="!px-6 !py-3 border border-[#C9C9C9]">
-                                                {goldData?.data?.metal_prices?.XAU?.price_24k
-                                                    ? "₹" + goldData.data.metal_prices.XAU.price_24k.toFixed(2) + "/g"
-                                                    : "Loading..."}
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
 
-                                {/* Table for sm (2 rows) */}
-                                <table className="md:hidden border-1 border-[#C9C9C9] rounded-md">
-                                    <tbody>
-                                        <tr>
-                                            <td className="!px-6 !py-3 border border-[#C9C9C9] ">
-                                                <div className="flex items-center justify-center gap-2">
-                                                    <img src={gold} alt="gold.gif" className="w-[40px] h-[40px] rounded-full" />
-                                                    <span>Today's Gold Rate ({today})</span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td className="!px-6 !py-3 border border-[#C9C9C9] text-center">
-                                                {goldData?.data?.metal_prices?.XAU?.price_24k
-                                                    ? "₹" + goldData.data.metal_prices.XAU.price_24k.toFixed(2) + "/g"
-                                                    : "Loading..."}
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+  const Faq = [
+    {
+      id: 1,
+      title: "What is a gold loan?",
+      answer:
+        " A gold loan is a secured loan where you pledge your gold ornaments in exchange for funds.",
+    },
+    {
+      id: 2,
+      title: "How much loan amount can I get?",
+      answer:
+        "The loan amount depends on the value and purity of the gold pledged.",
+    },
+    {
+      id: 3,
+      title: "Is my gold safe during the loan period?",
+      answer:
+        "Yes, your gold is stored securely and returned in the same condition after repayment.",
+    },
+    {
+      id: 4,
+      title: "What are the repayment options?",
+      answer: "You can repay through EMI and flexible repayment plans.",
+    },
+  ];
 
-                            </div>
+  const [selected, setSelected] = useState(null);
 
-
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-
-                    <h2 className="relative inline-block lg:text-[28px] md:text-[24px] text-[20px] font-semibold text-black lg:!mt-10 md:!mt-10 !mt-0 !mb-5">
-                        Why Gold Loan?
-                    </h2>
-                    <p className='text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 '>
-                        We are here to fulfil your needs with Gold Loan which allows you to get funds in 45 minutes! Whatever your need may be
-                        for education, business expansion, personal requirement, medical crisis or any other specified end-use, our Loan against Gold is all you need.
-                    </p>
-
-                    <p className='text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 '>
-                        In volatile times and during a contingency you can take a Loan on Gold, for any use other than to purchase jewellery.
-                    </p>
-                    <p className='text-[#666666] lg:text-[18px] md:text-[18px] text-[16px] lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2'>
-                        Gold is a valuable asset, and with it comes surety and stability, so why not let it work for you? With minimal documentation and quick disbursal,
-                        a Gold Loan is a seamless solution. You can avail a Loan against Gold at any time. Our flexible tenure and repayment options ensure that
-                        your monthly outgoings are within your budget.
-                    </p>
-                </section>
-
-                <section>
-
-                    <h2 className="relative inline-block lg:text-[28px] md:text-[24px] text-[20px] font-semibold text-black !mt-10 !mb-5">
-                        Features of Gold Loan
-                    </h2>
-                    <p className='text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 '>
-                        Every individual has certain phases in life where the need for some financial aid arises. From educational expenses to business expansion,
-                        medical emergencies to unexpected travel, the reason could be anything. In such situations, obtaining a loan against gold is the easiest
-                        and fastest way to arrange the required amount of money. One can pledge his/her gold ornaments to get access to funds and claim them back
-                        after repaying the loan.
-                    </p>
-                </section>
-
-                {/* faq */}
-
-                <section>
-
-                    <h2 className="text-center lg:text-[44px] md:text-[30px] text-[20px] font-semibold text-black !mt-10 !mb-5">
-                        FAQ's
-                    </h2>
-
-                    {/* FAQ List */}
-                    <div className="lg:w-[100%] md:w-[80%] w-full flex flex-col  !gap-5 !py-10">
-                        {Faq?.map((item) => {
-                            const isSelected = selected?.id === item?.id;
-
-                            return (
-                                <div key={item.id} className=" rounded-xl overflow-hidden">
-                                    <p
-                                        className={` bg-[#A3B5FF] w-[3px]  ${isSelected ? "opacity-100" : "opacity-0"
-                                            }`}
-                                    ></p>
-                                    {/* Title Row */}
-                                    <div
-                                        className={`flex !p-3 justify-between items-center cursor-pointer transition-all duration-300 ${isSelected ? "bg-[#F8F7FD] border-l-4 border-[#2956A6]" : "bg-[#FBFBFE] border-l-4 border-[#F1F2F9]"
-                                            }`}
-                                        onClick={() => {
-                                            setSelected(isSelected ? null : item);
-                                        }}
-                                    >
-
-
-                                        {isSelected ? (
-                                            <MdOutlineKeyboardArrowUp
-
-                                                size={25}
-                                                color="#170F49"
-                                            />
-                                        ) : (
-                                            <MdOutlineKeyboardArrowDown size={25} color="#2956A6" />
-                                        )}
-                                        <h2
-                                            className={`lg:text-[20px] md:text-[18px] sm:text-[16px] text-[14px] font-semibold w-full lg:!py-4 md:!py-4 !py-2 ${isSelected ? "text-[#170F49]" : "text-[#2956A6]"} font-poppins capitalize`}
-                                        >
-                                            {item?.title}
-
-                                        </h2>
-
-                                    </div>
-
-                                    {/* Answer */}
-                                    <AnimatePresence initial={false}>
-                                        {isSelected && (
-                                            <motion.div
-                                                key="faq"
-                                                initial={{ height: 0, opacity: 0 }}
-                                                animate={{ height: "auto", opacity: 1 }}
-                                                exit={{ height: 0, opacity: 0 }}
-                                                transition={{ duration: 0.4, ease: "easeInOut" }}
-                                                className="overflow-hidden bg-[#F9F8FD] border-l-4 border-[#2956A6] "
-                                            >
-                                                <div className=" ">
-                                                    <p className="lg:text-[16px] md:text-[16px] sm:text-[14px] text-[12px] text-[#6F6C8F] !px-10 !pb-5   ">
-                                                        {item?.answer}
-                                                    </p>
-                                                </div>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
-
-
-                                </div>
-                            );
-                        })}
-                    </div>
-
-                </section>
-            </div>
+  return (
+    <div>
+      <div className="relative bg-banner2 bg-cover h-[50vh] items-center">
+        <div className="absolute lg:top-[50%] md:top-[50%] top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
+          <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[35px] text-center">
+            Gold Loan
+          </h2>
+          <h3 className="text-[#D8D8D8] lg:text-[20px] md:text-[18px] text-[16px] tracking-wider text-center !py-7">
+            Keep your gold safe,and your goals moving. Instant gold loans with
+            minimum paperwork.
+          </h3>
         </div>
-    );
+      </div>
+
+      <div className="lg:!px-20 md:!px-20 !px-10 ">
+        <section>
+          <div ref={topSectionRef}>
+            <div className="!py-10 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1  justify-evenly items-center  ">
+              <div className="flex justify-center items-center ">
+                <div
+                  className={`transition-all duration-700 ease-out ${
+                    isVisible.topSection
+                      ? "opacity-100 translate-x-0"
+                      : "opacity-0 -translate-x-10"
+                  }`}
+                >
+                  <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] ">
+                    Gold Loan
+                    <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] -z-10"></span>
+                  </h1>
+
+                  <h2 className="lg:text-[50px] md:text-[35px] text-[25px] font-bold  text-black font-poppins">
+                    Your Trusted Partner <br /> in{" "}
+                    <span className="text-[#2956A6]">Gold Loan. </span>
+                  </h2>
+                  <p className="lg:text-[18px] md:text-[18px] text-[16px]  text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full  text-justify  ">
+                    we understand the challenges and complexities that
+                    businesses face in today's dynamic marketplace. That's why
+                    we offer a comprehensive suite of consulting services.
+                  </p>
+                  <div className="!mt-5 ">
+                    <button className=" flex items-center rounded-4xl bg-[#2956A6] text-white font-semibold text-[16px] !px-5 !py-2 cursor-pointer">
+                      Connect Us
+                      <FaArrowRight
+                        color="black"
+                        size={30}
+                        className="!ml-2 bg-white rounded-full !p-2 "
+                      />
+                    </button>
+                  </div>
+                  <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 items-center">
+                    <div className="!mt-5 flex !gap-5 items-center">
+                      <FaCircleCheck className="text-[#2956A6] mt-5 text-[20px] md:text-[20px] lg:text-[20px]" />
+                      <span className="text-[#666666] ">Easy Process</span>
+                    </div>
+                    <div className="!mt-5 flex !gap-5 items-center">
+                      <FaCircleCheck className="text-[#2956A6] mt-5 text-[20px] md:text-[20px] lg:text-[20px]" />
+                      <span className="text-[#666666] ">
+                        15 minutes disbursal
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className={`transition-all duration-700 ease-out ${
+                  isVisible.topSection
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 translate-x-10"
+                }`}
+              >
+                <img
+                  src={img1}
+                  alt=""
+                  className="w-fit place-self-center !py-5 "
+                />
+
+                <div className="place-self-center gap-2 !mt-5 w-fit">
+                  {/* Table for md & lg (1 row) */}
+                  <table className="hidden md:table border-1 border-[#C9C9C9] rounded-md">
+                    <tbody>
+                      <tr className="text-center">
+                        <td className="!px-6 !py-3 border border-[#C9C9C9]">
+                          <div className="flex items-center justify-center gap-2">
+                            <img
+                              src={gold}
+                              alt="gold.gif"
+                              className="w-[40px] h-[40px]"
+                            />
+                            <span>Today's Gold Rate ({today})</span>
+                          </div>
+                        </td>
+                        <td className="!px-6 !py-3 border border-[#C9C9C9]">
+                          {goldData?.data?.metal_prices?.XAU?.price_24k
+                            ? "₹" +
+                              goldData.data.metal_prices.XAU.price_24k.toFixed(
+                                2
+                              ) +
+                              "/g"
+                            : "Loading..."}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  {/* Table for sm (2 rows) */}
+                  <table className="md:hidden border-1 border-[#C9C9C9] rounded-md">
+                    <tbody>
+                      <tr>
+                        <td className="!px-6 !py-3 border border-[#C9C9C9] ">
+                          <div className="flex items-center justify-center gap-2">
+                            <img
+                              src={gold}
+                              alt="gold.gif"
+                              className="w-[40px] h-[40px] rounded-full"
+                            />
+                            <span>Today's Gold Rate ({today})</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="!px-6 !py-3 border border-[#C9C9C9] text-center">
+                          {goldData?.data?.metal_prices?.XAU?.price_24k
+                            ? "₹" +
+                              goldData.data.metal_prices.XAU.price_24k.toFixed(
+                                2
+                              ) +
+                              "/g"
+                            : "Loading..."}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div ref={textSectionRef}>
+            <div
+              className={`transition-all duration-1000 ease-out ${
+                isVisible.textSection
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-20"
+              }`}
+            >
+              <h2 className="relative inline-block lg:text-[28px] md:text-[24px] text-[20px] font-semibold text-black lg:!mt-10 md:!mt-10 !mt-0 !mb-5">
+                Why Gold Loan?
+              </h2>
+              <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
+                We are here to fulfil your needs with Gold Loan which allows you
+                to get funds in 45 minutes! Whatever your need may be for
+                education, business expansion, personal requirement, medical
+                crisis or any other specified end-use, our Loan against Gold is
+                all you need.
+              </p>
+
+              <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
+                In volatile times and during a contingency you can take a Loan
+                on Gold, for any use other than to purchase jewellery.
+              </p>
+              <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px] lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2">
+                Gold is a valuable asset, and with it comes surety and
+                stability, so why not let it work for you? With minimal
+                documentation and quick disbursal, a Gold Loan is a seamless
+                solution. You can avail a Loan against Gold at any time. Our
+                flexible tenure and repayment options ensure that your monthly
+                outgoings are within your budget.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div ref={textSection1Ref}>
+            <div
+              className={`transition-all duration-1000 ease-out ${
+                isVisible.textSection1
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-20"
+              }`}
+            >
+              <h2 className="relative inline-block lg:text-[28px] md:text-[24px] text-[20px] font-semibold text-black !mt-10 !mb-5">
+                Features of Gold Loan
+              </h2>
+              <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
+                Every individual has certain phases in life where the need for
+                some financial aid arises. From educational expenses to business
+                expansion, medical emergencies to unexpected travel, the reason
+                could be anything. In such situations, obtaining a loan against
+                gold is the easiest and fastest way to arrange the required
+                amount of money. One can pledge his/her gold ornaments to get
+                access to funds and claim them back after repaying the loan.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* faq */}
+
+        <section>
+          <div ref={faqSectionRef}>
+            <h2 className="text-center lg:text-[44px] md:text-[30px] text-[20px] font-semibold text-black !mt-10 !mb-5">
+              FAQ's
+            </h2>
+
+            {/* FAQ List */}
+            <div
+              className={`transition-all duration-700 ease-out ${isVisible.faqSection ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
+            >
+              <div className="lg:w-[100%] md:w-[80%] w-full flex flex-col  !gap-5 !py-10">
+                {Faq?.map((item) => {
+                  const isSelected = selected?.id === item?.id;
+
+                  return (
+                    <div key={item.id} className=" rounded-xl overflow-hidden">
+                      <p
+                        className={` bg-[#A3B5FF] w-[3px]  ${
+                          isSelected ? "opacity-100" : "opacity-0"
+                        }`}
+                      ></p>
+                      {/* Title Row */}
+                      <div
+                        className={`flex !p-3 justify-between items-center cursor-pointer transition-all duration-300 ${
+                          isSelected
+                            ? "bg-[#F8F7FD] border-l-4 border-[#2956A6]"
+                            : "bg-[#FBFBFE] border-l-4 border-[#F1F2F9]"
+                        }`}
+                        onClick={() => {
+                          setSelected(isSelected ? null : item);
+                        }}
+                      >
+                        {isSelected ? (
+                          <MdOutlineKeyboardArrowUp size={25} color="#170F49" />
+                        ) : (
+                          <MdOutlineKeyboardArrowDown
+                            size={25}
+                            color="#2956A6"
+                          />
+                        )}
+                        <h2
+                          className={`lg:text-[20px] md:text-[18px] sm:text-[16px] text-[14px] font-semibold w-full lg:!py-4 md:!py-4 !py-2 ${
+                            isSelected ? "text-[#170F49]" : "text-[#2956A6]"
+                          } font-poppins capitalize`}
+                        >
+                          {item?.title}
+                        </h2>
+                      </div>
+
+                      {/* Answer */}
+                      <AnimatePresence initial={false}>
+                        {isSelected && (
+                          <motion.div
+                            key="faq"
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.4, ease: "easeInOut" }}
+                            className="overflow-hidden bg-[#F9F8FD] border-l-4 border-[#2956A6] "
+                          >
+                            <div className=" ">
+                              <p className="lg:text-[16px] md:text-[16px] sm:text-[14px] text-[12px] text-[#6F6C8F] !px-10 !pb-5   ">
+                                {item?.answer}
+                              </p>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  );
 }
 
-export default GoldLoans
+export default GoldLoans;

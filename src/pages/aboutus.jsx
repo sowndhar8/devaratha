@@ -274,7 +274,15 @@ function Aboutus() {
       {/* Contact Section */}
       <section>
         <div className="!px-10 lg:!px-15 !p-10">
-          <div className="flex flex-col items-center justify-center">
+          <div ref={contactSectionRef}>
+            <div
+              className={`transition-all duration-1000 ease-out ${
+                isVisible.contact
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-20"
+              }`}
+            >
+                <div className="flex flex-col items-center justify-center">
             <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] z-10">
               Contact Us
               <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
@@ -289,7 +297,7 @@ function Aboutus() {
               overcome any issues that might occur.
             </p>
           </div>
-          <div ref={contactSectionRef}>
+          </div>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 lg:!gap-12 mt-10">
               {/* Left - Image */}
               <div
