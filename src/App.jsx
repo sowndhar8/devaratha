@@ -1,4 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 import Homepage from "./pages/homepage";
 import Contactus from "./pages/contactus";
 import Aboutus from "./pages/aboutus";
@@ -18,6 +20,7 @@ import Businessloan from "./pages/businessloan";
 import MortageLoan from "./pages/mortageLoan";
 import Enquire from "./pages/enquire";
 import Comments from "./pages/components/comments";
+import { tr } from "framer-motion/client";
 
 
 function Layout() {
@@ -101,7 +104,24 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+  <>
+  <RouterProvider router={router} />;
+  <ToastContainer
+        position="top-right"
+        autoClose={1000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
+  </>
+  );
+  
 }
 
 export default App;

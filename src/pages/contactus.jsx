@@ -2,8 +2,11 @@ import React, { useRef, useEffect, useState } from "react";
 import img4 from "../img/touch.png";
 import { Formik, Form as FormikForm, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
 function Contactus() {
+  const formRef = useRef(null);
   const contactSectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -102,11 +105,35 @@ function Contactus() {
               </p>
               <div className="!py-4">
                 <Formik
-                  initialValues={{ name: "", email: "", message: "" }}
+                  initialValues={{
+                    name: "",
+                    email: "",
+                    message: "",
+                  }}
                   validationSchema={TouchSchema}
                   onSubmit={(values, { resetForm }) => {
-                    console.log("Form Submitted", values);
-                    resetForm();
+                    const serviceId = "service_60tevty";
+                    const templateId = "template_tby0n3b";
+                    const publicKey = "xgdv_LIi48-pDVLg8";
+
+                    const templateparams = {
+                      formType: "Contact Us",
+                      name: values.name,
+                      email: values.email,
+                      message: values.message,
+                    };
+
+                    emailjs
+                      .send(serviceId, templateId, templateparams, publicKey)
+                      .then((response) => {
+                        console.log("Email sent successfully", response);
+                        toast.success("Email sent successfully");
+                        resetForm();
+                      })
+                      .catch((error) => {
+                        console.error("Email error", error);
+                        toast.error("Failed to send email");
+                      });
                   }}
                 >
                   {() => (
