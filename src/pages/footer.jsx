@@ -111,7 +111,7 @@ function Footer() {
                 Customers
               </a>
               <a
-                href="#"
+                href="/Contactus"
                 className="relative text-[#6F7481] text-[16px] w-fit after:content-[''] after:absolute after:left-0 after:-bottom-0 after:h-[2px] 
               after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full"
               >

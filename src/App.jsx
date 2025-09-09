@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import Homepage from "./pages/homepage";
 import Contactus from "./pages/contactus";
@@ -7,21 +7,14 @@ import Aboutus from "./pages/aboutus";
 import Services from "./pages/services";
 import Footer from "./pages/footer";
 import NavBar from "./pages/navbar";
-import Faq from "./pages/components/faq";
-import Progress from "./pages/components/progress";
 // import Terms from "./pages/terms";
 // import Privacy from "./pages/privacy";
 import { Outlet } from "react-router-dom";
-import AboutUsHomePage from "./pages/components/AboutUsHomePage";
-import Navbar from "./pages/navbar";
 import GoldLoans from "./pages/goldLoan";
 import PersonalLoan from "./pages/personalLoan";
 import Businessloan from "./pages/businessloan";
 import MortageLoan from "./pages/mortageLoan";
 import Enquire from "./pages/enquire";
-import Comments from "./pages/components/comments";
-import { tr } from "framer-motion/client";
-
 
 function Layout() {
   return (
@@ -32,7 +25,6 @@ function Layout() {
     </>
   );
 }
-
 
 const router = createBrowserRouter([
   {
@@ -52,24 +44,8 @@ const router = createBrowserRouter([
         element: <Aboutus />,
       },
       {
-        path: "/AboutUsHomePage",
-        element: <AboutUsHomePage />,
-      },
-      {
-        path: "/Comments",
-        element: <Comments />,
-      },
-      {
         path: "/Services",
         element: <Services />,
-      },
-      {
-        path: "/Faq",
-        element: <Faq />,
-      },
-      {
-        path: "/Progress",
-        element: <Progress />,
       },
       {
         path: "/GoldLoans",
@@ -105,9 +81,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-  <>
-  <RouterProvider router={router} />;
-  <ToastContainer
+    <>
+      <RouterProvider router={router} />;
+      <ToastContainer
         position="top-right"
         autoClose={1000}
         hideProgressBar={true}
@@ -119,9 +95,8 @@ function App() {
         pauseOnHover
         theme="colored"
       />
-  </>
+    </>
   );
-  
 }
 
 export default App;

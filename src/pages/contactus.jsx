@@ -112,9 +112,9 @@ function Contactus() {
                   }}
                   validationSchema={TouchSchema}
                   onSubmit={(values, { resetForm }) => {
-                    const serviceId = "service_60tevty";
-                    const templateId = "template_tby0n3b";
-                    const publicKey = "xgdv_LIi48-pDVLg8";
+                    const serviceId = "service_f3qpovz";
+                    const templateId = "template_46nw1h9";
+                    const publicKey = "14TnXU5KoMjgxNldA";
 
                     const templateparams = {
                       formType: "Contact Us",

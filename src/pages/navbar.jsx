@@ -224,6 +224,7 @@ const NavBar = () => {
 
                         <a href="/Enquire" className="hidden lg:flex items-center rounded-4xl bg-[#DFAE51] text-[#2956A6] font-medium text-[20px] !px-5 !py-2 cursor-pointer">Free Consult
                             <BsArrowUpRight color="white" size={40} className="!ml-2 bg-[#2956A6] rounded-full !p-2 " /></a>
+
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -265,6 +266,7 @@ const NavBar = () => {
                                     >
                                         {link.title}
                                     </a>
+                                    
                                     {link.dropdown && (
                                         <button
                                             onClick={() => toggleDropdown(index)}
@@ -289,6 +291,7 @@ const NavBar = () => {
                                         </button>
                                     )}
                                 </div>
+                                   
 
                                 {/* Mobile Dropdown - Accordion style */}
                                 {link.dropdown && (
@@ -309,10 +312,16 @@ const NavBar = () => {
                                                 {item.title}
                                             </a>
                                         ))}
+
+                                        
                                     </div>
                                 )}
                             </div>
                         ))}
+                        <div className="flex items-center w-full !pb-5">
+                                <a href="/Enquire" className="flex  items-center rounded-4xl bg-[#DFAE51] text-[#2956A6] text-[16px] !px-4 !py-2 cursor-pointer">Free Consult
+                            <BsArrowUpRight color="white" size={30} className="!ml-2 bg-[#2956A6] rounded-full !p-2 " /></a>
+                    </div>
                     </div>
                 </div>
             )}

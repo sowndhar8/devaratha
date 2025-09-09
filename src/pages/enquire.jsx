@@ -28,7 +28,8 @@ function Enquire() {
             Enquire
           </h2>
           <h3 className="text-[#D8D8D8] lg:text-[20px] md:text-[18px] text-[16px] tracking-wider text-center !py-7">
-           Fill out the enquiry form to get quick assistance from our team. Provide your details, and we’ll get back to you shortly
+            Fill out the enquiry form to get quick assistance from our team.
+            Provide your details, and we’ll get back to you shortly
           </h3>
         </div>
       </div>
@@ -71,9 +72,9 @@ function Enquire() {
                   }}
                   validationSchema={TouchSchema}
                   onSubmit={(values, { resetForm }) => {
-                    const serviceId = "service_y4cv8mg";
-                    const templateId = "template_gtp26kl";
-                    const publicKey = "xgdv_LIi48-pDVLg8";
+                    const serviceId = "service_vug0pkn";
+                    const templateId = "template_st8gbr9";
+                    const publicKey = "14TnXU5KoMjgxNldA";
 
                     const templateparams = {
                       formType: "Enquiry",
@@ -184,8 +185,7 @@ function Enquire() {
                       </div>
 
                       {/* Submit Button */}
-                      <div className="group flex justify-center items-center rounded-xl bg-[#2956A6] text-white lg:h-15 lg:w-50 h-10 md:h-12 md:w-40 w-40 cursor-pointer transition-colors duration-300 hover:bg-white hover:text-[#2956A6] hover:border-2 hover:border-[#2956A6] !gap-2"
-                      >
+                      <div className="group flex justify-center items-center rounded-xl bg-[#2956A6] text-white lg:h-15 lg:w-50 h-10 md:h-12 md:w-40 w-40 cursor-pointer transition-colors duration-300 hover:bg-white hover:text-[#2956A6] hover:border-2 hover:border-[#2956A6] !gap-2">
                         <button
                           type="submit"
                           className="lg:text-[22px] font-semibold group-hover:cursor-pointer md:text-[16px] text-[14px] transition-colors duration-300 "
