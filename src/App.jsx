@@ -7,8 +7,8 @@ import Aboutus from "./pages/aboutus";
 import Services from "./pages/services";
 import Footer from "./pages/footer";
 import NavBar from "./pages/navbar";
-// import Terms from "./pages/terms";
-// import Privacy from "./pages/privacy";
+import Terms from "./pages/terms & conditions";
+import Privacy from "./pages/privacy";
 import { Outlet } from "react-router-dom";
 import GoldLoans from "./pages/goldLoan";
 import PersonalLoan from "./pages/personalLoan";
@@ -67,14 +67,14 @@ const router = createBrowserRouter([
         path: "/Enquire",
         element: <Enquire />,
       },
-      // {
-      //   path: "/terms",
-      //   element: <Terms />,
-      // },
-      // {
-      //   path: "/privacy",
-      //   element: <Privacy />,
-      // }
+      {
+        path: "/terms",
+        element: <Terms />,
+      },
+      {
+        path: "/privacy",
+        element: <Privacy />,
+      }
     ],
   },
 ]);

@@ -167,9 +167,12 @@ function Footer() {
                   className="relative text-[#6F7481] text-[16px] w-fit after:content-[''] after:absolute after:left-0 after:-bottom-0 after:h-[2px] 
                 after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full"
                 >
-                  H-22, Peelamedu, HUDCO Colony,
+                  DEVAVRATHA CONSULTANCY SERVICES (OPC) PRIVATE LIMITED,
                   <br />
-                  Coimbatore, Tamil Nadu-641004
+                  NO2739 1ST RUDRAGUPPE
+                  <br />
+                  Kandangala Kodagu
+                  <br /> Karnataka-India 571218.
                 </a>
               </li>
             </ul>
@@ -181,10 +184,10 @@ function Footer() {
       </div>
       <div className="flex  md:!px-12 md:!py-5 justify-between items-center !px-6 !py-6 ">
         <div className="">
-          <a href="">
+          <a href="/Terms">
             <span className="text-[#D0DAF5] text-[14px] !pr-4">Terms</span>
           </a>
-          <a href="">
+          <a href="/Privacy">
             <span className="text-[#D0DAF5] text-[14px]">Privacy</span>
           </a>
         </div>
