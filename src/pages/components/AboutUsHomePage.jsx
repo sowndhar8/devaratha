@@ -1,17 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import img2 from "../../img/aboutus-bg.png";
 
-
-
 function AboutUsHomePage() {
-
   const aboutUsHomePageRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  
+
   useEffect(() => {
     const observerOptions = { threshold: 0.2 };
-  
-  
+
     const handleIntersect = (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -20,10 +16,11 @@ function AboutUsHomePage() {
         }
       });
     };
-  
+
     const observer = new IntersectionObserver(handleIntersect, observerOptions);
-    if (aboutUsHomePageRef.current) observer.observe(aboutUsHomePageRef.current);
-  
+    if (aboutUsHomePageRef.current)
+      observer.observe(aboutUsHomePageRef.current);
+
     return () => observer.disconnect();
   }, []);
 
@@ -57,7 +54,7 @@ function AboutUsHomePage() {
                 </h1>
 
                 <h2 className="lg:text-[50px] md:text-[35px] text-[25px] font-bold  text-black ">
-                  Building Wealth with <br />{" "}
+                  Building Wealth with <br />
                   <span className="text-[#2956A6]">Trust and Expertise</span>
                 </h2>
                 <p className="lg:text-[18px] md:text-[18px] text-[16px]  text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full  text-justify  ">

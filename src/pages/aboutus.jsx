@@ -137,7 +137,7 @@ function Aboutus() {
                 </h1>
 
                 <h2 className="lg:text-[50px] md:text-[35px] text-[25px] font-bold text-black ">
-                  Your Trusted Advisors <br /> in{" "}
+                  Your Trusted Advisors <br /> in
                   <span className="text-[#2956A6]"> Business Success.</span>
                 </h2>
                 <p className="lg:text-[18px] md:text-[18px] text-[16px] text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full text-justify">
@@ -282,22 +282,22 @@ function Aboutus() {
                   : "opacity-0 translate-y-20"
               }`}
             >
-                <div className="flex flex-col items-center justify-center">
-            <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] z-10">
-              Contact Us
-              <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
-            </h1>
-            <p className="lg:text-[44px] md:text-[35px] text-[25px] font-bold font-manrope text-black">
-              Get in Touch
-            </p>
-            <p className="lg:text-[20px] md:text-[18px] text-[16px] font-medium text-[#666666] !py-4 text-center w-[80%]">
-              Please feel free to contact us through our support center. Simply
-              choose the appropriate support options to send us your questions,
-              concerns and feedback.Our customer service team is ready to
-              overcome any issues that might occur.
-            </p>
-          </div>
-          </div>
+              <div className="flex flex-col items-center justify-center">
+                <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] z-10">
+                  Contact Us
+                  <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
+                </h1>
+                <p className="lg:text-[44px] md:text-[35px] text-[25px] font-bold font-manrope text-black">
+                  Get in Touch
+                </p>
+                <p className="lg:text-[20px] md:text-[18px] text-[16px] font-medium text-[#666666] !py-4 text-center w-[80%]">
+                  Please feel free to contact us through our support center.
+                  Simply choose the appropriate support options to send us your
+                  questions, concerns and feedback.Our customer service team is
+                  ready to overcome any issues that might occur.
+                </p>
+              </div>
+            </div>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 lg:!gap-12 mt-10">
               {/* Left - Image */}
               <div

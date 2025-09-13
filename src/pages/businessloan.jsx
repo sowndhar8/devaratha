@@ -179,7 +179,7 @@ function Businessloan() {
                     </h1>
 
                     <h2 className="lg:text-[50px] md:text-[35px] text-[25px] font-bold  text-black font-poppins">
-                      Your Trusted Partner <br /> in{" "}
+                      Your Trusted Partner <br /> in
                       <span className="text-[#2956A6]">Business Loan. </span>
                     </h2>
                     <p className="lg:text-[18px] md:text-[18px] text-[16px]  text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full  text-justify  ">
@@ -219,7 +219,6 @@ function Businessloan() {
                     : "opacity-0 translate-x-20"
                 }`}
               >
-                {" "}
                 <img
                   src={img1}
                   alt=""
@@ -265,7 +264,7 @@ function Businessloan() {
         </section>
 
         <section>
-             <div ref={textSection1Ref}>
+          <div ref={textSection1Ref}>
             <div
               className={`transition-all duration-1000 ease-out ${
                 isVisible.textSection1
@@ -273,70 +272,76 @@ function Businessloan() {
                   : "opacity-0 translate-x-20"
               }`}
             >
-          <h2 className=" lg:text-[28px] md:text-[24px] text-[20px] font-semibold text-black !mt-10 !mb-5">
-            Features of Business Loan
-          </h2>
-          <div>
-            <h3 className=" lg:text-[20px] md:text-[20px] text-[18px] font-bold lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
-              Fulfil Your Every Need
-            </h3>
-            <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
-              Avail of a loan up to ₹50 lakhs (up to ₹75 lakhs in select
-              locations) without any collateral, guarantor or security, to
-              fulfil your every business need, from business expansion and
-              working capital, or any other personal work.
-            </p>
-          </div>
+              <h2 className=" lg:text-[28px] md:text-[24px] text-[20px] font-semibold text-black !mt-10 !mb-5">
+                Features of Business Loan
+              </h2>
+              <div>
+                <h3 className=" lg:text-[20px] md:text-[20px] text-[18px] font-bold lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
+                  Fulfil Your Every Need
+                </h3>
+                <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
+                  Avail of a loan up to ₹50 lakhs (up to ₹75 lakhs in select
+                  locations) without any collateral, guarantor or security, to
+                  fulfil your every business need, from business expansion and
+                  working capital, or any other personal work.
+                </p>
+              </div>
 
-          <div>
-            <h3 className=" lg:text-[20px] md:text-[20px] text-[18px] font-bold  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
-              Transfer Loan Balance with Ease
-            </h3>
-            <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
-              Transfer your existing Business Loan to Devavratha consultency for
-              lower EMIs, and enjoy our benefits
-              <ul className="list-disc !pl-7">
-                <li>·Attractive Interest rates on existing loan transfer.</li>
-                <li>
-                  Flexible tenure upto 48 months to transfer your loan balance,
-                </li>
-              </ul>
-            </p>
-          </div>
+              <div>
+                <h3 className=" lg:text-[20px] md:text-[20px] text-[18px] font-bold  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
+                  Transfer Loan Balance with Ease
+                </h3>
+                <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
+                  Transfer your existing Business Loan to Devavratha consultency
+                  for lower EMIs, and enjoy our benefits
+                  <ul className="list-disc !pl-7">
+                    <li>
+                      ·Attractive Interest rates on existing loan transfer.
+                    </li>
+                    <li>
+                      Flexible tenure upto 48 months to transfer your loan
+                      balance,
+                    </li>
+                  </ul>
+                </p>
+              </div>
 
-          <div>
-            <h3 className=" lg:text-[20px] md:text-[20px] text-[18px] font-bold lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
-              Dropline Overdraft Facility
-            </h3>
-            <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
-              It provides Overdraft Facility without any security. Limit is set
-              in a separate Current Account which drops monthly till the end of
-              the tenure. Pay the interest only on the amount utilised.
-              <ul className="list-disc !pl-7">
-                <li>Dropline Overdraft Facility up to ₹1 lakh - ₹25 lakhs*</li>
-                <li>No guarantor/ security required</li>
-                <li>Tenure ranging from 12-48 months</li>
-                <li>Attractive rate of interest</li>
-              </ul>
-            </p>
-          </div>
+              <div>
+                <h3 className=" lg:text-[20px] md:text-[20px] text-[18px] font-bold lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
+                  Dropline Overdraft Facility
+                </h3>
+                <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
+                  It provides Overdraft Facility without any security. Limit is
+                  set in a separate Current Account which drops monthly till the
+                  end of the tenure. Pay the interest only on the amount
+                  utilised.
+                  <ul className="list-disc !pl-7">
+                    <li>
+                      Dropline Overdraft Facility up to ₹1 lakh - ₹25 lakhs*
+                    </li>
+                    <li>No guarantor/ security required</li>
+                    <li>Tenure ranging from 12-48 months</li>
+                    <li>Attractive rate of interest</li>
+                  </ul>
+                </p>
+              </div>
 
-          <div>
-            <h3 className="lg:text-[20px] md:text-[20px] text-[18px] font-bold lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
-              Quick Eligibility Check & Disbursal
-            </h3>
-            <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
-              Check your Business Loan eligibility in our consultency. Loans
-              will be disbursed based on previous repayment of Home Loans, Auto
-              Loans and Credit Cards.
-            </p>
-          </div>
-          </div>
+              <div>
+                <h3 className="lg:text-[20px] md:text-[20px] text-[18px] font-bold lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
+                  Quick Eligibility Check & Disbursal
+                </h3>
+                <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
+                  Check your Business Loan eligibility in our consultency. Loans
+                  will be disbursed based on previous repayment of Home Loans,
+                  Auto Loans and Credit Cards.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
         <section>
-             <div ref={textSection2Ref}>
+          <div ref={textSection2Ref}>
             <div
               className={`transition-all duration-1000 ease-out ${
                 isVisible.textSection2
@@ -344,44 +349,46 @@ function Businessloan() {
                   : "opacity-0 -translate-x-20"
               }`}
             >
-          <h2 className=" lg:text-[28px] md:text-[24px] text-[20px] font-semibold text-black !mt-10 !mb-5">
-            Eligibility for Business Loan
-          </h2>
+              <h2 className=" lg:text-[28px] md:text-[24px] text-[20px] font-semibold text-black !mt-10 !mb-5">
+                Eligibility for Business Loan
+              </h2>
 
-          <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
-            The following people are eligible to apply for a Business Loan:
-            <ul className="list-disc !pl-7">
-              <li>
-                Self employed individuals, proprietors, private ltd. co. and
-                partnership firms involved in the business of manufacturing,
-                trading or services.
-              </li>
-              <li>The business should have a minimum turnover of ₹40 lakhs</li>
-              <li>
-                Individuals who have been in the current business for a minimum
-                of 3 years, with 5 years total business experience.
-              </li>
-              <li>
-                Those whose business has been profit-making for the previous 2
-                years
-              </li>
-              <li>
-                The business should have a Minimal Annual Income (ITR) of ₹1.5
-                lakhs per annum
-              </li>
-              <li>
-                The applicant should be at least 21 years at the time of
-                applying for the loan, and should be not older than 65 years at
-                the time of loan maturity.
-              </li>
-            </ul>
-          </p>
-          </div>
+              <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
+                The following people are eligible to apply for a Business Loan:
+                <ul className="list-disc !pl-7">
+                  <li>
+                    Self employed individuals, proprietors, private ltd. co. and
+                    partnership firms involved in the business of manufacturing,
+                    trading or services.
+                  </li>
+                  <li>
+                    The business should have a minimum turnover of ₹40 lakhs
+                  </li>
+                  <li>
+                    Individuals who have been in the current business for a
+                    minimum of 3 years, with 5 years total business experience.
+                  </li>
+                  <li>
+                    Those whose business has been profit-making for the previous
+                    2 years
+                  </li>
+                  <li>
+                    The business should have a Minimal Annual Income (ITR) of
+                    ₹1.5 lakhs per annum
+                  </li>
+                  <li>
+                    The applicant should be at least 21 years at the time of
+                    applying for the loan, and should be not older than 65 years
+                    at the time of loan maturity.
+                  </li>
+                </ul>
+              </p>
+            </div>
           </div>
         </section>
 
         <section>
-             <div ref={textSection3Ref}>
+          <div ref={textSection3Ref}>
             <div
               className={`transition-all duration-1000 ease-out ${
                 isVisible.textSection3
@@ -389,60 +396,60 @@ function Businessloan() {
                   : "opacity-0 translate-x-20"
               }`}
             >
-          <h2 className=" lg:text-[28px] md:text-[24px] text-[20px] font-semibold text-black !mt-10 !mb-5">
-            Documents for Business Loan
-          </h2>
+              <h2 className=" lg:text-[28px] md:text-[24px] text-[20px] font-semibold text-black !mt-10 !mb-5">
+                Documents for Business Loan
+              </h2>
 
-          <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
-            The following documents are required along with your Business Loan
-            application:
-            <ul className="list-disc !pl-7">
-              <li>PAN Card – For Company/Firm/Individual</li>
-              <li>
-                A copy of any of the following documents as identity proof:
+              <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
+                The following documents are required along with your Business
+                Loan application:
                 <ul className="list-disc !pl-7">
-                  <li>Aadhaar Card</li>
-                  <li>PAN Card</li>
-                  <li>Driving License</li>
-                  <li>Passport</li>
-                  <li>Voter's ID</li>
+                  <li>PAN Card – For Company/Firm/Individual</li>
+                  <li>
+                    A copy of any of the following documents as identity proof:
+                    <ul className="list-disc !pl-7">
+                      <li>Aadhaar Card</li>
+                      <li>PAN Card</li>
+                      <li>Driving License</li>
+                      <li>Passport</li>
+                      <li>Voter's ID</li>
+                    </ul>
+                  </li>
+                  <li>
+                    A copy of any of the following documents as address proof:
+                    <ul className="list-disc !pl-7">
+                      <li>Aadhaar Card</li>
+                      <li>Driving License</li>
+                      <li>Passport</li>
+                      <li>Voter's ID</li>
+                    </ul>
+                  </li>
+                  <li>Bank statement of the previous 6 months</li>
+                  <li>
+                    Latest ITR along with computation of income, Balance Sheet
+                    and Profit & Loss account for the previous 2 years, after
+                    being CA Certified/Audited
+                  </li>
+                  <li>
+                    Proof of continuation (ITR/Trade license/Establishment/Sales
+                    Tax Certificate).
+                  </li>
+                  <li>
+                    Other Mandatory Documents [Sole Prop. Declaration Or
+                    Certified Copy of Partnership Deed, Certified true copy of
+                    Memorandum & Articles of Association (certified by Director)
+                    & Board resolution (Original)]
+                  </li>
                 </ul>
-              </li>
-              <li>
-                A copy of any of the following documents as address proof:
-                <ul className="list-disc !pl-7">
-                  <li>Aadhaar Card</li>
-                  <li>Driving License</li>
-                  <li>Passport</li>
-                  <li>Voter's ID</li>
-                </ul>
-              </li>
-              <li>Bank statement of the previous 6 months</li>
-              <li>
-                Latest ITR along with computation of income, Balance Sheet and
-                Profit & Loss account for the previous 2 years, after being CA
-                Certified/Audited
-              </li>
-              <li>
-                Proof of continuation (ITR/Trade license/Establishment/Sales Tax
-                Certificate).
-              </li>
-              <li>
-                Other Mandatory Documents [Sole Prop. Declaration Or Certified
-                Copy of Partnership Deed, Certified true copy of Memorandum &
-                Articles of Association (certified by Director) & Board
-                resolution (Original)]
-              </li>
-            </ul>
-          </p>
-          </div>
+              </p>
+            </div>
           </div>
         </section>
 
         {/* faq */}
 
         <section>
-             <div ref={faqSectionRef}>
+          <div ref={faqSectionRef}>
             <div
               className={`transition-all duration-1000 ease-out ${
                 isVisible.faqSection
@@ -450,69 +457,72 @@ function Businessloan() {
                   : "opacity-0 -translate-x-20"
               }`}
             >
-          <h2 className="text-center lg:text-[44px] md:text-[30px] text-[20px] font-semibold text-black !mt-10 !mb-5">
-            FAQ's
-          </h2>
+              <h2 className="text-center lg:text-[44px] md:text-[30px] text-[20px] font-semibold text-black !mt-10 !mb-5">
+                FAQ's
+              </h2>
 
-          {/* FAQ List */}
-          <div className="lg:w-[100%] md:w-[80%] w-full flex flex-col  !gap-5 !py-10">
-            {Faq?.map((item) => {
-              const isSelected = selected?.id === item?.id;
+              {/* FAQ List */}
+              <div className="lg:w-[100%] md:w-[80%] w-full flex flex-col  !gap-5 !py-10">
+                {Faq?.map((item) => {
+                  const isSelected = selected?.id === item?.id;
 
-              return (
-                <div key={item.id} className=" rounded-xl overflow-hidden">
-                  <p
-                    className={` bg-[#A3B5FF] w-[3px]  ${
-                      isSelected ? "opacity-100" : "opacity-0"
-                    }`}
-                  ></p>
-                  {/* Title Row */}
-                  <div
-                    className={`flex !p-3 justify-between items-center cursor-pointer transition-all duration-300 ${
-                      isSelected
-                        ? "bg-[#F8F7FD] border-l-4 border-[#2956A6]"
-                        : "bg-[#FBFBFE] border-l-4 border-[#F1F2F9]"
-                    }`}
-                    onClick={() => {
-                      setSelected(isSelected ? null : item);
-                    }}
-                  >
-                    {isSelected ? (
-                      <MdOutlineKeyboardArrowUp size={25} color="#170F49" />
-                    ) : (
-                      <MdOutlineKeyboardArrowDown size={25} color="#2956A6" />
-                    )}
-                    <h2
-                      className={`lg:text-[20px] md:text-[18px] sm:text-[16px] text-[14px] font-semibold w-full lg:!py-4 md:!py-4 !py-2 ${isSelected ? "text-[#170F49]" : "text-[#2956A6]"} font-poppins capitalize`}
-                    >
-                      {item?.title}
-                    </h2>
-                  </div>
-
-                  {/* Answer */}
-                  <AnimatePresence initial={false}>
-                    {isSelected && (
-                      <motion.div
-                        key="faq"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.4, ease: "easeInOut" }}
-                        className="overflow-hidden bg-[#F9F8FD] border-l-4 border-[#2956A6] "
+                  return (
+                    <div key={item.id} className=" rounded-xl overflow-hidden">
+                      <p
+                        className={` bg-[#A3B5FF] w-[3px]  ${
+                          isSelected ? "opacity-100" : "opacity-0"
+                        }`}
+                      ></p>
+                      {/* Title Row */}
+                      <div
+                        className={`flex !p-3 justify-between items-center cursor-pointer transition-all duration-300 ${
+                          isSelected
+                            ? "bg-[#F8F7FD] border-l-4 border-[#2956A6]"
+                            : "bg-[#FBFBFE] border-l-4 border-[#F1F2F9]"
+                        }`}
+                        onClick={() => {
+                          setSelected(isSelected ? null : item);
+                        }}
                       >
-                        <div className=" ">
-                          <p className="lg:text-[16px] md:text-[16px] sm:text-[14px] text-[12px] text-[#6F6C8F] !px-10 !pb-5   ">
-                            {item?.answer}
-                          </p>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
-          </div>
-          </div>
+                        {isSelected ? (
+                          <MdOutlineKeyboardArrowUp size={25} color="#170F49" />
+                        ) : (
+                          <MdOutlineKeyboardArrowDown
+                            size={25}
+                            color="#2956A6"
+                          />
+                        )}
+                        <h2
+                          className={`lg:text-[20px] md:text-[18px] sm:text-[16px] text-[14px] font-semibold w-full lg:!py-4 md:!py-4 !py-2 ${isSelected ? "text-[#170F49]" : "text-[#2956A6]"} font-poppins capitalize`}
+                        >
+                          {item?.title}
+                        </h2>
+                      </div>
+
+                      {/* Answer */}
+                      <AnimatePresence initial={false}>
+                        {isSelected && (
+                          <motion.div
+                            key="faq"
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.4, ease: "easeInOut" }}
+                            className="overflow-hidden bg-[#F9F8FD] border-l-4 border-[#2956A6] "
+                          >
+                            <div className=" ">
+                              <p className="lg:text-[16px] md:text-[16px] sm:text-[14px] text-[12px] text-[#6F6C8F] !px-10 !pb-5   ">
+                                {item?.answer}
+                              </p>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </section>
       </div>

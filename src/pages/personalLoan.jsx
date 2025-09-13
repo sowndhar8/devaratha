@@ -146,7 +146,7 @@ function PersonalLoan() {
                     </h1>
 
                     <h2 className="lg:text-[50px] md:text-[35px] text-[25px] font-bold  text-black font-poppins">
-                      Your Trusted Partner <br /> in{" "}
+                      Your Trusted Partner <br /> in
                       <span className="text-[#2956A6]">Personal Loan. </span>
                     </h2>
                     <p className="lg:text-[18px] md:text-[18px] text-[16px]  text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full  text-justify  ">

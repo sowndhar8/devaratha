@@ -177,7 +177,7 @@ function mortageLoan() {
                   </h1>
 
                   <h2 className="lg:text-[50px] md:text-[35px] text-[25px] font-bold  text-black font-poppins">
-                    Your Trusted Partner <br /> in{" "}
+                    Your Trusted Partner <br /> in
                     <span className="text-[#2956A6]">Mortgage Loan. </span>
                   </h2>
                   <p className="lg:text-[18px] md:text-[18px] text-[16px]  text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full  text-justify  ">
@@ -353,48 +353,48 @@ function mortageLoan() {
                   : "opacity-0 translate-x-20"
               }`}
             >
-            <h2 className=" lg:text-[28px] md:text-[24px] text-[20px] font-semibold text-black !mt-10 !mb-5">
-              Documents for Mortage Loan
-            </h2>
+              <h2 className=" lg:text-[28px] md:text-[24px] text-[20px] font-semibold text-black !mt-10 !mb-5">
+                Documents for Mortage Loan
+              </h2>
 
-            <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
-              The following documents are required along with your Mortgage Loan
-              application:
-            </p>
-            <p className=" lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full font-bold  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
-              For Salaried Individuals:
-              <ul className="list-disc text-[#666666] font-normal !pl-7">
-                <li>
-                  A copy of any of the following as proof of residence:
-                  <ul className="list-disc !pl-7">
-                    <li>Ration Card</li>
-                    <li>Telephone Bill</li>
-                    <li>Electricity Bill</li>
-                    <li>Voter's ID</li>
-                  </ul>
-                </li>
-                <li>
-                  A copy of any of the following as proof of identity:
-                  <ul className="list-disc !pl-7">
-                    <li>Employer's Card</li>
-                    <li>Voter's ID</li>
-                  </ul>
-                </li>
-                <li>
-                  Latest Bank Statement/Passbook from where you can show a
-                  salary/income being credited for the previous 6 months
-                </li>
-                <li>
-                  Salary slip for the previous 6 months showing all deductions
-                </li>
-                <li>Form 16 for the previous 2 years</li>
-                <li>
-                  Copies of all the property documents of the concerned property
-                  to be pledged for the loan
-                </li>
-              </ul>
-            </p>
-          </div>
+              <p className="text-[#666666] lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
+                The following documents are required along with your Mortgage
+                Loan application:
+              </p>
+              <p className=" lg:text-[18px] md:text-[18px] text-[16px]  lg:leading-10 md:leading-8 leading-8  w-full font-bold  text-justify lg:!pb-5 md:!pb-5 !pb-2 ">
+                For Salaried Individuals:
+                <ul className="list-disc text-[#666666] font-normal !pl-7">
+                  <li>
+                    A copy of any of the following as proof of residence:
+                    <ul className="list-disc !pl-7">
+                      <li>Ration Card</li>
+                      <li>Telephone Bill</li>
+                      <li>Electricity Bill</li>
+                      <li>Voter's ID</li>
+                    </ul>
+                  </li>
+                  <li>
+                    A copy of any of the following as proof of identity:
+                    <ul className="list-disc !pl-7">
+                      <li>Employer's Card</li>
+                      <li>Voter's ID</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Latest Bank Statement/Passbook from where you can show a
+                    salary/income being credited for the previous 6 months
+                  </li>
+                  <li>
+                    Salary slip for the previous 6 months showing all deductions
+                  </li>
+                  <li>Form 16 for the previous 2 years</li>
+                  <li>
+                    Copies of all the property documents of the concerned
+                    property to be pledged for the loan
+                  </li>
+                </ul>
+              </p>
+            </div>
           </div>
         </section>
 
