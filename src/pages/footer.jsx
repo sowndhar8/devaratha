@@ -192,10 +192,10 @@ function Footer() {
           </a>
         </div>
         <div className="flex gap-4">
-          <div className="w-[50px] h-[50px] border-1 border-[#212325] rounded-full flex justify-center items-center">
+          <div className="w-[50px] h-[50px] border-1 border-[#212325] rounded-full flex justify-center items-center cursor-pointer">
             <FaFacebookF color="#D0DBF4" />
           </div>
-          <div className="w-[50px] h-[50px] border-1 border-[#212325] rounded-full flex justify-center items-center">
+          <div className="w-[50px] h-[50px] border-1 border-[#212325] rounded-full flex justify-center items-center cursor-pointer">
             <FaTwitter color="#D0DBF4" />
           </div>
         </div>
