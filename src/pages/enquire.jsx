@@ -4,7 +4,7 @@ import { Formik, Form as FormikForm, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-
+import aboutimg from "../img/background.png";
 function Enquire() {
   const initialValues = {
     name: "",
@@ -22,7 +22,7 @@ function Enquire() {
 
   return (
     <div>
-      <div className="relative bg-banner2 bg-cover h-[50vh] items-center justify-enter">
+      <div className="relative  bg-cover h-[50vh] items-center justify-enter" style={{backgroundImage: `url(${aboutimg})`}}>
         <div className="absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
           <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[35px]">
             Enquire

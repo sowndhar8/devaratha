@@ -6,6 +6,7 @@ import {
   MdOutlineKeyboardArrowRight,
   MdOutlineKeyboardArrowUp,
 } from "react-icons/md";
+import aboutimg from "../img/background.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCircleCheck } from "react-icons/fa6";
 
@@ -115,7 +116,7 @@ function PersonalLoan() {
 
   return (
     <div>
-      <div className="relative bg-banner2 bg-cover h-[50vh] items-center justify-center">
+      <div className="relative  bg-cover h-[50vh] items-center justify-center" style={{backgroundImage: `url(${aboutimg})`}}>
         <div className="absolute lg:top-[50%] md:top-[50%] top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
           <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[35px] text-center">
             Personal Loan

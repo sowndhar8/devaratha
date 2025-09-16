@@ -9,10 +9,11 @@
 
 @theme {
   --font-poppins: "Poppins", sans-serif;
-  --background-image-banner: url("src/img/home-bg.png");
+  /* --background-image-banner: url("src/img/home-bg.png");
   --background-image-banner3: url("src/img/MobileHP.png");
-  --background-image-banner2: url("src/img/background.png");
+  --background-image-banner2: url("src/img/background.png"); */
 }
+
 
 .no-spinner .ant-input-number-handler-wrap {
   display: none !important;

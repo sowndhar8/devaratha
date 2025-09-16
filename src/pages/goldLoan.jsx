@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
 import { date } from "yup";
 import { FaCircleCheck } from "react-icons/fa6";
+import aboutimg from "../img/background.png";
 
 function GoldLoans() {
   const [goldData, setGoldData] = useState(null);
@@ -142,7 +143,7 @@ function GoldLoans() {
 
   return (
     <div>
-      <div className="relative bg-banner2 bg-cover h-[50vh] items-center">
+      <div className="relative  bg-cover h-[50vh] items-center" style={{backgroundImage: `url(${aboutimg})`}}>
         <div className="absolute lg:top-[50%] md:top-[50%] top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
           <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[35px] text-center">
             Gold Loan

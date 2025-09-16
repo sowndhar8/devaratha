@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import img1 from "../img/business-loan.png";
 import { FaArrowRight } from "react-icons/fa";
+import aboutimg from "../img/background.png";
 import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowRight,
@@ -148,7 +149,7 @@ function Businessloan() {
 
   return (
     <div>
-      <div className="relative bg-banner2 bg-cover h-[50vh] items-center justify-center">
+      <div className="relative  bg-cover h-[50vh] items-center justify-center" style={{backgroundImage: `url(${aboutimg})`}}>
         <div className="absolute lg:top-[50%] md:top-[50%] top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
           <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[35px] text-center">
             Business Loan

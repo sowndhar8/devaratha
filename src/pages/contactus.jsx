@@ -3,6 +3,7 @@ import img4 from "../img/touch.png";
 import { Formik, Form as FormikForm, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
+import aboutimg from "../img/background.png";
 import { toast } from "react-toastify";
 
 function Contactus() {
@@ -37,7 +38,7 @@ function Contactus() {
   return (
     <div>
       {/* Hero Banner */}
-      <div className="relative bg-banner2 bg-cover h-[50vh] flex items-center justify-center">
+      <div className="relative  bg-cover h-[50vh] flex items-center justify-center" style={{backgroundImage: `url(${aboutimg})`}}>
         <div className="text-center">
           <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[35px]">
             Contact us

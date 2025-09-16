@@ -4,6 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router-dom";
 import img3 from "../img/choose-us-bg.png";
 import img4 from "../img/we-do.png";
+import homeBg from "../img/home-bg.png";
+import mobileHp from "../img/MobileHP.png";
 import img5 from "../img/advantage.png";
 import comp1 from "../img/Component 1.png";
 import comp2 from "../img/Component 2.png";
@@ -162,7 +164,9 @@ function Homepage() {
       {/* top section */}
 
       <section>
-        <div className="lg:bg-banner bg-banner3 bg-cover h-[100vh] flex justify-center items-center">
+        <div className=" bg-cover h-[100vh] flex justify-center items-center" style={{
+    backgroundImage: `url(${window.innerWidth >= 1024 ? homeBg : mobileHp})`
+  }}>
           <div className=" flex items-center w-full h-full lg:!px-20 md:!px-15 !px-10 !py-25">
             <div>
               <h1 className="lg:text-[78px] md:text-[50px] text-[28px] font-bold text-white ">
