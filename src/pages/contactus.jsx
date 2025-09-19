@@ -3,7 +3,6 @@ import img4 from "../img/touch.png";
 import { Formik, Form as FormikForm, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
-import aboutimg from "../img/background.png";
 import { toast } from "react-toastify";
 
 function Contactus() {
@@ -38,13 +37,14 @@ function Contactus() {
   return (
     <div>
       {/* Hero Banner */}
-      <div className="relative  bg-cover h-[50vh] flex items-center justify-center" style={{backgroundImage: `url(${aboutimg})`}}>
-        <div className="text-center">
-          <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[35px]">
-            Contact us
+     
+       <div className="relative bg-banner2 bg-cover h-[50vh] items-center justify-center">
+        <div className="absolute lg:top-[50%] md:top-[50%] top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
+          <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[33px] text-center">
+            Contact Us
           </h2>
-          <h3 className="text-[#D8D8D8] lg:text-[20px] md:text-[18px] text-[16px] tracking-wider !py-7">
-            We’re just one text away. Join us and let’s shape your financial
+          <h3 className="text-[#D8D8D8] lg:text-[20px] md:text-[18px] text-[16px] text-center tracking-wider !py-7">
+              We’re just one text away. Join us and let’s shape your financial
             future together!
           </h3>
         </div>
@@ -61,10 +61,10 @@ function Contactus() {
                 : "opacity-0 translate-y-20"
             }`}
           >
-            <h1 className="relative inline-block lg:text-[20px] text-[18px] font-semibold text-[#2956A6] z-10">
+            <h3 className="relative inline-block lg:text-[20px] text-[18px] font-semibold text-[#2956A6] z-10">
               Contact Us
               <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
-            </h1>
+            </h3>
             <p className="lg:text-[44px] md:text-[35px] text-[25px] font-bold text-black">
               Get in Touch
             </p>
@@ -88,6 +88,7 @@ function Contactus() {
               <img
                 src={img4}
                 alt="Get in touch"
+                title="Devavratha Loan Service"
                 className="max-w-full h-auto"
               />
             </div>

@@ -1,11 +1,9 @@
 import { useRef, useEffect, useState } from "react";
-import background from "../img/background.png";
 import { FaArrowRight, FaCheck } from "react-icons/fa";
 import img1 from "../img/aboutus-bg.png";
 import img2 from "../img/mission.png";
 import img3 from "../img/start.png";
 import img4 from "../img/touch.png";
-import aboutimg from "../img/background.png";
 import Progress from "./components/progress";
 import { Formik, Form as FormikForm, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -111,7 +109,7 @@ function Aboutus() {
 
   return (
     <div>
-      <div className="relative bg-cover h-[50vh] items-center justify-center" style={{backgroundImage: `url(${aboutimg})`}}>
+      <div className="relative bg-banner2 bg-cover h-[50vh] items-center justify-center">
         <div className="absolute lg:top-[50%] md:top-[50%] top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
           <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[35px] text-center">
             About Us
@@ -128,19 +126,19 @@ function Aboutus() {
         <div>
           <div className="lg:!px-20 md:!px-20 !px-10 !py-10 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-evenly items-center">
             <div className="flex justify-center">
-              <img src={img1} alt="" className="w-full max-w-md" />
+              <img src={img1} alt="About Us" title="Devavratha Loan Service" className="w-full max-w-md" />
             </div>
             <div className="flex justify-center items-center">
               <div>
-                <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] ">
+                <h3 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] ">
                   About Us
                   <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] -z-10"></span>
-                </h1>
+                </h3>
 
-                <h2 className="lg:text-[50px] md:text-[35px] text-[25px] font-bold text-black ">
+                <h4 className="lg:text-[50px] md:text-[35px] text-[25px] font-bold text-black ">
                   Your Trusted Advisors <br /> in
                   <span className="text-[#2956A6]"> Business Success.</span>
-                </h2>
+                </h4>
                 <p className="lg:text-[18px] md:text-[18px] text-[16px] text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full text-justify">
                   we understand the challenges and complexities that businesses
                   face in today's dynamic marketplace. That's why we offer a
@@ -198,15 +196,15 @@ function Aboutus() {
               }`}
             >
               <div>
-                <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] z-0 ">
+                <h3 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] z-0 ">
                   Our Mission
                   <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] -z-10"></span>
-                </h1>
+                </h3>
 
-                <h2 className="lg:text-[50px] md:text-[35px] text-[25px] font-bold text-black ">
+                <h4 className="lg:text-[50px] md:text-[35px] text-[25px] font-bold text-black ">
                   Boosting Your <br />
                   <span className="text-[#2956A6]">Financial Knowledge</span>
-                </h2>
+                </h4>
                 <p className="lg:text-[18px] md:text-[18px] text-[16px] text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full text-justify">
                   Delivers a clear summary of vital metrics and trends that
                   define your financial landscape. This section emphasizes
@@ -225,7 +223,7 @@ function Aboutus() {
                   : "opacity-0 translate-x-20"
               }`}
             >
-              <img src={img2} alt="" className="w-full max-w-md rounded-lg" />
+              <img src={img2} alt="Our Mission" title="Devavratha Loan Service" className="w-full max-w-md rounded-lg" />
             </div>
           </div>
         </div>
@@ -284,10 +282,10 @@ function Aboutus() {
               }`}
             >
               <div className="flex flex-col items-center justify-center">
-                <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] z-10">
+                <h3 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] z-10">
                   Contact Us
                   <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
-                </h1>
+                </h3>
                 <p className="lg:text-[44px] md:text-[35px] text-[25px] font-bold font-manrope text-black">
                   Get in Touch
                 </p>
@@ -308,7 +306,7 @@ function Aboutus() {
                     : "opacity-0 -translate-x-20"
                 }`}
               >
-                <img src={img4} alt="" className="max-w-full h-auto" />
+                <img src={img4} alt="Contact Us" title="Devavratha Loan Service" className="max-w-full h-auto" />
               </div>
 
               {/* Right - Form */}

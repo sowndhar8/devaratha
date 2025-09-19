@@ -9,9 +9,9 @@
 
 @theme {
   --font-poppins: "Poppins", sans-serif;
-  /* --background-image-banner: url("src/img/home-bg.png");
-  --background-image-banner3: url("src/img/MobileHP.png");
-  --background-image-banner2: url("src/img/background.png"); */
+  --background-image-banner: url("../public/img/home-bg.png");
+  --background-image-banner2: url("../public/img/background.png");
+  --background-image-banner3: url("../public/img/MobileHP.png");
 }
 
 
@@ -24,6 +24,10 @@
   font-weight: bold !important;
   background-color:  #F0F0F2 !important;
  
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 .clip-diagonal {

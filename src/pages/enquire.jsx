@@ -1,17 +1,13 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import img4 from "../img/touch.png";
 import { Formik, Form as FormikForm, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-import aboutimg from "../img/background.png";
+
 function Enquire() {
-  const initialValues = {
-    name: "",
-    email: "",
-    service: "",
-    message: "",
-  };
+  const enquirySectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   const TouchSchema = Yup.object().shape({
     name: Yup.string().required("Name is required"),
@@ -20,9 +16,27 @@ function Enquire() {
     message: Yup.string().required("Message is required"),
   });
 
+  useEffect(() => {
+    const observerOptions = { threshold: 0.2 };
+
+    const handleIntersect = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+    if (enquirySectionRef.current) observer.observe(enquirySectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div>
-      <div className="relative  bg-cover h-[50vh] items-center justify-enter" style={{backgroundImage: `url(${aboutimg})`}}>
+      <div className="relative bg-banner2 bg-cover h-[50vh] items-center justify-enter">
         <div className="absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
           <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[35px]">
             Enquire
@@ -34,13 +48,20 @@ function Enquire() {
         </div>
       </div>
 
-      <section>
+      <section ref={enquirySectionRef}>
         <div className="!px-10 lg:!px-15 !p-10">
-          <div className="flex flex-col items-center justify-center">
-            <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px]  font-semibold text-[#2956A6] z-10">
+          <div
+            className={`flex flex-col items-center justify-center transform transition-all duration-1000 ease-out
+            ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-20"
+            }`}
+          >
+            <h3 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px]  font-semibold text-[#2956A6] z-10">
               Enquiry Form
               <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
-            </h1>
+            </h3>
             <p className="lg:text-[44px] md:text-[35px] text-[25px] font-bold font-manrope text-black">
               Enquire for Service
             </p>
@@ -53,12 +74,29 @@ function Enquire() {
           </div>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 lg:!gap-12">
             {/* Left - Image */}
-            <div className="flex justify-center items-center w-full md:w-1/2">
-              <img src={img4} alt="" className="max-w-full h-auto" />
+            <div
+              className={`flex justify-center items-center w-full md:w-1/2 transform transition-all duration-1000 ease-out
+              ${
+                isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-20"
+              }`}
+            >
+              <div className="flex justify-center items-center w-full md:w-1/2">
+                <img src={img4} alt="Enquire" title="Devavratha Loan Service" className="max-w-full h-auto" />
+              </div>
             </div>
 
             {/* Right - Form */}
-            <div className="w-full md:w-1/2  shadow-2xl !p-10 rounded-xl ">
+            <div
+              className={`w-full md:w-1/2 shadow-2xl !p-10 rounded-xl transform transition-all duration-1000 ease-out
+              ${
+                isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-20"
+              }`}
+            >
+              {" "}
               <p className="lg:text-[24px] md:text-[20px] text-[18px] font-semibold text-black">
                 Enquire
               </p>

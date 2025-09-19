@@ -10,7 +10,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
 import { date } from "yup";
 import { FaCircleCheck } from "react-icons/fa6";
-import aboutimg from "../img/background.png";
 
 function GoldLoans() {
   const [goldData, setGoldData] = useState(null);
@@ -143,7 +142,7 @@ function GoldLoans() {
 
   return (
     <div>
-      <div className="relative  bg-cover h-[50vh] items-center" style={{backgroundImage: `url(${aboutimg})`}}>
+      <div className="relative bg-banner2 bg-cover h-[50vh] items-center justify-center">
         <div className="absolute lg:top-[50%] md:top-[50%] top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
           <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[35px] text-center">
             Gold Loan
@@ -167,15 +166,15 @@ function GoldLoans() {
                       : "opacity-0 -translate-x-10"
                   }`}
                 >
-                  <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] ">
+                  <h2 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] ">
                     Gold Loan
                     <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] -z-10"></span>
-                  </h1>
-
-                  <h2 className="lg:text-[50px] md:text-[35px] text-[25px] font-bold  text-black font-poppins">
-                    Your Trusted Partner <br /> in
-                    <span className="text-[#2956A6]">Gold Loan. </span>
                   </h2>
+
+                  <h3 className="lg:text-[50px] md:text-[35px] text-[25px] font-bold  text-black font-poppins">
+                    Your Trusted Partner <br /> in
+                    <span className="text-[#2956A6]"> Gold Loan. </span>
+                  </h3>
                   <p className="lg:text-[18px] md:text-[18px] text-[16px]  text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full  text-justify  ">
                     we understand the challenges and complexities that
                     businesses face in today's dynamic marketplace. That's why
@@ -214,7 +213,8 @@ function GoldLoans() {
               >
                 <img
                   src={img1}
-                  alt=""
+                  alt="Gold Loan"
+                  title="Devavratha Gold Loan"
                   className="w-fit place-self-center !py-5 "
                 />
 

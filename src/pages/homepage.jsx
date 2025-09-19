@@ -2,10 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router-dom";
-import img3 from "../img/choose-us-bg.png";
 import img4 from "../img/we-do.png";
-import homeBg from "../img/home-bg.png";
-import mobileHp from "../img/MobileHP.png";
 import img5 from "../img/advantage.png";
 import comp1 from "../img/Component 1.png";
 import comp2 from "../img/Component 2.png";
@@ -13,7 +10,6 @@ import comp3 from "../img/Component 3.png";
 import comp4 from "../img/Component 4.png";
 import comp5 from "../img/Component 5.png";
 import comp6 from "../img/Component 6.png";
-import { FaArrowRight } from "react-icons/fa";
 import { FaCircleCheck } from "react-icons/fa6";
 import Faq from "./components/faq";
 import OurServices from "./components/ourServices";
@@ -164,9 +160,7 @@ function Homepage() {
       {/* top section */}
 
       <section>
-        <div className=" bg-cover h-[100vh] flex justify-center items-center" style={{
-    backgroundImage: `url(${window.innerWidth >= 1024 ? homeBg : mobileHp})`
-  }}>
+        <div className="relative lg:bg-banner md:bg-banner bg-banner3 bg-cover h-[100vh] items-center justify-center">
           <div className=" flex items-center w-full h-full lg:!px-20 md:!px-15 !px-10 !py-25">
             <div>
               <h1 className="lg:text-[78px] md:text-[50px] text-[28px] font-bold text-white ">
@@ -216,14 +210,14 @@ function Homepage() {
           <section className="item lg:h-[100vh] h-auto w-full lg:absolute lg:top-0 lg:left-0 relative flex justify-center items-center">
             <div className=" bg-[#D9E9FF] rounded-4xl lg:!m-20 md:!m-15 !m-10 lg:!p-10 lg:!py-15 md:!p-10 !py-5 ">
               <div className="text-center ">
-                <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px]  font-semibold text-[#2956A6] z-10">
+                <h2 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px]  font-semibold text-[#2956A6] z-10">
                   Why Choose Us
                   <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
-                </h1>
-                <h2 className="lg:text-[50px] md:text-[35px] text-[25px] text-center font-bold  text-black !px-5 ">
+                </h2>
+                <h3 className="lg:text-[50px] md:text-[35px] text-[25px] text-center font-bold  text-black !px-5 ">
                   why <span className="text-[#2956A6]">Devaratha </span> is the
                   right choice for you
-                </h2>
+                </h3>
               </div>
               {/* <div className='flex lg:flex-row md:flex-row flex-col gap-10 !mt-5 lg:!p-10 md:!p-10 !p-5 lg:w-[70%] md:w-[70%] !w-[90%] bg-white rounded-2xl !mx-auto '>
                             <div className='!mt-5 lg:w-[70%] md:w-[70%] w-full '>
@@ -259,14 +253,15 @@ function Homepage() {
                         <img
                           src={item.img}
                           alt={item.title}
+                          title="Devavratha Loan Service"
                           className="w-12 h-12 object-contain"
                         />
                       </div>
 
                       <div className=" ">
-                        <h2 className="lg:text-[20px] md:text-[18px] text-[16px] text-black font-semibold mt-2">
+                        <h3 className="lg:text-[20px] md:text-[18px] text-[16px] text-black font-semibold mt-2">
                           {item.title}
-                        </h2>
+                        </h3>
                         <p className="text-[#666] mt-2">{item.description}</p>
                       </div>
                     </div>
@@ -281,14 +276,14 @@ function Homepage() {
             <div className=" bg-[#D9E9FF] flex lg:flex-row md:flex-col flex-col rounded-4xl lg:!m-20 md:!m-15 !m-10 !px-10 lg:!py-20 md:!py-20 !py-10 ">
               <div className="items-center justify-center flex lg:w-[60%] md:w-[100%] w-[100%] ">
                 <div>
-                  <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px]  font-semibold text-[#2956A6] z-10">
+                  <h2 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px]  font-semibold text-[#2956A6] z-10">
                     How We Do
                     <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
-                  </h1>
-
-                  <h2 className="lg:text-[50px] md:text-[35px] text-[25px]  font-bold  text-black ">
-                    The importance of planning finances
                   </h2>
+
+                  <h3 className="lg:text-[50px] md:text-[35px] text-[25px]  font-bold  text-black ">
+                    The importance of planning finances
+                  </h3>
                   <div>
                     {data.map((item) => (
                       <div key={item.id} className=" mt-5 !py-5 ">
@@ -312,7 +307,11 @@ function Homepage() {
               </div>
 
               <div className="!mt-5 lg:w-[40%] md:w-[100%] w-[100%] ">
-                <img src={img4} alt="" />
+                <img
+                  src={img4}
+                  alt="Devavratha Loan Service"
+                  title="Devavratha Loan Service"
+                />
               </div>
             </div>
           </section>
@@ -321,18 +320,22 @@ function Homepage() {
           <section className="item lg:h-[100vh] h-auto w-full lg:absolute lg:top-0 lg:left-0 relative justify-center items-center">
             <div className=" bg-[#D9E9FF] flex lg:flex-row md:flex-col flex-col rounded-4xl lg:!m-20 md:!m-15 !m-10 !px-10 lg:!py-10 md:!py-10 !py-10 gap-10 ">
               <div className="!mt-5 lg:w-[40%] md:w-[100%] w-[100%] ">
-                <img src={img5} alt="" />
+                <img
+                  src={img5}
+                  alt="Devavratha Loan Service"
+                  title="Devavratha Loan Service"
+                />
               </div>
               <div className="items-center justify-center flex lg:w-[60%] md:w-[60%] w-[100%] ">
                 <div>
-                  <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] z-10">
+                  <h2 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] z-10">
                     Advantages
                     <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
-                  </h1>
-
-                  <h2 className="lg:text-[50px] md:text-[35px] text-[25px]  font-bold  text-black ">
-                    Safe Hands Leading Your Financial Journey
                   </h2>
+
+                  <h3 className="lg:text-[50px] md:text-[35px] text-[25px]  font-bold  text-black ">
+                    Safe Hands Leading Your Financial Journey
+                  </h3>
                   <div>
                     {data1.map((item) => (
                       <div key={item.id} className=" mt-5 !py-5 ">
@@ -340,9 +343,9 @@ function Homepage() {
                           <div className=" ">
                             <div className="flex gap-5 items-center">
                               <FaCircleCheck className="text-[#2956A6] mt-5 text-[20px] md:text-[20px] lg:text-[20px]" />
-                              <h2 className="lg:text-[20px] md:text-[18px] text-[16px] text-black font-semibold mt-2">
+                              <h3 className="lg:text-[20px] md:text-[18px] text-[16px] text-black font-semibold mt-2">
                                 {item.title}
-                              </h2>
+                              </h3>
                             </div>
                             <p className="text-[#666] !mt-2 !px-10">
                               {item.description}
@@ -367,9 +370,7 @@ function Homepage() {
 
       {/* faq */}
       <section>
-        <div className=" ">
-          <Faq />
-        </div>
+        <Faq />
       </section>
     </div>
   );

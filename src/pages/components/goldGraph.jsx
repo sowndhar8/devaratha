@@ -30,7 +30,7 @@ return (
         <tr>
           <th colSpan={2} className="!px-6 !py-3 text-lg font-semibold text-center">
             <div className="flex items-center justify-center gap-2">
-              <img src={gold} alt="gold.gif" className="w-[40px] h-[40px] rounded-full" />
+              <img src={gold} alt="gold.gif" title="Devavratha Gold Service" className="w-[40px] h-[40px] rounded-full" />
               <span>Today's Gold Rate</span>
             </div>
           </th>

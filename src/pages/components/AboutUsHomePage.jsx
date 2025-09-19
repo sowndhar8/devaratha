@@ -37,7 +37,7 @@ function AboutUsHomePage() {
                     : "opacity-0 -translate-x-20"
                 }`}
               >
-                <img src={img2} alt="" className=" w-fit place-self-center " />
+                <img src={img2} alt="Devavratha Loan Service" title="Devavratha Loan Service" className=" w-fit place-self-center " />
               </div>
             </div>
             <div className="flex justify-center items-center ">
@@ -48,15 +48,15 @@ function AboutUsHomePage() {
                     : "opacity-0 translate-x-20"
                 }`}
               >
-                <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] ">
+                <h2 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px] font-semibold text-[#2956A6] ">
                   About Us
                   <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] -z-10"></span>
-                </h1>
+                </h2>
 
-                <h2 className="lg:text-[50px] md:text-[35px] text-[25px] font-bold  text-black ">
+                <h3 className="lg:text-[50px] md:text-[35px] text-[25px] font-bold  text-black ">
                   Building Wealth with <br />
                   <span className="text-[#2956A6]">Trust and Expertise</span>
-                </h2>
+                </h3>
                 <p className="lg:text-[18px] md:text-[18px] text-[16px]  text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[80%] md:w-[80%] w-full  text-justify  ">
                   We are a trusted financial services company committed to
                   helping individuals and businesses make smarter money

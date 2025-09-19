@@ -30,14 +30,14 @@ function OurServices() {
       {/* what we do */}
 
       <div className="text-center !pt-10 ">
-        <h1 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px]  font-semibold text-white z-10">
+        <h2 className="relative inline-block lg:text-[20px] md:text-[20px] text-[18px]  font-semibold text-white z-10">
           Our Services
           <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] z-[-1]"></span>
-        </h1>
-
-        <h2 className="lg:text-[50px] md:text-[35px] text-[25px] text-center font-bold !px-10  text-white ">
-          Your Trusted Advisors in Business Success
         </h2>
+
+        <h3 className="lg:text-[50px] md:text-[35px] text-[25px] text-center font-bold !px-10  text-white ">
+          Your Trusted Advisors in Business Success
+        </h3>
       </div>
 
       <div className="!mt-10 !mb-1  flex flex-col justify-center items-center">
@@ -53,7 +53,7 @@ function OurServices() {
                 <div className="flex overflow-hidden rounded-4xl">
                   <img
                     src={thing.img}
-                    alt="service"
+                       alt={`${thing.title} - Devavratha Loan Service`}
                     className=" object-fit transition-transform duration-2000 group-hover:scale-110"
                   />
 

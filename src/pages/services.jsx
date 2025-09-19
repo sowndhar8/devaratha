@@ -1,6 +1,4 @@
 import { React, useState, useRef, useEffect } from "react";
-import background from "../img/background.png";
-import { FaArrowRight } from "react-icons/fa";
 import RdCalculator from "./rd";
 import FdCalculator from "./fdCal";
 import img1 from "../img/service-detail-1.png";
@@ -8,7 +6,6 @@ import img2 from "../img/Business Consulting.png";
 import img3 from "../img/Rectangle 1.png";
 import img4 from "../img/Rectangle 2.png";
 import img5 from "../img/Rectangle 3.png";
-import aboutimg from "../img/background.png";
 import GoldGraph from "./components/goldGraph";
 import { MdLocalPhone } from "react-icons/md";
 
@@ -101,7 +98,7 @@ function Services() {
 
   return (
     <div>
-      <div className="relative  bg-cover h-[50vh] items-center justify-enter" style={{backgroundImage: `url(${aboutimg})`}}>
+      <div className="relative bg-banner2 bg-cover h-[50vh] items-center justify-center">
         <div className="absolute lg:top-[50%] md:top-[50%] top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center flex flex-col">
           <h2 className="text-[#2956A6] lg:text-[50px] md:text-[50px] text-[35px] text-center">Services</h2>
           <h3 className="text-[#D8D8D8] lg:text-[20px] md:text-[18px] text-[16px] text-center tracking-wider !py-4 w-full">
@@ -156,7 +153,7 @@ function Services() {
               </button>
 
               <div className="relative flex  ">
-                <img src={img1} alt="" className="w-full h-fit relative  !p-5 lg:flex md:flex hidden" />
+                <img src={img1} alt="Contact" title="Devavratha Loan Service" className="w-full h-fit relative  !p-5 lg:flex md:flex hidden" />
                 <div className="absolute bottom-0 left-0 w-full  bg-[#2956A6] text-white !py-10  clip-diagonal ">
                   <div className="flex justify-center !mb-3">
                     <div className="bg-white text-[#2956A6] w-14 h-14 flex items-center justify-center rounded-full shadow-md">
@@ -171,7 +168,7 @@ function Services() {
 
             {activeTab === "fd" &&
               <div className="flex flex-col lg:w-[70%] w-[100%] bg-white !p-5 !gap-2 rounded-lg lg:!mt-10 lg:!m-5 lg:!pl-20 ">
-                <img src={img2} alt="" className=" w-full  lg:h-[40%] !py-5" />
+                <img src={img2} alt="Fixed Deposit" title="Devavratha Fixed Deposit" className=" w-full  lg:h-[40%] !py-5" />
                 <p className="text-[#767682] text-[16px] !py-2 rounded-lg ">
                   Grow your wealth with secure Fixed Deposits, disciplined Recurring Deposits, and
                   trusted Gold Investments. Whether you seek guaranteed returns, steady savings, or
@@ -183,7 +180,7 @@ function Services() {
             }
             {activeTab === "rd" &&
               <div className="flex flex-col lg:w-[70%] w-[100%] bg-white !p-5 !gap-2 rounded-lg lg:!mt-10 lg:!m-5 lg:!pl-20  ">
-                <img src={img2} alt="" className=" w-full  h-[40%]  !py-5" />
+                <img src={img2} alt="Recurring Deposit" title="Devavratha Recurring Deposit" className=" w-full  h-[40%]  !py-5" />
                 <p className="text-[#767682] text-[16px] !py-2 rounded-lg ">
                   Grow your wealth with secure Fixed Deposits, disciplined Recurring Deposits, and
                   trusted Gold Investments. Whether you seek guaranteed returns, steady savings, or
@@ -195,7 +192,7 @@ function Services() {
             }
             {activeTab === "gold" &&
               <div className="flex flex-col lg:w-[70%] w-[100%] bg-white !p-5 !gap-2 rounded-lg lg:!mt-10 lg:!m-5 lg:!pl-20 ">
-                <img src={img2} alt="" className=" w-full  h-[40%] !py-5" />
+                <img src={img2} alt="Gold Investment" title="Devavratha Gold Investment" className=" w-full  h-[40%] !py-5" />
                 <p className="text-[#767682] text-[16px] !py-2 rounded-lg ">
                   Grow your wealth with secure Fixed Deposits, disciplined Recurring Deposits, and
                   trusted Gold Investments. Whether you seek guaranteed returns, steady savings, or
@@ -216,19 +213,20 @@ function Services() {
             <div className={`transition-all duration-700 ease-out ${isVisible.financialPlanning ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
               <img
                 src={img3}
-                alt=""
+                alt="Financial Planning"
+                title="Devavratha Financial Planning"
                 className='w-fit !py-5'
               />
             </div>
             <div className={`flex justify-center items-center transition-all duration-700 ease-out delay-300 ${isVisible.financialPlanning ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-0'}`}>
               <div>
-                <h1 className="relative inline-block lg:text-[20px] md:text-[18px] text-[16px] font-semibold text-[#2956A6] ">
+                <h3 className="relative inline-block lg:text-[20px] md:text-[18px] text-[16px] font-semibold text-[#2956A6] ">
                   Financial Planning
                   <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] -z-10"></span>
-                </h1>
-                <h2 className='lg:text-[50px] md:text-[35px] text-[25px] font-bold text-black '>
+                </h3>
+                <h4 className='lg:text-[50px] md:text-[35px] text-[25px] font-bold text-black '>
                   Plan today for a <br /> <span className='text-[#2956A6]'> stronger tomorrow.</span>
-                </h2>
+                </h4>
                 <p className='lg:text-[18px] md:text-[18px] text-[16px] text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[90%] md:w-[90%] w-full text-justify'>
                   we understand the challenges and complexities that businesses face in today's dynamic marketplace.
                   That's why we offer a comprehensive suite of consulting services.
@@ -248,7 +246,8 @@ function Services() {
               <div className={`transition-all duration-700 ease-out ${isVisible.investmentAdvisory ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
                 <img
                   src={img4}
-                  alt=""
+                  alt="Investment Advisory"
+                  title="Devavratha Investment Advisory"
                   className='w-fit place-self-center !py-5'
                 />
               </div>
@@ -257,13 +256,13 @@ function Services() {
             {/* Text content */}
             <div className={`flex justify-center items-center transition-all duration-700 ease-out ${isVisible.investmentAdvisory ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
               <div>
-                <h1 className="relative inline-block lg:text-[20px] md:text-[18px] text-[16px] font-semibold text-[#2956A6] ">
+                <h3 className="relative inline-block lg:text-[20px] md:text-[18px] text-[16px] font-semibold text-[#2956A6] ">
                   Investment Advisory
                   <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] -z-10"></span>
-                </h1>
-                <h2 className='lg:text-[50px] md:text-[35px] text-[25px] font-bold text-black '>
+                </h3>
+                <h4 className='lg:text-[50px] md:text-[35px] text-[25px] font-bold text-black '>
                   Advisory that grows<br /> with <span className='text-[#2956A6]'> your ambitions.</span>
-                </h2>
+                </h4>
                 <p className='lg:text-[18px] md:text-[18px] text-[16px] text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[90%] md:w-[90%] w-full text-justify'>
                   we understand the challenges and complexities that businesses face in today's dynamic marketplace.
                   That's why we offer a comprehensive suite of consulting services.
@@ -276,7 +275,8 @@ function Services() {
               <div className={`transition-all duration-700 ease-out delay-300 ${isVisible.investmentAdvisory ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
                 <img
                   src={img4}
-                  alt=""
+                  alt="Investment Advisory"
+                  title="Devavratha Investment Advisory"
                   className='w-fit place-self-center !py-5'
                 />
               </div>
@@ -292,19 +292,20 @@ function Services() {
             <div className={`transition-all duration-700 ease-out ${isVisible.taxCompliance ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
               <img
                 src={img5}
-                alt=""
+                alt="Tax & compliance strategy"
+                title="Devavratha Tax & compliance strategy"
                 className='w-fit !py-5'
               />
             </div>
             <div className={`flex justify-center items-center transition-all duration-700 ease-out delay-300 ${isVisible.taxCompliance ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               <div>
-                <h1 className="relative inline-block lg:text-[20px] md:text-[18px] text-[16px] font-semibold text-[#2956A6] ">
+                <h3 className="relative inline-block lg:text-[20px] md:text-[18px] text-[16px] font-semibold text-[#2956A6] ">
                   Tax & compliance strategy
                   <span className="absolute left-0 bottom-1 w-full h-[30%] bg-[#DFAE51] -z-10"></span>
-                </h1>
-                <h2 className='lg:text-[50px] md:text-[35px] text-[25px] font-bold text-black '>
+                </h3>
+                <h4 className='lg:text-[50px] md:text-[35px] text-[25px] font-bold text-black '>
                   Right strategy,  <br /> <span className='text-[#2956A6]'> risk-free growth.</span>
-                </h2>
+                </h4>
                 <p className='lg:text-[18px] md:text-[18px] text-[16px] text-[#666666] lg:leading-10 md:leading-8 leading-8 lg:w-[90%] md:w-[90%] w-full text-justify'>
                   we understand the challenges and complexities that businesses face in today's dynamic marketplace.
                   That's why we offer a comprehensive suite of consulting services.

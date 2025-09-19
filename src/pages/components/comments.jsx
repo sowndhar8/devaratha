@@ -118,7 +118,7 @@ function Comments() {
                 <div className=" ">
                   <div className="flex gap-5 items-center">
                     <div>
-                      <img src={item.img} alt="" className="w-20 h-20" />
+                      <img src={item.img} alt={item.name} title={item.name} className="w-20 h-20" />
                     </div>
                     <div>
                       <p className="text-[#666] !mt-2">
@@ -149,7 +149,7 @@ function Comments() {
                 <div className=" ">
                   <div className="flex gap-5 items-center">
                     <div>
-                      <img src={item.img} alt="" className="w-20 h-20" />
+                      <img src={item.img} alt={item.name} title={item.name} className="w-20 h-20" />
                     </div>
                     <div>
                       <p className="text-[#666] !mt-2">

@@ -64,37 +64,37 @@ function Faq() {
         <div className="w-full flex flex-col gap-10 lg:py-20 py-10">
           <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center !my-10 !mx-10 ">
             {/* Left Image */}
-              <div className="lg:w-1/2 md:w-1/2 w-full flex justify-center items-center !mb-10">
-            <div
-              className={`transition-all duration-1000 ease-out ${
-                isVisible
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 -translate-x-20"
-              }`}
-            >
-                <img src={Img} alt="" />
+            <div className="lg:w-1/2 md:w-1/2 w-full flex justify-center items-center !mb-10">
+              <div
+                className={`transition-all duration-1000 ease-out ${
+                  isVisible
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 -translate-x-20"
+                }`}
+              >
+                <img src={Img} alt="FAQ" title="Devavratha Loan Service" />
               </div>
             </div>
 
             {/* Right Content */}
-              <div className="lg:w-1/2 md:w-1/2 w-full flex flex-col justify-center lg:!pl-10 md:!pl-10  ">
-            <div
-              className={`transition-all duration-1000 ease-out ${
-                isVisible
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 translate-x-20"
-              }`}
-            >
+            <div className="lg:w-1/2 md:w-1/2 w-full flex flex-col justify-center lg:!pl-10 md:!pl-10  ">
+              <div
+                className={`transition-all duration-1000 ease-out ${
+                  isVisible
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 translate-x-20"
+                }`}
+              >
                 <span>
-                  <h1 className="relative inline-block llg:text-[20px] md:text-[20px] text-[18px] font-semibold text-white z-10">
+                  <h2 className="relative inline-block llg:text-[20px] md:text-[20px] text-[18px] font-semibold text-white z-10">
                     <span className="absolute left-0 bottom-1 h-[30%] w-[100%] bg-[#DFAE51] z-[-1]"></span>
                     Have any Questions
-                  </h1>
+                  </h2>
                 </span>
 
-                <h2 className="lg:text-[40px] md:text-[35px] text-[25px] font-bold text-white">
+                <h3 className="lg:text-[40px] md:text-[35px] text-[25px] font-bold text-white">
                   Your burning question,answered
-                </h2>
+                </h3>
 
                 {/* FAQ List */}
                 <div className="lg:w-[100%] md:w-[80%] w-full flex flex-col  !gap-5 !py-5">
@@ -115,7 +115,7 @@ function Faq() {
                         >
                           <h2
                             className={`lg:text-[20px] md:text-[18px] sm:text-[16px] text-[14px] font-semibold w-full font-poppins capitalize "
-                                                    `}
+                            `}
                           >
                             {item?.title}
                           </h2>
