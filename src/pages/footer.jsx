@@ -168,11 +168,10 @@ function Footer() {
                 after:w-0 after:bg-[#2956A6] hover:text-white after:transition-all after:duration-300 hover:after:w-full"
                 >
                   DEVAVRATHA CONSULTANCY SERVICES (OPC) PRIVATE LIMITED,
+                  
                   <br />
-                  NO2739 1ST RUDRAGUPPE
-                  <br />
-                  Kandangala Kodagu
-                  <br /> Karnataka-India 571218.
+                   Kodagu
+                 Karnataka-India 571218.
                 </a>
               </li>
             </ul>
